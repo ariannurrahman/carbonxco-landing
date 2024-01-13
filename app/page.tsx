@@ -1,4 +1,5 @@
 import { HomeCarousel } from './ui/carousel/HomeCarousel';
+import { ContactSection } from './ui/contact-section';
 import { HomeHero } from './ui/hero/home-hero';
 import { Impact } from './ui/impact-section';
 import { ProjectSection } from './ui/project-section';
@@ -12,6 +13,7 @@ export default function Home() {
       <WhatIsCarbonx />
       <Impact />
       <ProjectSection />
+      <ContactSection />
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import { ButtonBlack } from '../button/button-black';
 import { BasicHeroWrapper } from '../wrapper/BasicHeroWrapper';
 
 export const Impact = () => {
@@ -34,9 +35,7 @@ export const Impact = () => {
           );
         })}
       </div>
-      <button className='flex items-center justify-center shadow-md rounded-[50px] border border-1 bg-[#133E3E] px-8 py-2 mt-12'>
-        <p className='mr-4 text-white font-medium text-[14px]'>Learn how we make impacts</p>
-      </button>
+      <ButtonBlack label='Learn how we make impacts' />
     </BasicHeroWrapper>
   );
 };
