@@ -26,13 +26,13 @@ export const Header = () => {
   ];
 
   return (
-    <div className='flex justify-between align-middle p-5 px-20'>
+    <div className='flex justify-between items-center p-5 pt-10 px-20'>
       <Link href='/'>
         <Image alt='carbonxco' src='/assets/carbonxco-logo.svg' width='135' height='32' />
       </Link>
-      <nav className='flex gap-5'>
+      <nav className='flex gap-5 items-center'>
         {HEADER_NAV.map(({ href, label }) => (
-          <Link key={label} href={href}>
+          <Link className='tracking-wider text-[14px] font-medium text-center' key={label} href={href}>
             {label}
           </Link>
         ))}
