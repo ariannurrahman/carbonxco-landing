@@ -31,7 +31,7 @@ export default function News() {
   return (
     <>
       <Hero />
-      <BasicWrapper className='grid grid-cols-3 grid-rows-2 gap-7 mt-5 pb-[200px]'>
+      <BasicWrapper className='grid grid-cols-1 lg:grid-cols-3 grid-rows-2 gap-7 mt-5 pb-[200px]'>
         {DUMMY_DATA_CARD.map(({ title }, index) => (
           <NewsCard key={index} title={title} />
         ))}
