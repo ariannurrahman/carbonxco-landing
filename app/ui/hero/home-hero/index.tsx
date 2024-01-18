@@ -1,23 +1,24 @@
 import Image from 'next/image';
-import { BasicHeroWrapper } from '../../wrapper/BasicHeroWrapper';
-import { ButtonArrow } from '../../button/button-arrow';
 
 export const HomeHero = () => {
   return (
-    <BasicHeroWrapper bgColor='#EEE' sectionId='home-hero'>
-      <h1 className='text-[40px] font-medium'>
-        Making
-        <br />
-        Significant
-        <br />
-        Impact
-      </h1>
-      <p className='text-[16px] text-black font-medium mt-[29px] mb-[43px]'>
-        Carbonxco is a carbon company leading the way in making impact <br /> through collaboration in the sustainable
-        industry
-      </p>
-
-      <ButtonArrow imgAlt='See Our Portfolio' label='See Our Portfolio' />
-    </BasicHeroWrapper>
+    <>
+      <Image
+        className='hidden lg:block'
+        src='/assets/home/home-hero-desktop.png'
+        width={1380}
+        height={416}
+        alt='home'
+        priority
+      />
+      <Image
+        className='block lg:hidden w-full'
+        src='/assets/home/home-hero-mobile.png'
+        width={360}
+        height={173}
+        alt='home'
+        priority
+      />
+    </>
   );
 };

@@ -10,7 +10,9 @@ interface BasicHeroWrapperProps {
 export const BasicHeroWrapper = ({ children, sectionId, className, bgColor = 'white' }: BasicHeroWrapperProps) => {
   return (
     <section
-      className={`p-5 md:p-20 lg:px-[160px] lg:py-[190px] flex-grow bg-[${bgColor}] ${className ?? ''}`}
+      className={`p-5 md:p-20 lg:px-[70px] lg:py-[140px] xl:px-[160px] xl:py-[190px] flex-grow bg-[${bgColor}] ${
+        className ?? ''
+      }`}
       id={sectionId}
     >
       {children}
