@@ -10,27 +10,14 @@ import { OurFocus } from './ui/home/our-focus';
 export default function Home() {
   return (
     <main>
-      <div className='px-2 lg:px-8 w-full relative'>
-        <HomeHero />
-      </div>
-      <div className='px-2 lg:px-[120px] xl:px-[159px]'>
-        <QualitySection />
-      </div>
-
+      <HomeHero />
+      <QualitySection />
       <HomeCarousel />
-      <div className='px-2 lg:px-[120px] xl:px-[159px]'>
-        <WhatIsCarbonx />
-      </div>
+      <WhatIsCarbonx />
       <WhyCarbonx />
-      <div className='px-2 lg:pl-[120px] xl:pl-[159px]'>
-        <OurWorkSection />
-      </div>
-      <div className='px-2 lg:px-8 w-full relative'>
-        <OurFocus />
-      </div>
-      <div className='relative'>
-        <ContactSection />
-      </div>
+      <OurWorkSection />
+      <OurFocus />
+      <ContactSection />
     </main>
   );
 }

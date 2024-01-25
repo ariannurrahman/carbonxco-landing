@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import { SectionWrapper } from '../../wrapper';
 
 export const HomeHero = () => {
   return (
-    <>
+    <SectionWrapper padding='low'>
       <Image
         className='hidden lg:block'
         src='/assets/home/home-hero-desktop.png'
@@ -19,6 +20,6 @@ export const HomeHero = () => {
         alt='home'
         priority
       />
-    </>
+    </SectionWrapper>
   );
 };

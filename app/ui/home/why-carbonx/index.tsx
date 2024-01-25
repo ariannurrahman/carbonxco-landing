@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
+
 export const WhyCarbonx = () => {
   const WHY_CARBON_X = [
     {
@@ -22,7 +24,7 @@ export const WhyCarbonx = () => {
   return (
     <div className='relative w-screen min-h-screen h-full lg:h-screen'>
       <div className='relative z-20 flex flex-col justify-center items-center w-full h-full'>
-        <h1 className='text-white font-semibold text-[14px] text-center mb-6 mt-5 tracking-widest'>WHY CARBONX</h1>
+        <GreenSubTitle className='text-center mb-6 mt-5' label='WHY CARBONX' white />
         <h3 className='text-white font-medium mb-20 text-center lg:max-w-[700px]'>
           We catalyze climate actions and create high-impact projects for people and planet, as well as your brand
         </h3>

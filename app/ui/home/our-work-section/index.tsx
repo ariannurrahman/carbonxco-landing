@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { Button } from '../../button';
+import { SectionWrapper } from '../../wrapper';
+import { GreenSubTitle } from '../../typography/GreenSubTitle';
 
 export const OurWorkSection = () => {
   const OUR_WORK_IMAGE = [
@@ -46,39 +48,42 @@ export const OurWorkSection = () => {
   ];
 
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-2 py-20 gap-y-10 gap-x-5 lg:gap-x-[40px] xl:gap-x-[100px]'>
-      <div>
-        <h1 className='text-[#00AC42] text-[16px] font-semibold tracking-widest'>OUR WORK</h1>
-        <h3 className='text-[#13282D] text-[26px] font-medium mt-5'>
-          From grass-root communities, to nation-wide carbon projects
-        </h3>
-        <p className='text-[#000] text-[14px] font-medium mt-2'>Our Core Values are driven by SDGs</p>
-        <div className='flex flex-row flex-wrap gap-x-2 gap-y-2 mt-3'>
-          {OUR_WORK_IMAGE.map((eachImg) => (
-            <Image className='m-0' key={eachImg} src={eachImg} width={60} height={60} alt={eachImg} />
-          ))}
+    <SectionWrapper padding='high'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 py-20 gap-y-10 gap-x-5 lg:gap-x-[40px] xl:gap-x-[100px]'>
+        <div>
+          <GreenSubTitle label='OUR WORK' />
+
+          <h3 className='text-[#13282D] text-[26px] font-medium mt-5'>
+            From grass-root communities, to nation-wide carbon projects
+          </h3>
+          <p className='text-[#000] text-[14px] font-medium mt-2'>Our Core Values are driven by SDGs</p>
+          <div className='flex flex-row flex-wrap gap-x-2 gap-y-2 mt-3'>
+            {OUR_WORK_IMAGE.map((eachImg) => (
+              <Image className='m-0' key={eachImg} src={eachImg} width={60} height={60} alt={eachImg} />
+            ))}
+          </div>
+          <div className='flex justify-center lg:block'>
+            <Button label='Find out more about our values' className='bg-[#00AC42] mt-20' />
+          </div>
         </div>
-        <div className='flex justify-center lg:block'>
-          <Button label='Find out more about our values' className='bg-[#00AC42] mt-20' />
-        </div>
-      </div>
-      <div className='flex flex-nowrap flex-row justify-start items-center overflow-y-scroll'>
-        {WORK_LIST.map(({ caption, src, title, id }) => {
-          return (
-            <div
-              key={id}
-              className='flex justify-around items-start flex-col flex-nowrap min-w-[300px] h-full px-8 border-l-2 border-[#D4EFDE] pb-5'
-            >
-              <div>
-                <Image src={src} width={308} height={208} alt={title} />
-                <h1 className='text-[#13282D] text-[24px] xl:text-[32px] font-medium my-2'>{title}</h1>
-                <p className='text-[#13282D] text-base xl:text-[16px] font-medium'>{caption}</p>
+        <div className='flex flex-nowrap flex-row justify-start items-center overflow-y-scroll'>
+          {WORK_LIST.map(({ caption, src, title, id }) => {
+            return (
+              <div
+                key={id}
+                className='flex justify-around items-start flex-col flex-nowrap min-w-[300px] h-full px-8 border-l-2 border-[#D4EFDE] pb-5'
+              >
+                <div>
+                  <Image src={src} width={308} height={208} alt={title} />
+                  <h1 className='text-[#13282D] text-[24px] xl:text-[32px] font-medium my-2'>{title}</h1>
+                  <p className='text-[#13282D] text-base xl:text-[16px] font-medium'>{caption}</p>
+                </div>
+                <p className='text-[16px] text-[#00B040] font-bold text-center w-full mt-20'>Read More</p>
               </div>
-              <p className='text-[16px] text-[#00B040] font-bold text-center w-full mt-20'>Read More</p>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
