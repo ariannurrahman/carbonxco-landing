@@ -1,6 +1,7 @@
 import { AboutHero } from '@/app/ui/hero/about-hero';
 import { MainFocus } from '@/app/ui/about/main-focus';
 import { OurGoals } from '@/app/ui/about/our-goals';
+import { Values } from '@/app/ui/about/values';
 
 export default function About() {
   return (
@@ -8,6 +9,7 @@ export default function About() {
       <AboutHero />
       <MainFocus />
       <OurGoals />
+      <Values />
     </>
   );
 }

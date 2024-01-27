@@ -4,8 +4,8 @@ export const HEADER_NAV = [
     label: 'ABOUT US',
   },
   {
-    href: '/impact',
-    label: 'IMPACT',
+    href: '/works',
+    label: 'OUR WORKS',
   },
   {
     href: '/news',

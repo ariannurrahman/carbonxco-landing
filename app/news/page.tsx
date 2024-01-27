@@ -1,40 +1,53 @@
-import { Hero } from '../ui/hero/news-hero';
+import { NewsHero } from '@/app/ui/hero/news-hero';
+import { SectionWrapper } from '@/app/ui/wrapper';
 import { NewsCard } from '../ui/card/news-card';
 
 export default function News() {
   const DUMMY_DATA_CARD = [
     {
-      title: "CarbonX Signs MoU with AirCarbon Exchange, Building Indonesia's Carbon Marketplace",
+      title: 'Buru Island',
+      caption:
+        'Intervening the ongoing land conversion to become restored and sustainably preserved; investing in community-based empowerment to generate alternative livelihoods; and protecting the...',
+      slug: 'News',
+      date: '01 JANUARY 2024',
+      author: 'AUTHOR NAME',
     },
     {
-      title:
-        'Addressing Climate Impacts on the Northern Java Coastline, CarbonX and IIF Plant 3,000 Mangroves Seedlings in Brebes, Central Java',
+      title: 'Buru Island',
+      caption:
+        'Intervening the ongoing land conversion to become restored and sustainably preserved; investing in community-based empowerment to generate alternative livelihoods; and protecting the...',
+      slug: 'News',
+      date: '01 JANUARY 2024',
+      author: 'AUTHOR NAME',
     },
     {
-      title:
-        'CarbonX and Indonesia Indah Foundation Join Forces to Accelerate Environmental Sustainability Education for School Children',
+      title: 'Buru Island',
+      caption:
+        'Intervening the ongoing land conversion to become restored and sustainably preserved; investing in community-based empowerment to generate alternative livelihoods; and protecting the...',
+      slug: 'News',
+      date: '01 JANUARY 2024',
+      author: 'AUTHOR NAME',
     },
     {
-      title: "CarbonX Signs MoU with AirCarbon Exchange, Building Indonesia's Carbon Marketplace",
-    },
-    {
-      title:
-        'Addressing Climate Impacts on the Northern Java Coastline, CarbonX and IIF Plant 3,000 Mangroves Seedlings in Brebes, Central Java',
-    },
-    {
-      title:
-        'CarbonX and Indonesia Indah Foundation Join Forces to Accelerate Environmental Sustainability Education for School Children',
+      title: 'Buru Island',
+      caption:
+        'Intervening the ongoing land conversion to become restored and sustainably preserved; investing in community-based empowerment to generate alternative livelihoods; and protecting the...',
+      slug: 'News',
+      date: '01 JANUARY 2024',
+      author: 'AUTHOR NAME',
     },
   ];
 
   return (
     <>
-      <Hero />
-      {/* <BasicWrapper className='grid grid-cols-1 lg:grid-cols-3 grid-rows-2 gap-7 mt-5 pb-[200px]'>
-        {DUMMY_DATA_CARD.map(({ title }, index) => (
-          <NewsCard key={index} title={title} />
-        ))}
-      </BasicWrapper> */}
+      <NewsHero />
+      <SectionWrapper padding='high'>
+        <div className='flex flex-col w-full pt-[60px]'>
+          {DUMMY_DATA_CARD.map((news, index) => {
+            return <NewsCard key={index} {...news} />;
+          })}
+        </div>
+      </SectionWrapper>
     </>
   );
 }
