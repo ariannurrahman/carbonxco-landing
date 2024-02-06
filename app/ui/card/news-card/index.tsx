@@ -10,7 +10,7 @@ interface NewsCardProps {
 
 export const NewsCard = ({ title, caption, slug, date, author }: NewsCardProps) => {
   return (
-    <div className='flex justify-start flex-nowrap items-center last:border-none py-[60px] border-b-2 border-black gap-x-10'>
+    <div className='flex justify-start flex-wrap lg:flex-nowrap items-center last:border-none py-[60px] border-b-2 border-black gap-x-10'>
       <div className='relative w-[320px] h-[290px] min-w-[320px] min-h-[290px]'>
         <Image src='/assets/works/other-project.png' fill alt='projects' />
       </div>

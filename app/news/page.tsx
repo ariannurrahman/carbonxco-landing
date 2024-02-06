@@ -39,7 +39,7 @@ export default function News() {
   ];
 
   return (
-    <>
+    <div>
       <NewsHero />
       <SectionWrapper padding='high'>
         <div className='flex flex-col w-full pt-[60px]'>
@@ -48,6 +48,6 @@ export default function News() {
           })}
         </div>
       </SectionWrapper>
-    </>
+    </div>
   );
 }
