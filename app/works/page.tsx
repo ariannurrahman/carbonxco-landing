@@ -99,7 +99,9 @@ export default function WorksPage() {
             </div>
             <div className='flex flex-col items-center justify-center'>
               <h3 className='text-base font-bold text-center mb-[18px]'>Need more information for this project?</h3>
-              <Button label='Contact Us' className='bg-[#46A7ED] w-full max-w-[342px]' />
+              <Button className='bg-[#46A7ED] w-full max-w-[342px]'>
+                <p className='text-[20px] text-white font-medium text-nowrap'>Contact Us</p>
+              </Button>
             </div>
           </div>
         </div>

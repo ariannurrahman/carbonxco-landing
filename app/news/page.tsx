@@ -11,6 +11,7 @@ export default function News() {
       slug: 'News',
       date: '01 JANUARY 2024',
       author: 'AUTHOR NAME',
+      id: 1,
     },
     {
       title: 'Buru Island',
@@ -19,6 +20,7 @@ export default function News() {
       slug: 'News',
       date: '01 JANUARY 2024',
       author: 'AUTHOR NAME',
+      id: 2,
     },
     {
       title: 'Buru Island',
@@ -27,6 +29,7 @@ export default function News() {
       slug: 'News',
       date: '01 JANUARY 2024',
       author: 'AUTHOR NAME',
+      id: 3,
     },
     {
       title: 'Buru Island',
@@ -35,11 +38,12 @@ export default function News() {
       slug: 'News',
       date: '01 JANUARY 2024',
       author: 'AUTHOR NAME',
+      id: 4,
     },
   ];
 
   return (
-    <div>
+    <>
       <NewsHero />
       <SectionWrapper padding='high'>
         <div className='flex flex-col w-full pt-[60px]'>
@@ -48,6 +52,6 @@ export default function News() {
           })}
         </div>
       </SectionWrapper>
-    </div>
+    </>
   );
 }

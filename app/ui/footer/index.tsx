@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FOOTER_NAV } from '../constants';
+import { SectionWrapper } from '../wrapper';
 
 export const Footer = () => {
   const FooterLogo = (
     <div>
       <Link href='/'>
-        <Image alt='carbonxco' src='/assets/footer-logo.png' width={135} height={32} />
+        <div className='w-[135px] h-[32px] relative'>
+          <Image alt='carbonxco' className='object-contain' src='/assets/footer-logo.png' fill />
+        </div>
       </Link>
-      <p className='mt-[18px] mb-[26px] w-[330px] font-medium text-white text-[14px]'>
+      <p className='mt-[18px] mb-[26px] max-w-[330px] font-medium text-white text-[14px]'>
         CarbonX is an impact-focused company, leading the way in meaningful collaborations that goes beyond carbon
         offsetting.
       </p>
@@ -46,21 +49,28 @@ export const Footer = () => {
   );
 
   return (
-    <footer className='bg-[#13282D] lg:bg-transparent p-5 lg:py-14 lg:px-40 relative'>
-      <div className='hidden relative z-20 lg:flex justify-between items-start flex-col md:flex-row'>
-        <div className='flex justify-between items-start gap-12 flex-col md:flex-row'>
-          {FooterLogo}
-          {FooterUrl}
+    <SectionWrapper padding='high' className='bg-[#13282D] lg:bg-transparent py-5 lg:py-14 relative'>
+      <footer>
+        <div className='hidden relative z-20 lg:flex justify-between items-start flex-col md:flex-row'>
+          <div className='flex justify-between items-start gap-12 flex-col md:flex-row'>
+            {FooterLogo}
+            {FooterUrl}
+          </div>
+          {FooterAddress}
         </div>
-        {FooterAddress}
-      </div>
 
-      <div className='flex lg:hidden relative z-20 flex-col'>
-        {FooterUrl}
-        {FooterAddress}
-        <div className='mt-10'>{FooterLogo}</div>
-      </div>
-      <Image className='z-10 hidden lg:absolute top-0 left-0' src='/assets/footer-bg.png' alt='carbonx footer' fill />
-    </footer>
+        <div className='flex lg:hidden relative z-20 flex-col'>
+          {FooterUrl}
+          {FooterAddress}
+          <div className='mt-10'>{FooterLogo}</div>
+        </div>
+        <Image
+          className='z-10 hidden lg:block absolute top-0 left-0'
+          src='/assets/footer-bg.png'
+          alt='carbonx footer'
+          fill
+        />
+      </footer>
+    </SectionWrapper>
   );
 };

@@ -24,18 +24,21 @@ export const OurStory = () => {
 
   return (
     <SectionWrapper padding='high' className='relative h-screen w-screen flex justify-center items-center'>
-      <div className='w-full max-w-[678px] relative z-20'>
+      <div className='w-full max-w-[678px] relative z-20 flex flex-col justify-center items-center'>
         <GreenSubTitle className='text-center mb-5' label='OUR STORY' />
-        <h2 className='text-center text-[32px] text-black font-medium'>
+        <h2 className='text-center text-[32px] text-black font-medium w-[299px]'>
           Catalyzing climate actions since 2021, and will keep on doing so for future generations
         </h2>
         <div className='flex justify-center items-center flex-col my-10 gap-y-3'>
           {STORY.map(({ label, year }) => {
             return (
-              <div className='group grid grid-cols-[50px_20px_165px] gap-7 items-center' key={year}>
-                <p className='font-medium text-[20px]'> {year}</p>
+              <div
+                className='group grid grid-cols-[50px_20px_130px] lg:grid-cols-[50px_20px_165px] gap-7 items-center'
+                key={year}
+              >
+                <p className='font-medium text-base lg:text-[20px]'> {year}</p>
                 <div className='h-4 w-4 bg-[#D4EFDE] group-hover:bg-[#00B040] rounded-full' />
-                <p className='font-medium text-[20px] text-left'>{label}</p>
+                <p className='font-medium text-base lg:text-[20px] text-left'>{label}</p>
               </div>
             );
           })}

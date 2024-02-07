@@ -49,7 +49,9 @@ export default function ContactPage() {
             </p>
             <div className='flex justify-between flex-row flex-wrap lg:flex-nowrap items-center mt-6 gap-5'>
               <ReCAPTCHA size='normal' sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''} />
-              <Button label='Send' className='bg-[#00AC42] w-full md:w-fit' />
+              <Button className='bg-[#00AC42] w-full md:w-fit'>
+                <p className='text-[20px] text-white font-medium text-nowrap'>Send</p>
+              </Button>
             </div>
           </form>
         </div>

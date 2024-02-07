@@ -109,7 +109,9 @@ export const ApplyJobForm = () => {
       <label className='text-[#252C2D] text-base font-medium leading-[29px]'>Human Check*</label>
       <br />
       <ReCAPTCHA size='normal' sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''} />
-      <Button className='bg-[#00AC42] w-full md:w-fit mt-10' label='Submit Application' type='submit' />
+      <Button className='bg-[#00AC42] w-full md:w-fit mt-10' type='submit'>
+        <p className='text-[20px] text-white font-medium text-nowrap'>Submit Application</p>
+      </Button>
     </form>
   );
 };

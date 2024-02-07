@@ -44,7 +44,7 @@ export const FOOTER_NAV = [
     label: 'MEET THE TEAM',
   },
   {
-    href: '/job',
+    href: '/career',
     label: 'JOB OPPORTUNITY',
   },
   {
