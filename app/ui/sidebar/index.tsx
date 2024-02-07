@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { HEADER_NAV } from '../constants';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -13,9 +14,9 @@ export const Sidebar = () => {
 
   return (
     <>
-      <div className='block lg:hidden'>
-        <button onClick={onOpenSidebar} className='px-3 border border-black rounded'>
-          -
+      <div className='block md:hidden'>
+        <button onClick={onOpenSidebar}>
+          <Image src='/assets/menu-icon.svg' width={40} height={40} alt='menu' />
         </button>
       </div>
       {isSidebarOpen && (
