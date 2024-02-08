@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <SectionWrapper padding='high' className='min-h-screen py-24'>
+    <SectionWrapper padding='high' className='min-h-screen py-5 lg:py-24'>
       <GreenSubTitle label='CONTACT' />
       <h1 className='text-[32px] font-medium mt-2'>Contact Us</h1>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-12'>
