@@ -1,55 +1,18 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+import Link from 'next/link';
 
 import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
 import { SectionWrapper } from '@/app/ui/wrapper';
-import { Button } from '../ui/button';
-import Link from 'next/link';
+import { Button } from '@/app/ui/button';
+import TeamsList from './TeamsList';
+
+export const metadata: Metadata = {
+  title: 'Teams',
+  description: 'Teams Carbonxco',
+};
 
 export default function TeamsPage() {
-  const [selectedTeam, setSelectedTeam] = useState<number | null>(null);
-
-  const TEAMS_LIST = [
-    {
-      name: 'Ken Sauer',
-      title: 'Co-Founder and CEO',
-      jobDesc:
-        'A seasoned investor and Managing Partner of Risco Energy, Ken Sauer co-founded Risco Gas Infrastructure “RGI” and has over 15 years of experience in financing and investing in the energy sector. Currently, he is a Board of Advisor of the Indonesian Indah Foundation “IIF”, a non-profit multi-faceted environmentally sustainable foundation across Indonesia. Aside from that, he is a member of the Young Presidents Organization (YPO). He studied History, Market, and Management at Duke University.',
-    },
-    {
-      name: 'Dessi Yuliana',
-      title: 'Director',
-      jobDesc:
-        'A seasoned investor and Managing Partner of Risco Energy, Ken Sauer co-founded Risco Gas Infrastructure “RGI” and has over 15 years of experience in financing and investing in the energy sector. Currently, he is a Board of Advisor of the Indonesian Indah Foundation “IIF”, a non-profit multi-faceted environmentally sustainable foundation across Indonesia. Aside from that, he is a member of the Young Presidents Organization (YPO). He studied History, Market, and Management at Duke University.',
-    },
-    {
-      name: 'Kiki Hermawan Susilo',
-      title: 'Finance Director',
-      jobDesc:
-        'A seasoned investor and Managing Partner of Risco Energy, Ken Sauer co-founded Risco Gas Infrastructure “RGI” and has over 15 years of experience in financing and investing in the energy sector. Currently, he is a Board of Advisor of the Indonesian Indah Foundation “IIF”, a non-profit multi-faceted environmentally sustainable foundation across Indonesia. Aside from that, he is a member of the Young Presidents Organization (YPO). He studied History, Market, and Management at Duke University.',
-    },
-    {
-      name: 'Rusman Sudaya',
-      title: 'General Manager for Carbon Project',
-      jobDesc:
-        'A seasoned investor and Managing Partner of Risco Energy, Ken Sauer co-founded Risco Gas Infrastructure “RGI” and has over 15 years of experience in financing and investing in the energy sector. Currently, he is a Board of Advisor of the Indonesian Indah Foundation “IIF”, a non-profit multi-faceted environmentally sustainable foundation across Indonesia. Aside from that, he is a member of the Young Presidents Organization (YPO). He studied History, Market, and Management at Duke University.',
-    },
-    {
-      name: 'Adhi Wardana',
-      title: 'Senior Legal Manager',
-      jobDesc:
-        'A seasoned investor and Managing Partner of Risco Energy, Ken Sauer co-founded Risco Gas Infrastructure “RGI” and has over 15 years of experience in financing and investing in the energy sector. Currently, he is a Board of Advisor of the Indonesian Indah Foundation “IIF”, a non-profit multi-faceted environmentally sustainable foundation across Indonesia. Aside from that, he is a member of the Young Presidents Organization (YPO). He studied History, Market, and Management at Duke University.',
-    },
-    {
-      name: 'Fikri Syaryadi',
-      title: 'Senior Investment Manager',
-      jobDesc:
-        'A seasoned investor and Managing Partner of Risco Energy, Ken Sauer co-founded Risco Gas Infrastructure “RGI” and has over 15 years of experience in financing and investing in the energy sector. Currently, he is a Board of Advisor of the Indonesian Indah Foundation “IIF”, a non-profit multi-faceted environmentally sustainable foundation across Indonesia. Aside from that, he is a member of the Young Presidents Organization (YPO). He studied History, Market, and Management at Duke University.',
-    },
-  ];
-
   return (
     <>
       <SectionWrapper padding='high' className='pt-5 lg:pt-[100px] pb-[300px] z-30'>
@@ -60,26 +23,7 @@ export default function TeamsPage() {
           </h2>
         </div>
         <div className='grid grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-14 mt-[100px] relative z-20'>
-          {TEAMS_LIST.map(({ name, title, jobDesc }, index) => {
-            return (
-              <div key={index} onClick={() => setSelectedTeam(index)} className='bg-white'>
-                <div className='z-30 bg-white relative'>
-                  <div className=''>
-                    <div className='relative aspect-square'>
-                      <Image src='/assets/teams.png' alt={name} fill />
-                    </div>
-                    <h2 className='font-semibold text-2xl mt-5'>{name}</h2>
-                    <p className='font-medium text-base mt-2'>{title}</p>
-                  </div>
-                </div>
-                {selectedTeam === index && (
-                  <div className='cursor-pointer relative z-20 bg-white'>
-                    <p className='absolute top-0 left-0 bg-white pt-7'>{jobDesc}</p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+          <TeamsList />
         </div>
       </SectionWrapper>
       <div className='relative w-full h-[230px] z-10'>

@@ -2,6 +2,12 @@ import Image from 'next/image';
 import { SectionWrapper } from '../ui/wrapper';
 import { GreenSubTitle } from '../ui/typography/GreenSubTitle';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Career',
+  description: 'Career Carbonxco',
+};
 
 export default function CareerPage() {
   const OPPORTUNITY = [

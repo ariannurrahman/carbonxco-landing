@@ -23,7 +23,7 @@ export const ContactSection = () => {
             pages describing your project design and its roadmap
           </p>
           <Button className='bg-[#00AC42] w-fit mt-8'>
-            <Link href='/contact'>
+            <Link href='/contact-us'>
               <p className='text-[20px] text-white font-medium'>Contact Us</p>
             </Link>
           </Button>

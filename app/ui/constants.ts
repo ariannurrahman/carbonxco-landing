@@ -21,6 +21,33 @@ export const HEADER_NAV = [
   },
 ];
 
+export const SIDEBAR_NAV = [
+  {
+    href: '/about',
+    label: 'ABOUT US',
+  },
+  {
+    href: '/works',
+    label: 'OUR WORKS',
+  },
+  {
+    href: '/news',
+    label: 'NEWS & INSIGHTS',
+  },
+  {
+    href: '/teams',
+    label: 'OUR TEAMS',
+  },
+  {
+    href: '/career',
+    label: 'CAREERS',
+  },
+  {
+    href: '/contact-us',
+    label: 'CONTACT US',
+  },
+];
+
 export const FOOTER_NAV = [
   {
     href: '/about',

@@ -1,6 +1,12 @@
+import { Metadata } from 'next';
 import { NewsHero } from '@/app/ui/hero/news-hero';
 import { SectionWrapper } from '@/app/ui/wrapper';
-import { NewsCard } from '../ui/card/news-card';
+import { NewsCard } from '@/app/ui/card/news-card';
+
+export const metadata: Metadata = {
+  title: 'News',
+  description: 'News Carbonxco',
+};
 
 export default function News() {
   const DUMMY_DATA_CARD = [

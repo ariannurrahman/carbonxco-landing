@@ -23,7 +23,7 @@ export default function WorksPage() {
   return (
     <div>
       <SectionWrapper padding='high'>
-        <div className='mt-[93px] mb-[47px]'>
+        <div className='mt-5 lg:mt-[93px] mb-[47px]'>
           <GreenSubTitle label='OUR WORK / PROJECTS' />
           <h3 className='font-medium text-[32px] mt-1'>Sanggala Projects</h3>
           <p className='text-base font-medium mt-[18px] max-w-[756px]'>
