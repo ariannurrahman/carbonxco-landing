@@ -7,7 +7,7 @@ import { Sidebar } from '../sidebar';
 
 export const Header = () => {
   return (
-    <div className='header flex justify-between items-center h-[80px] p-3 md:p-5 md:pt-10 md:px-20'>
+    <div className='bg-white flex justify-between items-center h-[80px] p-3 md:p-5 md:pt-10 md:px-20'>
       <Link href='/'>
         <Image alt='carbonxco' src='/assets/carbonxco-logo.svg' width='135' height='32' />
       </Link>

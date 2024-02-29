@@ -12,8 +12,11 @@ export const WhatIsCarbonx = () => {
         <div className='order-2 lg:order-1 flex justify-center items-start flex-col flex-nowrap mt-10 lg:mt-0'>
           <GreenSubTitle label='WHAT IS CARBONX' />
           <h1 className='text-[20px] lg:text-[32px] font-medium mt-5'>
-            We are an end-to-end carbon projects facilitator, centered around grassroot communities and climate
-            technology solutions.
+            We are an{' '}
+            <span className='underline underline-offset-8 decoration-[#FFC42D]'>
+              end-to-end carbon projects facilitator
+            </span>
+            , centered around grassroot communities and climate technology solutions.
           </h1>
           <p className='text-[14px] lg:text-base text-black font-medium mt-[29px] mb-[43px]'>
             From originating, investing, developing, and implementing carbon projects, CarbonX is committed to design a
@@ -30,7 +33,20 @@ export const WhatIsCarbonx = () => {
         </div>
         <div className='order-1 lg:order-2 mt-5 lg:mt-0  flex justify-center items-center lg:justify-end lg:items-end flex-col flex-nowrap'>
           <div className='w-[320px] h-[325px] relative lg:w-[428px] lg:h-[607px]'>
-            <Image src='/assets/home/what-is-carbonx.png' fill alt='what is carbonx' priority />
+            <Image
+              className='hidden lg:block'
+              src='/assets/home/what-is-carbonx.png'
+              fill
+              alt='what is carbonx'
+              priority
+            />
+            <Image
+              className='block lg:hidden'
+              src='/assets/home/what-is-carbonx-mobile.png'
+              fill
+              alt='what is carbonx'
+              priority
+            />
           </div>
         </div>
       </div>

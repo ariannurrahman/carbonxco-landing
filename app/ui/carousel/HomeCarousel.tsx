@@ -10,34 +10,41 @@ import Image from 'next/image';
 
 export const HomeCarousel = () => {
   return (
-    <div className='bg-[#F6F6F6] px-[30px] py-[18px]'>
-      <Swiper
-        autoplay={{ delay: 0, pauseOnMouseEnter: false, stopOnLastSlide: false }}
-        loop
-        speed={3600}
-        slidesPerView={3}
-        modules={[Autoplay, Pagination]}
-        className='home-swiper-carousel bg-white rounded-2xl'
-      >
-        <SwiperSlide>
-          <Image src='/assets/carousel/carousel-aircarbon.svg' width={190} height={100} alt='Air Carbon Exchange' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/assets/carousel/carousel-iif.svg' width={206} height={100} alt='Indonesia Indah Foundation' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/assets/carousel/carousel-bi.svg' width={315} height={100} alt='Bank Indonesia' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/assets/carousel/carousel-aircarbon.svg' width={190} height={100} alt='Air Carbon Exchange' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/assets/carousel/carousel-iif.svg' width={206} height={100} alt='Indonesia Indah Foundation' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/assets/carousel/carousel-bi.svg' width={315} height={100} alt='Bank Indonesia' />
-        </SwiperSlide>
-      </Swiper>
-    </div>
+    <Swiper
+      autoplay={{ delay: 0, pauseOnMouseEnter: false, stopOnLastSlide: false }}
+      loop
+      speed={3600}
+      breakpoints={{
+        320: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+      }}
+      modules={[Autoplay, Pagination]}
+      className='home-swiper-carousel bg-white rounded-2xl w-full'
+    >
+      <SwiperSlide>
+        <Image src='/assets/carousel/carousel-aircarbon.svg' width={128} height={67} alt='Air Carbon Exchange' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src='/assets/carousel/carousel-iif.svg' width={138} height={75} alt='Indonesia Indah Foundation' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src='/assets/carousel/carousel-fairatmos.svg' width={200} height={50} alt='Fairatmos' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src='/assets/carousel/carousel-eco-securities.svg' width={170} height={75} alt='Eco Securities' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image
+          src='/assets/carousel/carousel-icta.svg'
+          width={184}
+          height={117}
+          alt='Indonesian Carbo Trade Association'
+        />
+      </SwiperSlide>
+    </Swiper>
   );
 };

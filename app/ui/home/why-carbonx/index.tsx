@@ -17,24 +17,24 @@ export const WhyCarbonx = () => {
     {
       title: 'Mutual Benefits',
       caption: 'Emphasis on co-benefits, beyond emissions reductions',
-      src: '/assets/home/why-carbonx-1.png',
+      src: '/assets/home/why-carbonx-3.png',
     },
   ];
 
   return (
     <div className='relative w-screen min-h-screen h-full lg:h-screen'>
-      <div className='relative z-20 flex flex-col justify-center items-center w-full h-full'>
-        <GreenSubTitle className='text-center mb-6 mt-5' label='WHY CARBONX?' white />
-        <h3 className='text-white text-2xl lg:text-[32px] font-medium mb-20 text-center md:max-w-[712px]'>
+      <div className='relative z-20 flex flex-col justify-center items-center w-full h-full py-20 lg:py-0'>
+        <GreenSubTitle className='text-center mb-6 ' label='WHY CARBONX?' white />
+        <h3 className='text-white text-2xl lg:text-[32px] leading-[44px] font-medium mb-20 text-center md:max-w-[712px]'>
           We catalyze climate actions and spearhead high-impact projects for people and the planet
         </h3>
         <div className='grid grid-cols-1 lg:grid-cols-[300px_300px_300px] gap-6 pb-5'>
           {WHY_CARBON_X.map(({ caption, src, title }) => {
             return (
-              <div className='flex justify-start items-center flex-col flex-nowrap' key={caption}>
+              <div className='flex justify-start items-center flex-col flex-nowrap px-5' key={caption}>
                 <Image className='object-fit w-[95px] h-[87px]' src={src} width={95} height={87} alt={caption} />
-                <p className='text-center text-[#D4EFDE] font-medium text-[20px] mt-5'>{title}</p>
-                <p className='text-center text-[#D4EFDE] font-medium text-[14px] lg:text-[16px] mt-5'>{caption}</p>
+                <p className='text-center text-[#D4EFDE] font-semibold text-[20px] mt-5'>{title}</p>
+                <p className='text-center text-[#D4EFDE] font-medium text-[14px] lg:text-[16px] mt-3'>{caption}</p>
               </div>
             );
           })}

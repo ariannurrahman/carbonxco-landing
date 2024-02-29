@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Button } from '../../button';
 import { SectionWrapper } from '../../wrapper';
 import { GreenSubTitle } from '../../typography/GreenSubTitle';
+import Link from 'next/link';
 
 export const OurWorkSection = () => {
   const OUR_WORK_IMAGE = [
@@ -65,28 +66,39 @@ export const OurWorkSection = () => {
               </div>
             ))}
           </div>
-          <div className='flex justify-start lg:block'>
+          <div className='hidden lg:flex justify-start'>
             <Button className='bg-[#00AC42] mt-20'>
-              <p className='text-[20px] text-white font-medium'>See Our Projects</p>
+              <Link href='/projects'>
+                <p className='text-[20px] text-white font-medium'>See Our Projects</p>
+              </Link>
             </Button>
           </div>
         </div>
-        <div className='flex flex-nowrap flex-row justify-start items-center overflow-y-scroll gap-x-5 pb-10'>
-          {WORK_LIST.map(({ caption, src, title, id }) => {
-            return (
-              <div
-                key={id}
-                className='shadow-[0_1px_1px_0_rgba(0,0,0,0.04)] flex justify-around items-start flex-col flex-nowrap min-w-[370px] border-2 rounded-[20px] border-[#D4EFDE] p-8'
-              >
-                <div>
-                  <Image src={src} width={308} height={195} alt={title} />
-                  <h1 className='text-[#13282D] text-[24px] xl:text-[32px] font-medium my-2'>{title}</h1>
-                  <p className='text-[#13282D] text-base xl:text-[16px] font-medium'>{caption}</p>
+        <div className='flex flex-col flex-nowrap w-full overflow-y-scroll'>
+          <div className='flex flex-nowrap flex-row justify-start items-center overflow-y-scroll gap-x-5 pb-10 w-full'>
+            {WORK_LIST.map(({ caption, src, title, id }) => {
+              return (
+                <div
+                  key={id}
+                  className='shadow-[0_1px_1px_0_rgba(0,0,0,0.04)] flex justify-around items-start flex-col flex-nowrap min-w-[370px] border-2 rounded-[20px] border-[#D4EFDE] p-8'
+                >
+                  <div>
+                    <Image src={src} width={308} height={195} alt={title} />
+                    <h1 className='text-[#13282D] text-[24px] xl:text-[32px] font-medium my-2'>{title}</h1>
+                    <p className='text-[#13282D] text-base xl:text-[16px] font-medium'>{caption}</p>
+                  </div>
+                  <p className='text-[16px] text-[#00B040] font-bold text-center w-full mt-20'>Read More</p>
                 </div>
-                <p className='text-[16px] text-[#00B040] font-bold text-center w-full mt-20'>Read More</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+          <div className='flex lg:hidden justify-start'>
+            <Button className='bg-[#00AC42] mt-5'>
+              <Link href='/projects'>
+                <p className='text-[20px] text-white font-medium'>See Our Projects</p>
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </SectionWrapper>
