@@ -5,50 +5,68 @@ import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
 export const MainFocus = () => {
   const DUMMY_DATA = [
     {
-      label: 'Community Based Conservation',
+      label: 'Community Based Conservations',
+      desc: "Indigenous People serve a vital role in conserving the Earth. They also make up at least 25% of the global population (Hoffman, 2022) including over one-third of the world's protected areas. It is about time they are getting the respect they deserve–and that is why we include them, including the youth and women to undertake carbon projects with informed consent and post-project dialogue.",
+      img: '/assets/about/focus-1.png',
     },
     {
-      label: 'Alternative Livelihood through Market Access',
+      label: 'Sustainable Livelihood with Integrated Approaches',
+      desc: 'Our projects are rooted in trust and a shared vision with targeted stakeholders in each region to make it less affected by macroeconomic uncertainty. This helps us establish a solid supply chain that is connected to a wider network to provide market access, products, and valuable services.',
+      img: '/assets/about/focus-2.png',
     },
     {
-      label: 'Social Inclusion',
+      label: 'Nature Based Solution',
+      desc: 'Indonesia has about 60-70 percent of carbon emission reduction potential from its natural sector. Tapping into the transformative power of collective action, we are working together with various stakeholders to take the lead in numerous Nature-based Solution (NbS) projects across the country.',
+      img: '/assets/about/focus-3.png',
     },
     {
-      label: 'Emission Reduction',
+      label: 'Technology Innovations',
+      desc: 'From satellite imagery, LiDAR technology, and advanced algorithms, our project selections are streamlined and optimized. These cutting-edge technologies has also helped in data collection and monitoring.',
+      img: '/assets/about/focus-4.png',
     },
   ];
 
   return (
-    <div className='relative w-screen min-h-screen h-full lg:h-screen py-5'>
-      <SectionWrapper padding='high' className='relative z-20 h-full flex justify-center items-center flex-col'>
-        <div className='grid grid-cols-1 lg:grid-cols-[265px_auto]'>
-          <GreenSubTitle label='MAIN FOCUS' white />
+    <div className='relative w-screen min-h-screen h-full py-5'>
+      <SectionWrapper padding='high' className='relative z-20 h-full flex justify-start items-center flex-col py-20'>
+        <div className='flex justify-start items-start lg:gap-x-20'>
+          <GreenSubTitle label='MAIN FOCUS' white className='w-fit text-nowrap' />
           <div>
-            <h3 className='text-white font-bold text-base'>
-              What are the roles of CarbonX Investments in this ecosystem?
-            </h3>
-            <p className='text-white font-medium text-base mt-2'>
-              We believe that the courage to continue that counts. Success is not our final goal as failure is
-              inevitable in innovation. Hence, it is a thorough collaboration among various networks and
+            <h4 className='text-white text-2xl font-medium'>How does CarbonX play a part in this ecosystem?</h4>
+            <p className='text-white text-base font-medium mt-5'>
+              Engaging with local communities has become a core aspect of our approach for both environmental
+              preservation and improved the livelihood of communities. By harnessing the power of nature and
+              technological solutions, we are making strides to address climate challenges in an efficient and effective
+              manner.
             </p>
           </div>
         </div>
-        <div className='mt-8 flex justify-start items-center flex-col md:flex-row flex-wrap md:flex-nowrap gap-5'>
-          {DUMMY_DATA.map(({ label }) => (
-            <div
-              className='bg-[#D4EFDE] rounded-lg hover:bg-[#DAEEFA] flex justify-center items-center transition flex-1 w-full min-h-[264px]'
-              key={label}
-            >
-              <p className='text-[#13282D] text-xl font-medium text-center'>{label}</p>
-            </div>
-          ))}
+
+        <div className='flex flex-col w-full mt-10 border-white border-2 p-10 backdrop-blur-sm gap-5'>
+          {DUMMY_DATA.map(({ desc, img, label }, index) => {
+            return (
+              <div key={label} className='grid grid-cols-[50px_auto_200px] w-full gap-10'>
+                <div className='h-9 w-9 border-2 border-white rounded-full flex justify-center items-center'>
+                  <p className='text-white text-[20px] font-medium'>{index + 1}</p>
+                </div>
+
+                <div>
+                  <p className='text-white text-[20px] font-medium'>{label}</p>
+                  <p className='text-white text-base font-medium'>{desc}</p>
+                </div>
+                <div className='w-[150px] h-[150px]'>
+                  <Image alt={label} src={img} height={150} width={150} />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </SectionWrapper>
       <Image
-        className='z-10 absolute top-0 left-0 w-screen min-h-screen h-full object-fit'
-        src='/assets/about/main-focus.png'
-        width={1440}
-        height={800}
+        className='z-10 absolute top-0 left-0 object-fill'
+        src='/assets/about/main-focus-bg.png'
+        sizes='100vw'
+        fill
         alt='about carbon x'
       />
     </div>

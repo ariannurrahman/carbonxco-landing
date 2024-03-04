@@ -1,54 +1,49 @@
 import React from 'react';
 import { SectionWrapper } from '@/app/ui/wrapper';
 import { GreenSubTitle } from '../../typography/GreenSubTitle';
+import Image from 'next/image';
 
 export const OurGoals = () => {
   const OUR_GOALS = [
     {
-      label: '8 Million',
-      value: 'tCO2e per year',
-      caption: 'of GHG emissions avoidance and reductions',
+      label: 'Greenhouse gasses emissions avoidance and reductions',
+      value: '8 million tCO2e per year',
+      src: '/assets/about/goal-1.png',
     },
     {
-      label: '200 Villages and 15 Village Forrest',
-      caption: 'Supported and Rehabilitated',
+      label: 'Green jobs creations',
+      value: '>400 new jobs, with 50% of the jobs made accessible for local communities',
+      src: '/assets/about/goal-2.png',
     },
     {
-      label: '6 Million',
-      value: 'tCO2e per year',
-      caption: 'carbon credits available for sale',
+      label: 'Supporting villages and village forests',
+      value: '>200 villages and 15 village forests',
+      src: '/assets/about/goal-3.png',
     },
     {
-      label: '30.000',
-      value: 'Local Communities',
-      caption: '(49% are female) livelihood resilience increased',
-    },
-    {
-      label: 'Biodiversity Protection',
-      caption: 'Endangered Species Protection',
-    },
-    {
-      label: 'More than 400 Green Jobs',
-      caption: '50% of the jobs will be available for local communities',
+      label: 'Increasing livelihood resilience',
+      value: 'in >30,000 local communities in which 49% of it are female',
+      src: '/assets/about/goal-4.png',
     },
   ];
 
   return (
     <SectionWrapper
-      className='relative w-screen min-h-screen h-full lg:h-screen py-5 flex justify-center items-start flex-col'
+      className='relative w-screen min-h-screen h-full flex justify-center items-center flex-col py-20'
       padding='high'
     >
       <GreenSubTitle label='Our Goal' />
-      <h1 className='text-black font-medium text-[40px]'>Targeted Impacts</h1>
+      <h1 className='text-black font-medium text-[32px]'>Targeted Impacts</h1>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-y-8 mt-11'>
-        {OUR_GOALS.map(({ label, caption, value }) => {
+      <div className='grid grid-cols-1 md:grid-cols-2 place-content-center gap-20 mt-11'>
+        {OUR_GOALS.map(({ label, src, value }) => {
           return (
-            <div key={label} className='border-l-[3px] border-[#D4EFDE] pl-4'>
-              <p className='text-2xl text-black font-medium'>
-                {label} | {value ?? <span className='text-base'>{value}</span>}
-              </p>
-              <p className='mt-2 text-base text-black font-medium'>{caption}</p>
+            <div key={label} className='flex flex-col justify-start items-center w-[320px]'>
+              <div className='h-[240px] flex justify-center items-center'>
+                <Image src={src} alt='label' width={200} height={166} />
+              </div>
+              <p className='text-xl text-center text-black font-semibold'>{label}</p>
+              <p className='text-base text-center text-black font-medium mt-5'>{value}</p>
             </div>
           );
         })}
