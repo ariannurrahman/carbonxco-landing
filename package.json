@@ -15,6 +15,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",
+    "react-tooltip": "^5.26.3",
     "sass": "^1.69.7",
     "swiper": "^11.0.5",
     "zod": "^3.22.4"

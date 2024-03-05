@@ -5,6 +5,7 @@ import { MainFocus } from '@/app/ui/about/main-focus';
 import { OurGoals } from '@/app/ui/about/our-goals';
 import { Values } from '@/app/ui/about/values';
 import { OurStory } from '@/app/ui/about/our-story';
+import { MoreAbout } from '@/app/ui/about/more-about';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -19,6 +20,7 @@ export default function About() {
       <MainFocus />
       <OurGoals />
       <Values />
+      <MoreAbout />
     </>
   );
 }
