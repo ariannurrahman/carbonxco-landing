@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import { BASE_URL } from '../constant';
 
 export type InitialState = {
   errors: {
@@ -23,6 +24,7 @@ const ApplyJobSchema = z.object({
   state: z.string(),
   postalCode: z.string(),
   file: z.any(),
+  id: z.string(),
 });
 
 const ApplyJob = ApplyJobSchema.omit({});
@@ -38,6 +40,7 @@ export async function applyJob(prevState: InitialState | undefined, formData: Fo
     state: formData.get('state'),
     postalCode: formData.get('postalCode'),
     file: formData.get('file'),
+    id: formData.get('id'),
   });
   console.log('validatedFields', validatedFields);
 
@@ -47,4 +50,20 @@ export async function applyJob(prevState: InitialState | undefined, formData: Fo
       message: 'Missing Fields. Failed to apply.',
     };
   }
+
+  const { firstName, lastName, address, city, state, postalCode, phone, email, file, id } = validatedFields.data;
+  console.log('id', id);
+  console.log('file', file);
+
+  const payload = {
+    name: firstName + ' ' + lastName,
+    address: `${address} ${city} ${state} ${postalCode}`,
+    phone,
+    email,
+  };
+
+  await fetch(`${BASE_URL}/applicants/${id}`, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
 }

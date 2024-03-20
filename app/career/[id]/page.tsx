@@ -1,55 +1,47 @@
+'use client';
+
 import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
 import { SectionWrapper } from '@/app/ui/wrapper';
 import { ApplyJobForm } from './ApplyJobForm';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { BASE_URL } from '@/app/constant';
+
+interface Job {
+  createdAt: string;
+  id: string;
+  location: string;
+  qualification: string[];
+  requirement: string[];
+  title: string;
+  type: string;
+  updatedAt: string;
+}
 
 export default function CarrerPageDetails() {
-  const JOB = {
-    title: 'Senior Finance and Accounting Supervisor',
-    type: 'FULL TIME',
-    location: 'JAKARTA',
-    requirements: [
-      ' Plan, implement, and supervise the company’s financial strategy',
-      'Responsibility for making the company’s financial statements report, and transactions related to WHT (PPh 21, 23, 26, 29, 4 (2)), also assisted in tax litigation matters',
-      'Ensure completion of statutory audits and compliance with the law',
-      'Ensure compliance with local finance policies and procedures',
-      'Follow proper accounting procedures to reach financial objectives',
-      'Drive continuous improvement initiatives regarding processes, technologies, accounting standard changes, and organization',
-      'Supervise and coach subordinates in the accounting division',
-      'Make recommendations to business stakeholders',
-      'Setting up the SOP’s and accounting systems',
-      'Lead the timely completion of month-end, quarterly, and financial statements with meticulous record reconciliation',
-      'Prepare for annual audits, cooperate with external auditors, and coordinate the preparation of work papers',
-      'Prepare a board of Director’s materials related to financial information',
-      'Responsible for checking and verifying each AP submission',
-      'Check daily finance reports both Petty Cash and bank reconciliation',
-    ],
-    qualifications: [
-      'Age below 40',
-      'Min education S1 Accounting from reputable university',
-      'Having a tax brevet certificate (A&B) is preferred',
-      'Min 7 years’ experience as a Finance & Accounting Supervisor or 4 Years’ experience as a Finance & Accounting Senior Supervisor',
-      'Deep knowledge of accounting and Indonesian tax laws',
-      'Fluent in spoken and written English',
-      'Experience in working with accounting software and databases',
-      'Excellent organizational, problem solving, time management, presentation and communication skills',
-      'Detail-oriented, honest, and disciplined',
-      'Can join as soon as possible',
-      'Placement at SCBD South Jakarta',
-    ],
-  };
+  const [job, setJob] = useState<Job | null>(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const getJobDetail = async () => {
+      const response = await fetch(`${BASE_URL}/jobs/${id}`).then((res) => res.json());
+      setJob(response);
+    };
+    getJobDetail();
+  }, [id]);
 
   return (
     <SectionWrapper className='p-5 lg:py-[100px]' padding='high'>
       <GreenSubTitle label='JOB DETAILS' />
-      <h1 className='text-2xl leading-[48px] font-medium'>{JOB.title}</h1>
+      <h1 className='text-2xl leading-[48px] font-medium'>{job?.title}</h1>
       <div className='grid grid-cols-[120px_auto]'>
         <div className='w-fit'>
           <p className='text-base font-semibold'>TYPE</p>
           <p className='text-base font-semibold'>LOCATION</p>
         </div>
         <div>
-          <p className='text-base font-medium'>{JOB.type}</p>
-          <p className='text-base font-medium'>{JOB.location}</p>
+          <p className='text-base font-medium'>{job?.type}</p>
+          <p className='text-base font-medium'>{job?.location}</p>
         </div>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-[auto_400px] gap-10'>
@@ -57,7 +49,7 @@ export default function CarrerPageDetails() {
           <div className='mt-8'>
             <h3 className='text-base font-semibold leading-[29px]'>REQUIREMENTS</h3>
             <div className='mt-2'>
-              {JOB.requirements.map((req) => {
+              {job?.requirement.map((req) => {
                 return (
                   <li className='text-base leading-[29px] font-medium' key={req}>
                     {req}
@@ -69,7 +61,7 @@ export default function CarrerPageDetails() {
           <div className='mt-8'>
             <h3 className='text-base font-semibold leading-[29px]'>QUALIFICATIONS, SKILLS & EXPERIENCE</h3>
             <div className='mt-2'>
-              {JOB.qualifications.map((eachQualification) => {
+              {job?.qualification.map((eachQualification) => {
                 return (
                   <li className='text-base leading-[29px] font-medium' key={eachQualification}>
                     {eachQualification}

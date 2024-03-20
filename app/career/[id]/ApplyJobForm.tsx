@@ -1,15 +1,16 @@
 'use client';
 
-import { FormEvent } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useFormState } from 'react-dom';
+import { useParams } from 'next/navigation';
 
 import { Button } from '@/app/ui/button';
 import { applyJob } from '@/app/lib/actions';
 
 export const ApplyJobForm = () => {
   const [state, dispatch] = useFormState(applyJob, undefined);
-
+  const { id } = useParams();
+  console.log('state', state);
   const APPLY_FORM = [
     {
       name: 'firstName',
@@ -69,6 +70,7 @@ export const ApplyJobForm = () => {
         );
       })}
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-[14px] mt-[14px]'>
+        <input className='hidden' type='text' id='id' name='id' value={id} />
         <input
           className='border border-2-[#D9D9D9] rounded-lg w-full h-[64px] py-4 px-5'
           type='text'

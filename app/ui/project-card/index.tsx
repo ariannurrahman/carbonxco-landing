@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Project {
   title: string;
@@ -20,7 +21,12 @@ export const ProjectCard = ({ desc, id, title, src }: Project) => {
         <h1 className='text-[#13282D] text-[24px] xl:text-[32px] font-medium my-2'>{title}</h1>
         <p className='text-[#13282D] text-base xl:text-[16px] font-medium'>{desc}</p>
       </div>
-      <p className='text-[16px] text-[#00B040] font-bold text-center w-full mt-20'>Read More</p>
+      <Link
+        href={`/works/${id}`}
+        className='cursor-pointer text-[16px] text-[#00B040] font-bold text-center w-full mt-20'
+      >
+        Read More
+      </Link>
     </div>
   );
 };

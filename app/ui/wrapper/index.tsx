@@ -11,9 +11,9 @@ export const SectionWrapper = ({ children, padding, className }: WrapperProps) =
     padding === 'none'
       ? ''
       : padding === 'low'
-      ? 'px-2 lg:px-8 w-full relative'
+      ? 'px-4 lg:px-8 w-full relative'
       : padding === 'high'
-      ? 'px-2 lg:px-[120px] xl:px-[159px]'
+      ? 'px-4 lg:px-[120px] xl:px-[159px]'
       : '';
 
   return <div className={`${defaultPadding} ${className}`}>{children}</div>;

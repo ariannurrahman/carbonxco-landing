@@ -1,5 +1,5 @@
 import { SectionWrapper } from '@/app/ui/wrapper';
-import { GreenSubTitle } from '../ui/typography/GreenSubTitle';
+import { GreenSubTitle } from '../../ui/typography/GreenSubTitle';
 import Image from 'next/image';
 import { Button } from '@/app/ui/button';
 
@@ -23,7 +23,7 @@ export default function ProjectsPage() {
   return (
     <div>
       <SectionWrapper padding='high'>
-        <div className='mt-5 lg:mt-[93px] mb-[47px]'>
+        <div className='mt-5 lg:mt-[93px] mb-5 lg:mb-[47px]'>
           <GreenSubTitle label='OUR WORK / PROJECTS' />
           <h3 className='font-medium text-[32px] mt-1'>Sanggala Projects</h3>
           <p className='text-base font-medium mt-[18px] max-w-[756px]'>
@@ -34,9 +34,15 @@ export default function ProjectsPage() {
           </p>
         </div>
       </SectionWrapper>
-      <SectionWrapper padding='low'>
-        <div className=' h-[392px]'>
-          <Image src='/assets/hero/projects-hero.png' className='w-full' alt='our works' width={1380} height={416} />
+      <SectionWrapper className='mb-5' padding='low'>
+        <div className='h-[160px] lg:h-[392px]'>
+          <Image
+            src='/assets/hero/projects-hero.png'
+            className='w-full h-full'
+            alt='our works'
+            width={1380}
+            height={416}
+          />
         </div>
       </SectionWrapper>
       <SectionWrapper className='pb-[125px]' padding='high'>
@@ -77,7 +83,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* RIGHT */}
-          <div className='p-8 border-l-2 border-[#D9D9D9] flex justify-between flex-col'>
+          <div className='p-8 lg:border-l-2 border-[#D9D9D9] flex justify-between flex-col'>
             <div>
               <div className='rounded-lg bg-[#DAEEFA] border border-[#46A7ED] w-fit px-6 py-4'>
                 <p className='text-[#13282D] font-semibold text-[14px] tracking-widest'>{PROJECT_DETAILS.status}</p>

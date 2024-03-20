@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { SectionWrapper } from '../ui/wrapper';
 import { GreenSubTitle } from '../ui/typography/GreenSubTitle';
-import Link from 'next/link';
 import { Metadata } from 'next';
+import { OpportunityList } from './opportunity-list';
 
 export const metadata: Metadata = {
   title: 'Career',
@@ -10,21 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function CareerPage() {
-  const OPPORTUNITY = [
-    {
-      label: 'Senior Finance and Accounting Supervisor',
-      id: 1,
-    },
-    {
-      label: 'Senior Finance and Accounting Supervisor',
-      id: 2,
-    },
-    {
-      label: 'Senior Finance and Accounting Supervisor',
-      id: 3,
-    },
-  ];
-
   return (
     <SectionWrapper className='py-5 lg:py-[100px]' padding='high'>
       <div className='grid grid-cols-1 lg:grid-cols-2'>
@@ -47,25 +32,8 @@ export default function CareerPage() {
         </div>
       </div>
       <div>
-        <h2 className='font-bold text-xl leading-[30px]'>Current Openings</h2>
-        <div className='flex flex-col gap-y-5 mt-7'>
-          {OPPORTUNITY.map(({ label, id }, index) => {
-            return (
-              <div
-                key={index}
-                className='flex justify-between items-center flex-row flex-wrap p-9 rounded-[20px] border border-2-[#D4EFDE]'
-              >
-                <p className='font-medium text-[20px]'>{label}</p>
-                <div className='grid grid-cols-2 gap-x-5'>
-                  <Link href={`/career/${id}`}>
-                    <p className='font-semibold text-base cursor-pointer'>View Job</p>
-                  </Link>
-                  <p className='font-semibold text-base cursor-pointer text-right'>Apply</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <h2 className='font-bold text-xl leading-[30px] mt-5 lg:mt-0'>Current Openings</h2>
+        <OpportunityList />
       </div>
     </SectionWrapper>
   );
