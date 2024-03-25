@@ -9,36 +9,38 @@ export const WhatIsCarbonx = () => {
   return (
     <SectionWrapper padding='high'>
       <div className='grid grid-cols-1 lg:grid-cols-2 py-10 lg:py-[100px]'>
-        <div className='order-2 lg:order-1 flex justify-center items-start flex-col flex-nowrap mt-10 lg:mt-0'>
-          <GreenSubTitle label='WHAT IS CARBONX' />
-          <h1 className='text-[20px] lg:text-[32px] font-medium mt-5'>
-            We are an{' '}
-            <span className='underline underline-offset-8 decoration-[#FFC42D]'>
-              end-to-end carbon projects facilitator
-            </span>
-            , centered around grassroot communities and climate technology solutions.
+        <div className='order-2 lg:order-1 flex justify-start items-start flex-col flex-nowrap mt-10 lg:mt-0 space-y-5'>
+          <GreenSubTitle label='WHY CARBON AND WHY DOES IT MATTER?' />
+          <h1 className='text-[20px] lg:text-[32px] font-medium '>
+            Carbon projects help mitigate the looming climate crisis
           </h1>
-          <p className='text-[14px] lg:text-base text-black font-medium mt-[29px] mb-[43px]'>
-            From originating, investing, developing, and implementing carbon projects, CarbonX is committed to design a
-            sustainable growth for businesses involving community, innovation, and conservation to address global
-            climate challenges and pursue a more just economy.
+          <p className='text-[14px] lg:text-base text-black font-medium'>
+            The impending climate crisis is not just a threat to our environment, but also to our health and economy.
+            Yet it is inevitable that our activities release carbon into the atmosphere, further exacerbating our
+            warming planet, our only home.
+          </p>
+          <p className='text-[14px] lg:text-base text-black font-medium'>
+            To address the said global climate challenges and pursue a more just economy, CarbonX offers an end-to-end
+            quality carbon project services–from originating, investing, developing, to implementing involving
+            community, innovation, and conservation principles.
           </p>
           <div className='flex items-center lg:justify-start w-full'>
             <Button className='bg-[#46A7ED]'>
               <Link href='/about'>
-                <p className='text-[20px] text-white font-medium'>About CarbonX</p>
+                <p className='text-[20px] text-white font-medium'>More about CarbonX</p>
               </Link>
             </Button>
           </div>
         </div>
         <div className='order-1 lg:order-2 mt-5 lg:mt-0  flex justify-center items-center lg:justify-end lg:items-end flex-col flex-nowrap'>
-          <div className='w-[320px] h-[325px] relative lg:w-[428px] lg:h-[607px]'>
+          <div className='w-[320px] h-[325px] relative lg:w-[380px] xl:w-[428px] lg:h-[607px]'>
             <Image
               className='hidden lg:block'
               src='/assets/home/what-is-carbonx.png'
               fill
               alt='what is carbonx'
               priority
+              sizes='(max-width: 768px) 320px, (max-width: 1200px) 320px, 428px'
             />
             <Image
               className='block lg:hidden'
@@ -46,6 +48,7 @@ export const WhatIsCarbonx = () => {
               fill
               alt='what is carbonx'
               priority
+              sizes='320px'
             />
           </div>
         </div>

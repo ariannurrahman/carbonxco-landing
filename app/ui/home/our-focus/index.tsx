@@ -35,15 +35,9 @@ export const OurFocus = () => {
 
   return (
     <SectionWrapper padding='low'>
-      <div className='w-full h-screen lg:h-[667px] px-2 lg:px-8 relative'>
+      <div className='w-full h-screen lg:h-[399px] px-2 lg:px-8 relative'>
         <div className='z-20 relative flex justify-center flex-col items-start h-full lg:pl-[100px] p-5'>
-          <div>
-            <GreenSubTitle yellow label='OUR SCOPE OF WORK' />
-
-            <h1 className='max-w-[681px] text-[#D4EFDE] text-[20px] lg:text-[32px] font-medium my-4'>
-              Community-based conservation, sustainable livelihood, with solutions using nature & technology
-            </h1>
-          </div>
+          <GreenSubTitle yellow label='OUR SCOPE OF WORK' />
           <div className='mt-10 flex flex-col lg:flex-row gap-5'>
             {OUR_FOCUS_LIST.map(({ title, description, key }) => {
               return (
@@ -60,9 +54,16 @@ export const OurFocus = () => {
           </div>
         </div>
         <Image
-          className='z-10 absolute top-0 left-0 object-fill'
-          fill
+          className='hidden lg:block z-10 absolute top-0 left-0 w-screen h-full'
+          width={1440}
+          height={399}
           src='/assets/home/our-focus.png'
+          alt='our focus'
+        />
+        <Image
+          className='block lg:hidden z-10 absolute top-0 left-0 w-screen min-h-screen h-full'
+          fill
+          src='/assets/home/our-focus-mobile.png'
           alt='our focus'
         />
       </div>
