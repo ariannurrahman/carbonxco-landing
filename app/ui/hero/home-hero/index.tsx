@@ -1,10 +1,13 @@
-import Image from 'next/image';
 import { SectionWrapper } from '../../wrapper';
 
 export const HomeHero = () => {
   return (
     <SectionWrapper padding='low'>
-      <Image
+      <video autoPlay playsInline width='100%' height='416' controls preload='auto'>
+        <source src='/assets/video/home-video.mp4' type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+      {/* <Image
         className='hidden md:block w-full '
         src='/assets/home/home-hero-desktop.png'
         width={1380}
@@ -19,7 +22,7 @@ export const HomeHero = () => {
         height={280}
         alt='home'
         priority
-      />
+      /> */}
     </SectionWrapper>
   );
 };

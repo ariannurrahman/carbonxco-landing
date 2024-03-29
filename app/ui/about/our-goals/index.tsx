@@ -40,7 +40,7 @@ export const OurGoals = () => {
           return (
             <div key={label} className='flex flex-col justify-start items-center w-fit lg:w-[320px]'>
               <div className='h-[240px] flex justify-center items-center'>
-                <Image src={src} alt='label' width={200} height={166} />
+                <Image src={src} alt='label' width={150} height={150} />
               </div>
               <p className='text-base lg:text-xl text-wrap text-center text-black font-semibold'>{label}</p>
               <p className='text-base text-center text-black font-medium mt-5'>{value}</p>

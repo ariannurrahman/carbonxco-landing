@@ -27,7 +27,8 @@ export const WhatWeDo = () => {
         <div className='w-full lg:max-w-[500px]'>
           <p className='font-medium text-base mt-3 lg:mt-10'>
             CarbonX partner ups with Local NGOs, government, communities, and business & microfinance to implements
-            ranges of mitigation and adaptation programs to achieve high-impact projects with activities such as:
+            ranges of mitigation and adaptation programs to achieve high-impact projects with activities illustrated in
+            the graphic.
           </p>
         </div>
       ),

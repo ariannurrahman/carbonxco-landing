@@ -5,6 +5,7 @@ import { GreenSubTitle } from '../../typography/GreenSubTitle';
 import Link from 'next/link';
 import { BASE_URL } from '@/app/constant';
 import { Project } from '@/app/types';
+import { ProjectCard } from '../../project-card';
 
 export const OurWorkSection = async () => {
   const OUR_WORK_IMAGE = [
@@ -50,42 +51,9 @@ export const OurWorkSection = async () => {
         </div>
         <div className='flex flex-col flex-nowrap w-full overflow-y-scroll'>
           <div className='flex flex-nowrap flex-row justify-start items-center overflow-y-scroll gap-x-5 pb-10 w-full'>
-            {projectsList.map(({ documents, title, id, description, sdg }) => {
-              const projectThumbnail = documents.filter(({ document_type }) => document_type === 'project_thumbnail');
-
+            {projectsList?.map(({ documents, title, id, description, sdg }) => {
               return (
-                <div
-                  key={id}
-                  className='relative shadow-[0_1px_1px_0_rgba(0,0,0,0.04)] flex justify-around items-start flex-col flex-nowrap min-w-[370px] h-[500px] border-2 rounded-[20px] border-[#D4EFDE] p-8'
-                >
-                  <div>
-                    <div className='relative w-[308px] h-[195px]'>
-                      <Image
-                        className='object-cover z-10'
-                        src={projectThumbnail?.[0]?.url}
-                        fill
-                        alt={title}
-                        sizes='308'
-                      />
-                      <div className='absolute -top-5 right-0 flex flex-row'>
-                        {sdg.map((eachSdg, index) => (
-                          <div
-                            key={eachSdg}
-                            className={`w-9 h-9 border-2 rounded-full flex justify-center items-center -ml-2 bg-red-700`}
-                            style={{ zIndex: 10 + index }}
-                          >
-                            {eachSdg}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <h1 className='text-[#13282D] text-[24px] xl:text-[32px] font-medium my-2'>{title}</h1>
-                    <p className='text-[#13282D] text-base xl:text-[16px] font-medium'>{description}</p>
-                  </div>
-                  <Link href={`/works/${id}`} className='text-[16px] text-[#00B040] font-bold text-center w-full mt-20'>
-                    Read More
-                  </Link>
-                </div>
+                <ProjectCard key={id} documents={documents} title={title} id={id} description={description} sdg={sdg} />
               );
             })}
           </div>

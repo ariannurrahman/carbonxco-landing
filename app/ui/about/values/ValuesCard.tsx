@@ -18,7 +18,7 @@ export const ValuesCard = () => {
     {
       label: 'Environment Integrity',
       caption: (
-        <div className='flex flex-col justify-center items-center mt-5 gap-y-5 relative'>
+        <div className='flex flex-col justify-center items-center mt-5 gap-y-4 relative'>
           <p className={`first-tooltip ${firstValueClassname}`}>Additionality</p>
           <p className={`second-tooltip ${firstValueClassname}`}>Permeance</p>
           <p className={`third-tooltip ${firstValueClassname}`}>Measurability</p>
@@ -47,8 +47,8 @@ export const ValuesCard = () => {
 
   return VALUES_CARD.map(({ caption, label, src }, index) => {
     return (
-      <div key={label} className='relative rounded-lg bg-white h-[400px] flex-1 z-20'>
-        <div className='relative z-50 bg-white rounded-t-lg flex justify-start flex-col items-center h-[250px] p-4 pt-10'>
+      <div key={label} className='relative h-[400px] w-full'>
+        <div className='relative z-30 rounded-t-lg bg-white flex justify-start flex-col items-center h-[250px] p-4 pt-10'>
           <h2 className='font-medium text-center text-[#13282D] text-[24px]'>{label}</h2>
           {typeof caption === 'string' ? (
             <p className='font-medium text-center text-[#13282D] text-[14px] mt-4'>{caption}</p>
@@ -87,7 +87,7 @@ export const ValuesCard = () => {
             Conducting robust monitoring systems to track and verify the key project indicators
           </p>
         </Tooltip>
-        <Image src={src} alt='label' fill className='z-10 absolute top-0 left-0 object-fill' />
+        <Image src={src} alt='label' fill sizes='300' className='z-20 absolute top-0 left-0 w-full' />
       </div>
     );
   });

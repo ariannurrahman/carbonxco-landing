@@ -96,10 +96,7 @@ export const StoryList = () => {
             </div>
           );
         })}
-
-        {/* <p className='text-base font-medium text-center'> */}
-        {activeStory?.description}
-        {/* </p> */}
+        <div className='h-[600px] md:h-[220px]'>{activeStory?.description}</div>
       </div>
     </div>
   );

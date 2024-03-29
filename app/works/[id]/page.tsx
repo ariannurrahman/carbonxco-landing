@@ -2,22 +2,35 @@ import { SectionWrapper } from '@/app/ui/wrapper';
 import { GreenSubTitle } from '../../ui/typography/GreenSubTitle';
 import Image from 'next/image';
 import { Button } from '@/app/ui/button';
+import { BASE_URL } from '@/app/constant';
+import { ProjectDetail } from '@/app/types';
 
-export default function ProjectsPage() {
+export default async function ProjectsPage({ params }: { params: { id: string } }) {
+  const { id } = params;
+  console.log('id', id);
+
+  const project: ProjectDetail = await fetch(`${BASE_URL}/projects/${id}`).then((res) => res.json());
+  const moreProject: ProjectDetail = await fetch(`${BASE_URL}/projects/${id}/more`).then((res) => res.json());
+  console.log('moreProject', moreProject);
+
+  const featureImage = project.documents.find(({ document_type }) => document_type === 'project_thumbnail');
+  const gallery = project.documents.filter(({ document_type }) => document_type === 'project_gallery');
+  const mapImage = project.documents.find(({ document_type }) => document_type === 'project_map');
+
   const PROJECT_DETAILS = {
+    title: project.title,
+    description: project.description,
     projectArea: {
-      value: '20.606 ha',
-      caption: 'including 10 villages within Sanggau and Landak Regency, West Kalimantan Province',
+      value: project.area,
+      caption: project.area_description,
     },
-    ecosystemType: 'Tropical Rainforest',
+    ecosystemType: project.ecosystem_type,
     community: 'There are five Dayak indigenous communities within this area as well as five customary lands.',
-    mainGoal:
-      'Intervening the ongoing land conversion to become restored and sustainably preserved; investing in community-based empowerment to generate alternative livelihoods; and protecting the biological diversity within the ecosystem.',
-    keyFactor:
-      'Halting palm oil expansion and forest degradation; Escalated numbers of income from sustainable land management; A thriving ecosystem for agroforestry development.',
-    projectStarted: '20.606 ha',
-    location: '20.606 ha',
-    status: 'IN PROGRESS',
+    mainGoal: project.main_goal,
+    keyFactor: project.key_factor,
+    projectStarted: project.start_date,
+    location: project.location,
+    status: project.status,
   };
 
   return (
@@ -25,24 +38,13 @@ export default function ProjectsPage() {
       <SectionWrapper padding='high'>
         <div className='mt-5 lg:mt-[93px] mb-5 lg:mb-[47px]'>
           <GreenSubTitle label='OUR WORK / PROJECTS' />
-          <h3 className='font-medium text-[32px] mt-1'>Sanggala Projects</h3>
-          <p className='text-base font-medium mt-[18px] max-w-[756px]'>
-            Intervening the ongoing land conversion to become restored and sustainably preserved; investing in
-            community-based empowerment to generate alternative livelihoods; and protecting the biological diversity
-            within the ecosystem. ored and sustainably preserved; investing in community-based empowerment to generate
-            alternative livelihoods; and protecting the biological diversity within the ecosystem.
-          </p>
+          <h3 className='font-medium text-[32px] mt-1'>{PROJECT_DETAILS.title}</h3>
+          <p className='text-base font-medium mt-[18px] max-w-[756px]'>{PROJECT_DETAILS.description}</p>
         </div>
       </SectionWrapper>
       <SectionWrapper className='mb-5' padding='low'>
         <div className='h-[160px] lg:h-[392px]'>
-          <Image
-            src='/assets/hero/projects-hero.png'
-            className='w-full h-full'
-            alt='our works'
-            width={1380}
-            height={416}
-          />
+          <Image src={featureImage?.url ?? ''} className='w-full h-full' alt='our works' width={1380} height={416} />
         </div>
       </SectionWrapper>
       <SectionWrapper className='pb-[125px]' padding='high'>
@@ -74,7 +76,7 @@ export default function ProjectsPage() {
             </div>
             <div>
               <p className='text-[16px] font-bold mt-8'>Main Goals</p>
-              <p className='my-4 text-left text-[16px] font-medium'>{PROJECT_DETAILS.community}</p>
+              <p className='my-4 text-left text-[16px] font-medium'>{PROJECT_DETAILS.mainGoal}</p>
             </div>
             <div>
               <p className='text-[16px] font-bold mt-8'>Key Factors</p>
@@ -87,6 +89,12 @@ export default function ProjectsPage() {
             <div>
               <div className='rounded-lg bg-[#DAEEFA] border border-[#46A7ED] w-fit px-6 py-4'>
                 <p className='text-[#13282D] font-semibold text-[14px] tracking-widest'>{PROJECT_DETAILS.status}</p>
+              </div>
+              <div>
+                <p className='text-[16px] font-bold mt-8'>Area map</p>
+                <div className='relative w-[350px] h-[350px]'>
+                  <Image src={mapImage?.url ?? ''} className='w-full h-full' alt='our works' fill sizes='350' />
+                </div>
               </div>
               <div>
                 <p className='text-[16px] font-bold mt-8'>Project Started</p>

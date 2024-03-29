@@ -20,12 +20,12 @@ export const QualitySection = () => {
           <div className='space-y-5 mt-5'>
             <Button className='bg-[#00AC42]'>
               <Link className='inline-flex items-center' href='/faq'>
-                <p className='text-[20px] text-white font-medium '>Co-create carbon projects with us</p>
+                <p className='text-base text-white font-medium '>Co-create carbon projects with us</p>
                 <Image className='ml-3' alt='go to FAQ' width={30} height={16} src='/assets/white-right-arrow.png' />
               </Link>
             </Button>
             <div>
-              <Link className='text-[14px] md:text-base font-semibold text-[#46A7ED] tracking-widest' href='/faq'>
+              <Link className='text-[12px] font-semibold text-[#46A7ED] tracking-widest' href='/faq'>
                 BUT FIRST, <span className='underline'>WHAT IS CARBON?</span>
               </Link>
             </div>

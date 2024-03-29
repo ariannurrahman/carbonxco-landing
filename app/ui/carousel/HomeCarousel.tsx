@@ -26,20 +26,20 @@ export const HomeCarousel = () => {
       className='home-swiper-carousel bg-white rounded-2xl w-full'
     >
       <SwiperSlide>
-        <Image src='/assets/carousel/carousel-aircarbon.svg' width={128} height={67} alt='Air Carbon Exchange' />
+        <Image src='/assets/carousel/carousel-aircarbon.png' width={128} height={67} alt='Air Carbon Exchange' />
       </SwiperSlide>
       <SwiperSlide>
-        <Image src='/assets/carousel/carousel-iif.svg' width={138} height={75} alt='Indonesia Indah Foundation' />
+        <Image src='/assets/carousel/carousel-iif.png' width={138} height={75} alt='Indonesia Indah Foundation' />
       </SwiperSlide>
       <SwiperSlide>
-        <Image src='/assets/carousel/carousel-fairatmos.svg' width={200} height={50} alt='Fairatmos' />
+        <Image src='/assets/carousel/carousel-fairatmos.png' width={200} height={50} alt='Fairatmos' />
       </SwiperSlide>
       <SwiperSlide>
-        <Image src='/assets/carousel/carousel-eco-securities.svg' width={170} height={75} alt='Eco Securities' />
+        <Image src='/assets/carousel/carousel-eco-securities.png' width={170} height={75} alt='Eco Securities' />
       </SwiperSlide>
       <SwiperSlide>
         <Image
-          src='/assets/carousel/carousel-icta.svg'
+          src='/assets/carousel/carousel-icta.png'
           width={184}
           height={117}
           alt='Indonesian Carbo Trade Association'

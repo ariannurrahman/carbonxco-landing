@@ -8,7 +8,7 @@ export const Footer = () => {
     <div>
       <Link href='/'>
         <div className='w-[135px] h-[32px] relative'>
-          <Image alt='carbonxco' className='object-contain' src='/assets/footer-logo.png' fill />
+          <Image alt='carbonxco' className='object-contain' src='/assets/footer-logo.png' fill sizes='130' />
         </div>
       </Link>
       <p className='mt-[18px] mb-[26px] max-w-[330px] font-medium text-white text-[14px]'>

@@ -35,13 +35,13 @@ export const MainFocusList = () => {
       {MAIN_FOCUS_LIST.map(({ desc, lottie, label }, index) => {
         return (
           <div key={label} className='grid grid-cols-1 lg:grid-cols-[50px_200px_auto] w-full gap-3 lg:gap-10'>
-            <div className='order-2 lg:order-1 h-9 w-9 border-2 border-white rounded-full flex justify-center items-center'>
+            <div className='order-2 lg:order-1 h-9 w-9 border-[1px] border-white rounded-full flex justify-center items-center'>
               <p className='text-white text-[20px] font-medium'>{index + 1}</p>
             </div>
 
             <div className='order-3'>
               <p className='text-white text-[20px] font-medium'>{label}</p>
-              <p className='text-white text-base font-medium mt-5'>{desc}</p>
+              <p className='text-white text-[14px] font-medium mt-5'>{desc}</p>
             </div>
             <div className='order-1 lg:order-2 w-full h-[150px] flex justify-center items-start'>
               <Lottie animationData={lottie} loop={true} />

@@ -2,6 +2,7 @@ import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
 import { SectionWrapper } from '@/app/ui/wrapper';
 import { Metadata } from 'next';
 import ContactUsForm from './ContactUsForm';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -10,35 +11,50 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <SectionWrapper padding='high' className='min-h-screen py-5 lg:py-24'>
-      <GreenSubTitle label='CONTACT' />
-      <h1 className='text-[32px] font-medium mt-2'>Contact Us</h1>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-12'>
-        <div>
-          <p className='text-[16px] font-medium mt-5'>
-            In a world where science and technology have quickly driven our ways in resolving things, let’s ignite our
-            collective efforts that can put inclusion at its core. So, we count on everyone to take part in our emission
-            reduction and beyond. 
-          </p>
-          <ContactUsForm />
-        </div>
-        <div>
+    <div className='relative'>
+      <Image
+        className='hidden lg:flex absolute top-0 right-0 object-fit lg:w-[300px] xl:w-[550px] h-full'
+        src='/assets/contact-us/contact-bg.png'
+        sizes='550'
+        width={550}
+        height={100}
+        alt='contact'
+      />
+      <Image
+        className='block lg:hidden w-full h-auto max-h-[280px] object-cover aspect-square'
+        src='/assets/contact-us/contact-bg.png'
+        sizes='550'
+        width={550}
+        height={100}
+        alt='contact'
+      />
+      <SectionWrapper padding='high' className='relative min-h-screen py-5 lg:py-24'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-12'>
           <div>
-            <div className='w-full h-[314px] bg-[#EDEDED]' />
-            <div className='mt-9 border-2 border-[#00B040] p-7 rounded-tl-[20px] rounded-br-[20px]'>
-              <h2 className='text-2xl font-medium w-[243px]'>Got some ideas? Let’s work together!</h2>
-              <p className='mt-5 font-medium text-[14px]'>
-                Do give us a hello, or spark a new collaboration with us by following our Instagram and LinkedIn.
-              </p>
-              <p className='mt-5 font-medium text-[14px]'>
-                {' '}
-                In addition, you might also drop us an email to <span className='underline'>admin@carbonxco.com.</span>
-              </p>
-              <p className='mt-5 font-medium text-[14px]'>Any comments or feedback are truly appreciated!</p>
+            <GreenSubTitle label='CONTACT US' />
+            <h1 className='text-[32px] font-medium mt-2'>Take part in our emission reduction and beyond.</h1>
+            <p className='text-[16px] font-medium mt-5'>
+              In a world where science and technology have quickly driven our ways in resolving things, let&apos;s
+              ignite our collective efforts that can put inclusion at its core. Do give us a hello, stay in touch, or
+              spark a new collaboration with us.
+            </p>
+            <ContactUsForm />
+            <div className='grid grid-cols-[120px_auto] gap-x-5 px-5 border-t-2 pt-5 border-[#00AC42] mt-20'>
+              <div className=''>
+                <Image src='/assets/contact-us/contact-handshake.png' width={116} height={108} alt='contact' />
+              </div>
+              <div>
+                <p className='font-medium text-base '>
+                  For those interested in co-creating a carbon project with us, do send your initial ideas with a
+                  maximum of 5 pages describing your project design and its roadmap by clicking{' '}
+                  <span className='text-[#46A7ED]'>here.</span>
+                </p>
+              </div>
             </div>
           </div>
+          <div />
         </div>
-      </div>
-    </SectionWrapper>
+      </SectionWrapper>
+    </div>
   );
 }
