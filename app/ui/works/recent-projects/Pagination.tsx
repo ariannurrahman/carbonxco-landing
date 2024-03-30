@@ -1,12 +1,16 @@
 'use client';
 
-import { useProjects } from './useProject';
+interface PaginationProps {
+  paginate: (page: number) => void;
+  paginationList: number[];
+  currentPage: number;
+}
 
-export const Pagination = () => {
-  const { paginate, paginationList, currentPage } = useProjects();
+export const Pagination = (props: PaginationProps) => {
+  const { paginate, paginationList = [], currentPage } = props;
 
   return (
-    <div className='flex-row justify-end hidden lg:flex'>
+    <div className='flex-row justify-end flex'>
       {paginationList.map((eachPage, index) => {
         return (
           <button

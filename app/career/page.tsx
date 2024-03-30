@@ -16,13 +16,12 @@ export default function CareerPage() {
         <div>
           <GreenSubTitle label='CAREERS AT CARBONX' />
           <h1 className='font-medium text-[40px] leading-[60px]'>Work on What Matters Most</h1>
-          <p className='font-medium text-[16px]'>
-            The clock is ticking. Aren&apos;t we doing enough to realize our potential as a vast carbon sink? Yet, we
-            all matter in this climate action.
+          <p className='font-medium text-base mt-5'>
+            The clock is ticking. Have we done enough to realize our potential as a vast carbon sink? 
           </p>
-          <p className='font-medium text-[16px] mt-3'>
-            So, CarbonX awaits you to join us in unleashing the opportunities for meaningful innovation, as well as to
-            conquer the dynamics of each carbon project development.
+          <p className='font-medium text-base mt-5'>
+            CarbonX invites you to join us in unleashing the opportunities for meaningful innovation and conquering the
+            dynamics of each carbon project development.
           </p>
         </div>
         <div className='flex justify-center w-full'>

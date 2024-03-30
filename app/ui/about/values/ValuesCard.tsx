@@ -24,30 +24,30 @@ export const ValuesCard = () => {
           <p className={`third-tooltip ${firstValueClassname}`}>Measurability</p>
         </div>
       ),
-      src: '/assets/about/environment.png',
+      src: '/assets/about/environment.jpg',
     },
     {
       label: 'Co-Benefit',
       caption:
         'Generating positive impacts beyond our environmental objectives, such as in the socio-economic and health sectors.',
-      src: '/assets/about/benefits.png',
+      src: '/assets/about/benefits.jpg',
     },
     {
       label: 'Inclusion',
       caption: 'Consulting and actively involving local communities in the planning and decision-making processes.',
-      src: '/assets/about/inclusion.png',
+      src: '/assets/about/inclusion.jpg',
     },
     {
       label: 'Sophistication',
       caption:
         'Employing both a team of passionate and highly-experienced people as well as advanced technologies like Monitoring, Reporting, and Verification (MRV) tools, satellite imagery, and data analytics to meet our quality standard.',
-      src: '/assets/about/sophistication.png',
+      src: '/assets/about/sophistication.jpg',
     },
   ];
 
-  return VALUES_CARD.map(({ caption, label, src }, index) => {
+  return VALUES_CARD.map(({ caption, label, src }) => {
     return (
-      <div key={label} className='relative h-[400px] w-full'>
+      <div key={label} className='relative h-[400px] rounded-lg w-full'>
         <div className='relative z-30 rounded-t-lg bg-white flex justify-start flex-col items-center h-[250px] p-4 pt-10'>
           <h2 className='font-medium text-center text-[#13282D] text-[24px]'>{label}</h2>
           {typeof caption === 'string' ? (
@@ -87,7 +87,7 @@ export const ValuesCard = () => {
             Conducting robust monitoring systems to track and verify the key project indicators
           </p>
         </Tooltip>
-        <Image src={src} alt='label' fill sizes='300' className='z-20 absolute top-0 left-0 w-full' />
+        <Image src={src} alt='label' fill sizes='300' className='z-20 absolute top-0 left-0 w-full rounded-lg' />
       </div>
     );
   });

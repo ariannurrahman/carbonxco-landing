@@ -38,7 +38,7 @@ export const OurGoals = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 place-content-center gap-20 mt-11'>
         {OUR_GOALS.map(({ label, src, value }) => {
           return (
-            <div key={label} className='flex flex-col justify-start items-center w-fit lg:w-[320px]'>
+            <div key={label} className='flex flex-col justify-start items-center w-fit lg:w-[320px] mx-auto'>
               <div className='h-[240px] flex justify-center items-center'>
                 <Image src={src} alt='label' width={150} height={150} />
               </div>

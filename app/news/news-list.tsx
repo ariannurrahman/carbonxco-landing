@@ -1,8 +1,6 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import { BASE_URL } from '../constant';
 import { NewsCard } from '../ui/card/news-card';
+import { Documents } from '../types';
 
 export interface News {
   id: string;
@@ -15,18 +13,12 @@ export interface News {
   project_summary: string;
   createdAt: string;
   updatedAt: string;
-  documents: string[];
+  documents: Documents[];
 }
 
-export const NewsList = () => {
-  const [news, setNews] = useState<News[] | null>(null);
-  useEffect(() => {
-    const getNews = async () => {
-      const response = await fetch(`${BASE_URL}/blogs`).then((res) => res.json());
-      setNews(response.data);
-    };
-    getNews();
-  }, []);
+export const NewsList = async () => {
+  const response = await await fetch(`${BASE_URL}/blogs`).then((res) => res.json());
+  const news: News[] = response.data;
 
   return news?.map((news, index) => {
     return <NewsCard {...news} key={index} />;
