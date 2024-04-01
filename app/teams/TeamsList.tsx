@@ -12,28 +12,38 @@ interface Team {
   link: string | null;
   createdAt: string;
   updatedAt: string;
-  documents: string[];
+  documents: {
+    document_type: string;
+    url: string;
+  }[];
 }
 
 export default function TeamsList() {
   const [teams, setTeams] = useState<Team[] | null>(null);
   const [selectedTeam, setSelectedTeam] = useState<number | null>(null);
-
   useEffect(() => {
     const getTeams = async () => {
-      const response = await fetch(`${BASE_URL}/teams`).then((res) => res.json());
+      const response = await fetch(`${BASE_URL}/teams?limit=50`).then((res) => res.json());
       setTeams(response.data);
     };
     getTeams();
   }, []);
 
-  return teams?.map(({ name, position, description, link }, index) => {
+  return teams?.map(({ name, position, description, link, documents }, index) => {
+    const imgUrl = documents?.find(({ document_type }) => document_type === 'team_avatar');
+
     return (
       <div key={index} onClick={() => setSelectedTeam(index)} className='bg-white'>
         <div className='z-30 bg-white relative'>
           <div className=''>
-            <div className='relative aspect-square'>
-              <Image src='/assets/teams.png' alt={name} fill />
+            <div className='relative aspect-square rounded-tl-[30px] rounded-br-[30px]'>
+              <Image
+                src={imgUrl?.url ?? ''}
+                alt={name}
+                fill
+                className='rounded-tl-[30px] rounded-br-[30px]'
+                sizes='auto'
+              />
             </div>
             <h2 className='font-semibold text-2xl mt-5'>{name}</h2>
             <p className='font-medium text-base mt-2'>{position}</p>

@@ -1,5 +1,6 @@
 'use client';
 
+import { createRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useFormState } from 'react-dom';
 import { useParams } from 'next/navigation';
@@ -8,9 +9,10 @@ import { Button } from '@/app/ui/button';
 import { applyJob } from '@/app/lib/actions';
 
 export const ApplyJobForm = () => {
-  const [state, dispatch] = useFormState(applyJob, undefined);
+  const formRef = createRef<HTMLFormElement>();
+  const [_, dispatch] = useFormState(applyJob, undefined);
+
   const { id } = useParams();
-  console.log('state', state);
   const APPLY_FORM = [
     {
       name: 'firstName',
@@ -51,7 +53,15 @@ export const ApplyJobForm = () => {
   ];
 
   return (
-    <form className='mt-4' action={dispatch}>
+    <form
+      className='mt-4'
+      action={(payload) => {
+        dispatch(payload);
+        formRef?.current?.reset();
+        alert('Application sent!');
+      }}
+      ref={formRef}
+    >
       {APPLY_FORM.map(({ id, label, name, required, type, placeholder }) => {
         return (
           <div key={id} className='first:mt-0 mt-8'>
@@ -70,7 +80,7 @@ export const ApplyJobForm = () => {
         );
       })}
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-[14px] mt-[14px]'>
-        <input className='hidden' type='text' id='id' name='id' value={id} />
+        <input className='hidden' type='text' id='id' name='id' value={id} readOnly />
         <input
           className='border border-2-[#D9D9D9] rounded-lg w-full h-[64px] py-4 px-5'
           type='text'

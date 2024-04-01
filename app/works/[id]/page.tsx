@@ -6,6 +6,8 @@ import { BASE_URL } from '@/app/constant';
 import { ProjectDetail } from '@/app/types';
 import dayjs from 'dayjs';
 
+type StatusType = 'Origination' | 'Due dilligence' | 'Development' | 'Implementation' | 'Issuance';
+
 export default async function ProjectsPage({ params }: { params: { id: string } }) {
   const { id } = params;
 
@@ -29,7 +31,24 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
     keyFactor: project.key_factor,
     projectStarted: project.start_date ? dayjs.unix(Number(project.start_date)).format('DD MMMM YYYY') : '-',
     location: project.location,
-    status: project.status.toUpperCase(),
+    status: project.status as StatusType,
+  };
+
+  const statusStyle = () => {
+    switch (PROJECT_DETAILS.status) {
+      case 'Origination':
+        return 'bg-[#FFC42D]';
+      case 'Due dilligence':
+        return 'bg-[#D4EFDE]';
+      case 'Development':
+        return 'bg-[#DAEEFA]';
+      case 'Implementation':
+        return 'bg-[#D4EFDE]';
+      case 'Issuance':
+        return 'bg-[#00B040]';
+      default:
+        return 'bg-white';
+    }
   };
 
   return (
@@ -100,13 +119,21 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
           {/* RIGHT */}
           <div className='p-8 lg:border-l-2 border-[#D9D9D9] flex justify-between flex-col'>
             <div>
-              <div className='rounded-lg bg-[#DAEEFA] border border-[#46A7ED] w-fit px-6 py-4'>
-                <p className='text-[#13282D] font-semibold text-[14px] tracking-widest'>{PROJECT_DETAILS.status}</p>
+              <div className={`rounded-lg border w-fit px-6 py-4 ${statusStyle()}`}>
+                <p className='text-[#13282D] font-semibold text-[14px] tracking-widest'>
+                  {PROJECT_DETAILS.status.toUpperCase()}
+                </p>
               </div>
               <div>
                 <p className='text-[16px] font-bold mt-8'>Area map</p>
                 <div className='relative w-[350px] h-[350px]'>
-                  <Image src={mapImage?.url ?? ''} className='w-full h-full' alt='our works' fill sizes='350' />
+                  <Image
+                    src={mapImage?.url ?? ''}
+                    className='w-full h-full object-fill'
+                    alt='our works'
+                    fill
+                    sizes='350'
+                  />
                 </div>
               </div>
             </div>
@@ -123,7 +150,7 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
         <div className='relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {gallery.map(({ url }) => (
             <div key={url} className='w-full h-auto aspect-square relative'>
-              <Image src={url} fill alt={url} sizes='300' />
+              <Image src={url} fill alt={url} sizes='300' className='object-fill' />
             </div>
           ))}
         </div>

@@ -31,7 +31,7 @@ export default function CareerPage() {
         </div>
       </div>
       <div>
-        <h2 className='font-bold text-xl leading-[30px] mt-5 lg:mt-0'>Current Openings</h2>
+        <h2 className='font-bold text-xl leading-[30px] mt-5 '>Current Openings</h2>
         <OpportunityList />
       </div>
     </SectionWrapper>

@@ -2,6 +2,7 @@
 
 import { z } from 'zod';
 import { BASE_URL } from '../constant';
+import axios from 'axios';
 
 export type InitialState = {
   errors: {
@@ -42,7 +43,6 @@ export async function applyJob(prevState: InitialState | undefined, formData: Fo
     file: formData.get('file'),
     id: formData.get('id'),
   });
-  console.log('validatedFields', validatedFields);
 
   if (!validatedFields.success) {
     return {
@@ -52,18 +52,35 @@ export async function applyJob(prevState: InitialState | undefined, formData: Fo
   }
 
   const { firstName, lastName, address, city, state, postalCode, phone, email, file, id } = validatedFields.data;
-  console.log('id', id);
-  console.log('file', file);
+
+  const fileFormData = new FormData();
+  fileFormData.append('file', file);
+  fileFormData.append('reference_type', 'careers');
+  fileFormData.append('document_type', 'applicants_cv');
+  fileFormData.append('id', '');
+
+  const { data: fileResponse } = await axios.post(`${BASE_URL}/documents`, fileFormData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
 
   const payload = {
     name: firstName + ' ' + lastName,
     address: `${address} ${city} ${state} ${postalCode}`,
     phone,
     email,
+    documents: [
+      {
+        id: '',
+        file_type: fileResponse.file_type,
+        file_name: fileResponse.file_name,
+        url: fileResponse.url,
+        document_type: 'applicant_cv',
+        key: fileResponse.key,
+      },
+    ],
   };
 
-  await fetch(`${BASE_URL}/applicants/${id}`, {
-    method: 'POST',
-    body: JSON.stringify(payload),
-  });
+  await axios.post(`${BASE_URL}/applicants/${id}`, payload);
 }

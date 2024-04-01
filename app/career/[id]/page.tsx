@@ -49,7 +49,7 @@ export default function CarrerPageDetails() {
           <div className='mt-8'>
             <h3 className='text-base font-semibold leading-[29px]'>REQUIREMENTS</h3>
             <div className='mt-2'>
-              {job?.requirement.map((req) => {
+              {job?.requirement?.map((req) => {
                 return (
                   <li className='text-base leading-[29px] font-medium' key={req}>
                     {req}
@@ -61,7 +61,7 @@ export default function CarrerPageDetails() {
           <div className='mt-8'>
             <h3 className='text-base font-semibold leading-[29px]'>QUALIFICATIONS, SKILLS & EXPERIENCE</h3>
             <div className='mt-2'>
-              {job?.qualification.map((eachQualification) => {
+              {job?.qualification?.map((eachQualification) => {
                 return (
                   <li className='text-base leading-[29px] font-medium' key={eachQualification}>
                     {eachQualification}

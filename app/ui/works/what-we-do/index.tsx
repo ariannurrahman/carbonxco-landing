@@ -55,12 +55,71 @@ export const WhatWeDo = () => {
     },
   ];
 
+  const WhatWeDoMainContent = [
+    {
+      mainClass: 'absolute top-0 left-0',
+      src: '/assets/works/what-we-do-local.svg',
+      height: 150,
+      width: 150,
+      text: 'LOCAL NGOs',
+    },
+    {
+      mainClass: 'absolute top-0 right-0',
+      src: '/assets/works/what-we-do-gov.svg',
+      height: 150,
+      width: 150,
+      text: 'GOVERNMENT',
+    },
+    {
+      mainClass: 'absolute bottom-0 right-0',
+      src: '/assets/works/what-we-do-business.svg',
+      height: 150,
+      width: 150,
+      text: 'BUSINESS & MICROFINANCE',
+    },
+    {
+      mainClass: 'absolute bottom-0 left-0',
+      src: '/assets/works/what-we-do-comm.svg',
+      height: 150,
+      width: 150,
+      text: 'COMMUNITIES',
+    },
+  ];
+
+  const WhatWeDoMain = (
+    <div className='relative'>
+      <Image
+        src='/assets/works/what-we-do-center.png'
+        alt='what we do'
+        className='object-fill hidden lg:block'
+        height={500}
+        width={500}
+      />
+      {WhatWeDoMainContent.map(({ height, mainClass, src, text, width }) => {
+        return (
+          <div key={text} className={`w-[150px] ${mainClass}`}>
+            <Image src={src} alt={text} className='object-fill hidden lg:block' height={width} width={height} />
+            <p className='text-center font-semibold text-base text-wrap line-clamp-2'>{text}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+
   return (
     <SectionWrapper padding='high' className='py-20'>
-      {whatWeDo.map(({ alt, height, right, src }) => {
+      {whatWeDo.map(({ alt, height, right, src }, index) => {
         return (
-          <div key={alt} className={`grid grid-cols-1 lg:grid-cols-2 h-fit place-content-center w-full`}>
-            <Image src={src} className='object-fill hidden lg:block' alt={alt} height={height} width={500} />
+          <div
+            key={alt}
+            className={`grid grid-cols-1 lg:grid-cols-[500px_auto] h-fit place-content-center w-full flex-row justify-start gap-x-20`}
+          >
+            {index === 1 ? (
+              WhatWeDoMain
+            ) : (
+              <Image src={src} className='object-fill hidden lg:block' alt={alt} height={height} width={500} />
+            )}
+
             <div className=''>{right}</div>
           </div>
         );
