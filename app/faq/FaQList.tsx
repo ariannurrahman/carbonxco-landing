@@ -19,7 +19,7 @@ export default function FaQList() {
 
   useEffect(() => {
     const getFaq = async () => {
-      const response = await fetch(`${BASE_URL}/faqs`).then((res) => res.json());
+      const response = await fetch(`${BASE_URL}/faqs?limit=50`).then((res) => res.json());
       setFaqs(response.data);
     };
     getFaq();

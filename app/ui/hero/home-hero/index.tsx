@@ -11,6 +11,8 @@ export const HomeHero = () => {
           width='100%'
           height='100%'
           controls
+          loop
+          muted
           preload='auto'
         >
           <source src='/assets/video/home-video.mp4' type='video/mp4' />

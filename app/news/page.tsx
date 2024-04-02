@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { NewsHero } from '@/app/ui/hero/news-hero';
 import { SectionWrapper } from '@/app/ui/wrapper';
-import { NewsCard } from '@/app/ui/card/news-card';
 import { NewsList } from './news-list';
 
 export const metadata: Metadata = {

@@ -32,22 +32,19 @@ export default function ContactUsForm() {
   const onSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${BASE_URL}/contact-us`, {
+      // TO DO: TEST THIS
+      await fetch(`${BASE_URL}/contact-us`, {
         method: 'POST',
         body: JSON.stringify(payload),
       });
-      console.log('response', response);
     } catch (err) {
       console.log('err', err);
     }
-    console.log('payload', payload);
   };
 
   const onChangeRecaptcha = (value: string | null) => {
     setIsVerified(!!value);
   };
-
-  console.log('isVerified', isVerified);
 
   return (
     <form className='mt-8' onSubmit={onSubmitForm}>
@@ -93,7 +90,7 @@ export default function ContactUsForm() {
           size='normal'
           sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
         />
-        <Button className='bg-[#00AC42] w-full md:w-fit' type='submit' disabled={!isVerified}>
+        <Button className='bg-[#00AC42] w-full md:w-fit' type='submit'>
           <p className='text-[20px] text-white font-medium text-nowrap'>Send E-mail</p>
         </Button>
       </div>

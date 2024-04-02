@@ -2,7 +2,7 @@ import { SectionWrapper } from '@/app/ui/wrapper';
 import { GreenSubTitle } from '../../ui/typography/GreenSubTitle';
 import Image from 'next/image';
 import { Button } from '@/app/ui/button';
-import { BASE_URL } from '@/app/constant';
+import { BASE_URL, sdg, SDG_COLOR } from '@/app/constant';
 import { ProjectDetail } from '@/app/types';
 import dayjs from 'dayjs';
 
@@ -18,6 +18,7 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
   const featureImage = project.documents.find(({ document_type }) => document_type === 'project_thumbnail');
   const gallery = project.documents.filter(({ document_type }) => document_type === 'project_gallery');
   const mapImage = project.documents.find(({ document_type }) => document_type === 'project_map');
+  const sdgList = project.sdg;
   const PROJECT_DETAILS = {
     title: project.title,
     description: project.description,
@@ -53,11 +54,32 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
 
   return (
     <div>
-      <SectionWrapper padding='high'>
-        <div className='mt-5 lg:mt-[93px] mb-5 lg:mb-[47px]'>
+      <SectionWrapper
+        className='mt-5 lg:mt-[93px] mb-5 lg:mb-[47px] grid grid-cols-1 md:grid-cols-[auto_340px]'
+        padding='high'
+      >
+        <div className=''>
           <GreenSubTitle label='OUR WORK / PROJECTS' />
           <h3 className='font-medium text-[32px] mt-1'>{PROJECT_DETAILS.title}</h3>
           <p className='text-base font-medium mt-[18px] max-w-[756px]'>{PROJECT_DETAILS.description}</p>
+        </div>
+        <div className='grid grid-cols-2 gap-3'>
+          {sdgList.map((eachSdg, index) => {
+            const eachStyle = SDG_COLOR[Number(eachSdg) as sdg];
+            return (
+              <div key={eachSdg} className='flex flex-row justify-start items-center gap-x-4'>
+                <div
+                  className={`min-w-9 min-h-9 border-2 rounded-full flex justify-center items-center -ml-2 ${eachStyle?.bg} ${eachStyle?.border} ${eachStyle?.text}`}
+                  style={{ zIndex: 10 + index }}
+                >
+                  {eachSdg}
+                </div>
+                <span>
+                  <p className='text-[12px] font-medium'>{eachStyle.caption}</p>
+                </span>
+              </div>
+            );
+          })}
         </div>
       </SectionWrapper>
       <SectionWrapper className='mb-5' padding='low'>

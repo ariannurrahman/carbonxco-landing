@@ -23,7 +23,7 @@ export const Footer = () => {
     <div className='grid grid-cols-2 gap-y-3 gap-x-5'>
       {FOOTER_NAV.map(({ href, label }) => {
         return (
-          <Link className='tracking-wider text-[12px] text-white text-start font-semibold' key={label} href={href}>
+          <Link className='tracking-wider text-[12px] text-white text-start font-semibold hover:text-[#00B040]' key={label} href={href}>
             {label}
           </Link>
         );

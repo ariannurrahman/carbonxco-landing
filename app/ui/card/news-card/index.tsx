@@ -11,9 +11,9 @@ enum NewsEnum {
   'insight' = 'Insight',
 }
 
-export const NewsCard = ({ category, title, content, createdAt, author, id, documents }: News) => {
+export const NewsCard = ({ category, title, createdAt, author, id, documents, project_summary }: News) => {
   const transformedCategory = NewsEnum[category as NewsType];
-  const thumbnailUrl = documents?.find(({ document_type }) => document_type === 'project_thumbnail');
+  const thumbnailUrl = documents?.find(({ document_type }) => document_type === 'blog_thumbnail');
   return (
     <div className='flex justify-center lg:justify-start flex-wrap lg:flex-nowrap items-center lg:items-start last:border-none py-[60px] border-b-2 border-black gap-x-10'>
       <div className='relative w-full md:w-[300px] h-[290px] min-w-[300px] min-h-[290px] rounded-tl-[40px] rounded-br-[40px]'>
@@ -32,7 +32,7 @@ export const NewsCard = ({ category, title, content, createdAt, author, id, docu
         <h2 className='text-[#252C2D] font-medium text-[14px] my-4'>
           {formatDate(createdAt).toUpperCase()} | {(author ?? '').toUpperCase()}
         </h2>
-        <p className='text-black text-[16px] font-medium'>{content}</p>
+        <p className='text-black text-[16px] font-medium'>{project_summary}</p>
       </div>
     </div>
   );

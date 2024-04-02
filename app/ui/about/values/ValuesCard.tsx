@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { Tooltip } from 'react-tooltip';
 
 interface ValusCard {
@@ -40,7 +40,7 @@ export const ValuesCard = () => {
     {
       label: 'Sophistication',
       caption:
-        'Employing both a team of passionate and highly-experienced people as well as advanced technologies like Monitoring, Reporting, and Verification (MRV) tools, satellite imagery, and data analytics to meet our quality standard.',
+        'Employing cutting-edge technologies from Monitoring, Reporting, and Verification (MRV) tools, satellite imagery, to data analytics.',
       src: '/assets/about/sophistication.jpg',
     },
   ];
@@ -48,7 +48,7 @@ export const ValuesCard = () => {
   return VALUES_CARD.map(({ caption, label, src }) => {
     return (
       <div key={label} className='relative h-[400px] rounded-lg w-full'>
-        <div className='relative z-30 rounded-t-lg bg-white flex justify-start flex-col items-center h-[250px] p-4 pt-10'>
+        <div className='relative z-30 rounded-t-lg bg-white flex justify-start flex-col items-center h-[250px] p-6 pt-10'>
           <h2 className='font-medium text-center text-[#13282D] text-[24px]'>{label}</h2>
           {typeof caption === 'string' ? (
             <p className='font-medium text-center text-[#13282D] text-[14px] mt-4'>{caption}</p>

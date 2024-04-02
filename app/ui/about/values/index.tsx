@@ -6,8 +6,8 @@ export const Values = () => {
   return (
     <SectionWrapper className='relative w-screen h-full' padding='none'>
       <SectionWrapper className='relative z-20 pt-[100px] pb-[100px]' padding='high'>
-        <h2 className='font-medium text-center text-black text-[32px]'>VALUES</h2>
-        <h3 className='font-medium text-center text-black text-xl'>WE LIVE BY</h3>
+        <h2 className='font-medium text-center text-[#252C2D] text-[32px]'>VALUES</h2>
+        <h3 className='font-medium text-center text-[#252C2D] text-xl'>CODE OF CONDUCT AT THE HEART OF OUR WORK</h3>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 mt-20'>
           <ValuesCard />
         </div>
