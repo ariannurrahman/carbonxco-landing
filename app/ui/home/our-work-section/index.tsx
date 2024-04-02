@@ -53,7 +53,15 @@ export const OurWorkSection = async () => {
           <div className='flex flex-nowrap flex-row justify-start items-center overflow-y-scroll gap-x-5 pb-10 w-full'>
             {projectsList?.map(({ documents, title, id, description, sdg }) => {
               return (
-                <ProjectCard key={id} documents={documents} title={title} id={id} description={description} sdg={sdg} />
+                <ProjectCard
+                  minWidth='min-w-[370px]'
+                  key={id}
+                  documents={documents}
+                  title={title}
+                  id={id}
+                  description={description}
+                  sdg={sdg}
+                />
               );
             })}
           </div>

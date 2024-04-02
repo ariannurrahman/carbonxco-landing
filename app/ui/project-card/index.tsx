@@ -9,15 +9,18 @@ interface ProjectCardProps {
   id: string;
   description: string;
   sdg: string[];
+  minWidth?: string;
 }
 
-export const ProjectCard = ({ documents, title, id, description, sdg }: ProjectCardProps) => {
+export const ProjectCard = ({ documents, title, id, description, sdg, minWidth }: ProjectCardProps) => {
   const projectThumbnail = documents?.filter(({ document_type }) => document_type === 'project_thumbnail');
 
   return (
     <div
       key={id}
-      className='relative shadow-[0_1px_1px_0_rgba(0,0,0,0.04)] flex justify-around items-start flex-col flex-nowrap w-full  h-[500px] border-2 rounded-[20px] border-[#D4EFDE] p-8'
+      className={`relative shadow-[0_1px_1px_0_rgba(0,0,0,0.04)] flex justify-around items-start flex-col flex-nowrap ${
+        minWidth ? minWidth : 'w-full'
+      }  h-[500px] border-2 rounded-[20px] border-[#D4EFDE] p-8`}
     >
       <div className='w-full'>
         <div className='relative w-full h-[195px]'>
