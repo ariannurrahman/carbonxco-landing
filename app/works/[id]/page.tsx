@@ -52,6 +52,9 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
     }
   };
 
+  const firstSdg = sdgList.slice(0, 5);
+  const secondSdg = sdgList.slice(5);
+
   return (
     <div>
       <SectionWrapper
@@ -64,22 +67,42 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
           <p className='text-base font-medium mt-[18px] max-w-[756px]'>{PROJECT_DETAILS.description}</p>
         </div>
         <div className='grid grid-cols-2 gap-3'>
-          {sdgList.map((eachSdg, index) => {
-            const eachStyle = SDG_COLOR[Number(eachSdg) as sdg];
-            return (
-              <div key={eachSdg} className='flex flex-row justify-start items-center gap-x-4'>
-                <div
-                  className={`min-w-9 min-h-9 border-2 rounded-full flex justify-center items-center -ml-2 ${eachStyle?.bg} ${eachStyle?.border} ${eachStyle?.text}`}
-                  style={{ zIndex: 10 + index }}
-                >
-                  {eachSdg}
+          <div className='space-y-3'>
+            {firstSdg.map((eachSdg, index) => {
+              const eachStyle = SDG_COLOR[Number(eachSdg) as sdg];
+              return (
+                <div key={eachSdg} className='flex flex-row justify-start items-center gap-4'>
+                  <div
+                    className={`min-w-9 min-h-9 border-2 rounded-full flex justify-center items-center -ml-2 ${eachStyle?.bg} ${eachStyle?.border} ${eachStyle?.text}`}
+                    style={{ zIndex: 10 + index }}
+                  >
+                    {eachSdg}
+                  </div>
+                  <span>
+                    <p className='text-[12px] font-medium'>{eachStyle.caption}</p>
+                  </span>
                 </div>
-                <span>
-                  <p className='text-[12px] font-medium'>{eachStyle.caption}</p>
-                </span>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+          <div className='space-y-3'>
+            {secondSdg.map((eachSdg, index) => {
+              const eachStyle = SDG_COLOR[Number(eachSdg) as sdg];
+              return (
+                <div key={eachSdg} className='flex flex-row justify-start items-center gap-4'>
+                  <div
+                    className={`min-w-9 min-h-9 border-2 rounded-full flex justify-center items-center -ml-2 ${eachStyle?.bg} ${eachStyle?.border} ${eachStyle?.text}`}
+                    style={{ zIndex: 10 + index }}
+                  >
+                    {eachSdg}
+                  </div>
+                  <span>
+                    <p className='text-[12px] font-medium'>{eachStyle.caption}</p>
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </SectionWrapper>
       <SectionWrapper className='mb-5' padding='low'>
@@ -87,88 +110,101 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
           <Image src={featureImage?.url ?? ''} className='w-full h-full' alt='our works' width={1380} height={416} />
         </div>
       </SectionWrapper>
-      <SectionWrapper className='mb-5' padding='high'>
-        <GreenSubTitle label='PROJECT DETAILS' />
-        <div className='grid grid-cols-1 lg:grid-cols-[auto_420px] pt-8'>
-          {/* LEFT */}
-          <div className='pr-8 space-y-8'>
-            <div>
-              <p className='text-[16px] font-bold'>Project Started</p>
-              <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
-                <Image src='/assets/works/clock.png' width={44} height={44} alt='clock' />
-                <p className='text-[16px] font-medium'>{PROJECT_DETAILS.projectStarted}</p>
-              </div>
-            </div>
-            <div>
-              <p className='text-[16px] font-bold'>Location</p>
-              <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
-                <Image src='/assets/works/location.png' width={44} height={44} alt='location' />
-                <p className='text-[16px] font-medium'>{PROJECT_DETAILS.location}</p>
-              </div>
-            </div>
-            <div>
-              <p className='text-[16px] font-bold'>Project Area</p>
-              <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
-                <Image src='/assets/works/area.png' width={44} height={44} alt='clock' />
-                <p className='text-[16px] font-medium'>{PROJECT_DETAILS.projectArea.value}</p>
-              </div>
-              <p className='text-[14px] text-[#8C8C8C] font-bold'>{PROJECT_DETAILS.projectArea.caption}</p>
-            </div>
-            <div>
-              <p className='text-[16px] font-bold'>Ecosystem Type</p>
-              <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
-                <Image src='/assets/works/eco.png' width={44} height={44} alt='ecosystem' />
-                <p className='text-[16px] font-medium'>{PROJECT_DETAILS.ecosystemType}</p>
-              </div>
-            </div>
-            <div>
-              <p className='text-[16px] font-bold'>Community</p>
-              <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
-                <Image src='/assets/works/community.png' width={44} height={44} alt='community' />
-                <p className='text-[16px] font-medium'>{PROJECT_DETAILS.community}</p>
-              </div>
-            </div>
-            <div>
-              <p className='text-[16px] font-bold'>Main Goals</p>
-              <p className='my-4 text-left text-[16px] font-medium'>{PROJECT_DETAILS.mainGoal}</p>
-            </div>
-            <div>
-              <p className='text-[16px] font-bold'>Key Factors</p>
-              <p className='my-4 text-left text-[16px] font-medium'>{PROJECT_DETAILS.keyFactor}</p>
-            </div>
-          </div>
-
-          {/* RIGHT */}
-          <div className='p-8 lg:border-l-2 border-[#D9D9D9] flex justify-between flex-col'>
-            <div>
-              <div className={`rounded-lg border w-fit px-6 py-4 ${statusStyle()}`}>
-                <p className='text-[#13282D] font-semibold text-[14px] tracking-widest'>
-                  {PROJECT_DETAILS.status.toUpperCase()}
-                </p>
-              </div>
+      <SectionWrapper className='relative' padding='none'>
+        <SectionWrapper className='mb-5 z-30 relative' padding='high'>
+          <GreenSubTitle label='PROJECT DETAILS' />
+          <div className='grid grid-cols-1 lg:grid-cols-[auto_420px] pt-8'>
+            {/* LEFT */}
+            <div className='pr-8 space-y-8'>
               <div>
-                <p className='text-[16px] font-bold mt-8'>Area map</p>
-                <div className='relative w-[350px] h-[350px]'>
-                  <Image
-                    src={mapImage?.url ?? ''}
-                    className='w-full h-full object-fill'
-                    alt='our works'
-                    fill
-                    sizes='350'
-                  />
+                <p className='text-[16px] font-bold'>Project Started</p>
+                <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
+                  <Image src='/assets/works/clock.png' width={44} height={44} alt='clock' />
+                  <p className='text-[16px] font-medium'>{PROJECT_DETAILS.projectStarted}</p>
                 </div>
               </div>
+              <div>
+                <p className='text-[16px] font-bold'>Location</p>
+                <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
+                  <Image src='/assets/works/location.png' width={44} height={44} alt='location' />
+                  <p className='text-[16px] font-medium'>{PROJECT_DETAILS.location}</p>
+                </div>
+              </div>
+              <div>
+                <p className='text-[16px] font-bold'>Project Area</p>
+                <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
+                  <Image src='/assets/works/area.png' width={44} height={44} alt='clock' />
+                  <p className='text-[16px] font-medium'>{PROJECT_DETAILS.projectArea.value}</p>
+                </div>
+                <p className='text-[14px] text-[#8C8C8C] font-bold'>{PROJECT_DETAILS.projectArea.caption}</p>
+              </div>
+              <div>
+                <p className='text-[16px] font-bold'>Ecosystem Type</p>
+                <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
+                  <Image src='/assets/works/eco.png' width={44} height={44} alt='ecosystem' />
+                  <p className='text-[16px] font-medium'>{PROJECT_DETAILS.ecosystemType}</p>
+                </div>
+              </div>
+              <div>
+                <p className='text-[16px] font-bold'>Community</p>
+                <div className='flex flex-start gap-[18px] flex-row flex-nowrap items-center my-4'>
+                  <Image src='/assets/works/community.png' width={44} height={44} alt='community' />
+                  <p className='text-[16px] font-medium'>{PROJECT_DETAILS.community}</p>
+                </div>
+              </div>
+              <div>
+                <p className='text-[16px] font-bold'>Main Goals</p>
+                <p className='my-4 text-left text-[16px] font-medium'>{PROJECT_DETAILS.mainGoal}</p>
+              </div>
+              <div>
+                <p className='text-[16px] font-bold'>Key Factors</p>
+                <p className='my-4 text-left text-[16px] font-medium'>{PROJECT_DETAILS.keyFactor}</p>
+              </div>
             </div>
-            <div className='flex flex-col items-center justify-center'>
-              <h3 className='text-base font-semibold text-center mb-4'>Need more information for this project?</h3>
-              <Button className='bg-[#46A7ED] w-full max-w-[342px]'>
-                <p className='text-[20px] text-white font-medium text-nowrap'>Contact Us</p>
-              </Button>
+
+            {/* RIGHT */}
+            <div className='relative p-8 lg:border-l-2 border-[#D9D9D9] flex justify-between flex-col'>
+              <div className=''>
+                <div className='flex flex-row flex-start flex-nowrap items-center gap-[18px]'>
+                  <p className='text-[16px] font-bold'>Project Status</p>
+                  <div className={`rounded-lg border w-fit px-6 py-4 ${statusStyle()}`}>
+                    <p className='text-[#13282D] font-semibold text-[14px] tracking-widest'>
+                      {PROJECT_DETAILS.status.toUpperCase()}
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <p className='text-[16px] font-bold mt-8'>Area map</p>
+                  <div className='relative w-full h-full max-h-[350[px] max-w-[350px] aspect-square'>
+                    <Image
+                      src={mapImage?.url ?? ''}
+                      className='w-full h-full object-fill'
+                      alt='our works'
+                      fill
+                      sizes='350'
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className='flex flex-col items-center justify-center'>
+                <h3 className='text-base font-semibold text-center mb-4'>Need more information for this project?</h3>
+                <Button className='bg-[#46A7ED] w-full max-w-[342px]'>
+                  <p className='text-[20px] text-white font-medium text-nowrap'>Contact Us</p>
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        </SectionWrapper>
+        <Image
+          className='absolute bottom-0 right-0 z-20'
+          src='/assets/works/form-bg.png'
+          alt='contact'
+          width={500}
+          height={500}
+        />
       </SectionWrapper>
-      <SectionWrapper padding='high' className='pb-[125px]'>
+      <SectionWrapper padding='high' className='pb-[125px] mt-[150px]'>
         <div className='relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {gallery.map(({ url }) => (
             <div key={url} className='w-full h-auto aspect-square relative'>

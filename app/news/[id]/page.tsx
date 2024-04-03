@@ -31,7 +31,7 @@ export default async function NewsDetails({ params }: Props) {
         <Image
           src={blogThumbnail}
           alt={news.title ?? ''}
-          className='w-full h-[493px] object-fill'
+          className='w-full h-[493px] object-contain'
           width={1440}
           height={493}
         />
