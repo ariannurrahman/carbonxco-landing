@@ -23,7 +23,7 @@ export const AboutHero = () => {
           <p className='text-white md:text-[#757575] text-[14px] font-medium mt-4'>
             Join us to reshape the future of carbon projects and deliver real impacts together.
           </p>
-          <Button className='bg-[#00AC42] mt-5'>
+          <Button className='bg-[#00AC42] mt-5 hover:bg-[#287B49]'>
             <Link href='/works'>
               <p className='text-[20px] text-white font-medium'>Learn more about our impact</p>
             </Link>
