@@ -35,7 +35,7 @@ export const OpportunityList = () => {
             className='flex justify-between items-center flex-row flex-wrap p-9 rounded-[20px] border border-2-[#D4EFDE]'
           >
             <p className='font-medium text-[20px]'>{title}</p>
-            <div className=''>
+            <div className='bg-white hover:bg-[#D4EFDE] px-[10px] py-[10px] rounded-md'>
               <Link href={`/career/${id}`}>
                 <p className='font-semibold text-base cursor-pointer'>Apply</p>
               </Link>

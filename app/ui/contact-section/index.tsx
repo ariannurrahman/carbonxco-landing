@@ -22,9 +22,9 @@ export const ContactSection = () => {
             For those interested in co-creating a carbon project with us, do send your initial ideas with a
             <em> maximum of 5 pages</em> describing your project design and its roadmap
           </p>
-          <Button className='bg-[#46A7ED] w-fit mt-8'>
+          <Button className='bg-[#46A7ED] hover:bg-[#DAEEFA] text-white hover:text-[#13282D]  w-fit mt-8'>
             <Link href='/contact-us'>
-              <p className='text-[20px] text-white font-medium'>Submit your proposal!</p>
+              <p className='text-[20px]  font-medium'>Submit your proposal!</p>
             </Link>
           </Button>
         </div>
@@ -40,7 +40,7 @@ export const ContactSection = () => {
               <span className='text-[#46A7ED] font-semibold'>hello@carbonx.com</span>
             </p>
           </div>
-          <Button className='bg-[#00AC42] mt-8'>
+          <Button className='bg-[#00AC42] hover:bg-[#287B49] mt-8'>
             <Link href='/contact-us'>
               <p className='text-[20px] text-white font-medium'>Contact Us</p>
             </Link>

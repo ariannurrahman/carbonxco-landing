@@ -42,7 +42,7 @@ export const OurWorkSection = async () => {
             ))}
           </div>
           <div className='hidden lg:flex justify-start'>
-            <Button className='bg-[#00AC42] mt-20'>
+            <Button className='bg-[#00AC42] hover:bg-[#287B49] mt-20'>
               <Link href='/works'>
                 <p className='text-[20px] text-white font-medium'>Learn more about our projects</p>
               </Link>
@@ -66,7 +66,7 @@ export const OurWorkSection = async () => {
             })}
           </div>
           <div className='flex lg:hidden justify-start'>
-            <Button className='bg-[#00AC42] mt-5'>
+            <Button className='bg-[#00AC42] hover:bg-[#287B49] mt-5'>
               <Link href='/works'>
                 <p className='text-[20px] text-white font-medium'>Learn more about our projects</p>
               </Link>

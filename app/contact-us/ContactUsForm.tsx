@@ -90,7 +90,7 @@ export default function ContactUsForm() {
           size='normal'
           sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
         />
-        <Button className='bg-[#00AC42] w-full md:w-fit' type='submit'>
+        <Button className='bg-[#00AC42] hover:bg-[#287B49] w-full md:w-fit' type='submit'>
           <p className='text-[20px] text-white font-medium text-nowrap'>Send E-mail</p>
         </Button>
       </div>

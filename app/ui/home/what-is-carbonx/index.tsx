@@ -25,9 +25,9 @@ export const WhatIsCarbonx = () => {
             community, innovation, and conservation principles.
           </p>
           <div className='flex items-center lg:justify-start w-full'>
-            <Button className='bg-[#46A7ED]'>
+            <Button className='bg-[#46A7ED] hover:bg-[#DAEEFA] hover:text-[#13282D] text-white'>
               <Link href='/about'>
-                <p className='text-[20px] text-white font-medium'>More about CarbonX</p>
+                <p className='text-[20px] font-medium'>More about CarbonX</p>
               </Link>
             </Button>
           </div>
@@ -35,20 +35,12 @@ export const WhatIsCarbonx = () => {
         <div className='order-1 lg:order-2 mt-5 lg:mt-0  flex justify-center items-center lg:justify-end lg:items-end flex-col flex-nowrap'>
           <div className='w-[320px] h-[325px] relative lg:w-[380px] xl:w-[428px] lg:h-[607px]'>
             <Image
-              className='hidden lg:block'
+              className='block'
               src='/assets/home/what-is-carbonx.png'
               fill
               alt='what is carbonx'
               priority
               sizes='(max-width: 768px) 320px, (max-width: 1200px) 320px, 428px'
-            />
-            <Image
-              className='block lg:hidden'
-              src='/assets/home/what-is-carbonx-mobile.png'
-              fill
-              alt='what is carbonx'
-              priority
-              sizes='320px'
             />
           </div>
         </div>

@@ -15,16 +15,15 @@ export const metadata: Metadata = {
 export default function TeamsPage() {
   return (
     <>
-      <SectionWrapper padding='high' className='pt-5 lg:pt-[100px] pb-[300px] z-30'>
+      <SectionWrapper padding='high' className='pt-5 lg:pt-[100px] pb-[800px] z-30'>
         <GreenSubTitle label='OUR TEAM' />
         <div className='flex justify-end '>
           <h2 className='text-right text-[28px] lg:text-[40px] font-medium max-w-[923px]'>
             A broad range of expertise spanning from technical, commercial, and legal domains.
           </h2>
         </div>
-        <div className='grid grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-14 mt-[100px] relative z-20'>
-          <TeamsList />
-        </div>
+
+        <TeamsList />
       </SectionWrapper>
       <div className='relative w-full h-[230px] z-10'>
         <SectionWrapper
