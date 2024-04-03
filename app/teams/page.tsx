@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function TeamsPage() {
   return (
     <>
-      <SectionWrapper padding='high' className='pt-5 lg:pt-[100px] pb-[800px] z-30'>
+      <SectionWrapper padding='high' className='pt-5 lg:pt-[100px] pb-[400px] z-30'>
         <GreenSubTitle label='OUR TEAM' />
         <div className='flex justify-end '>
           <h2 className='text-right text-[28px] lg:text-[40px] font-medium max-w-[923px]'>
