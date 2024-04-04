@@ -24,7 +24,7 @@ export interface News {
 
 export const NewsList = () => {
   const searchParams = useSearchParams();
-  const currentStatus: FilterType = (searchParams.get('status') || 'all') as FilterType;
+  const currentCategory: FilterType = (searchParams.get('category') || '') as FilterType;
 
   const [totalPage, setTotalPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,14 +32,14 @@ export const NewsList = () => {
 
   useEffect(() => {
     const getProjects = async () => {
-      const response = await fetch(`${BASE_URL}/blogs?status=${currentStatus}&limit=6&page=${currentPage}`).then(
+      const response = await fetch(`${BASE_URL}/blogs?category=${currentCategory}&limit=6&page=${currentPage}`).then(
         (res) => res.json(),
       );
       setNews(response.data);
       setTotalPage(response.totalPage);
     };
     getProjects();
-  }, [currentPage, currentStatus]);
+  }, [currentPage, currentCategory]);
 
   const paginationList = Array.from({ length: totalPage }, (_, i) => i + 1);
   const paginate = (page: number) => {

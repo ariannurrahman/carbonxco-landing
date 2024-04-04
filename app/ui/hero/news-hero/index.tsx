@@ -7,20 +7,20 @@ import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
 import { useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-export type FilterType = 'all' | 'insight' | 'news' | 'all-carbon';
+export type FilterType = 'all' | 'insight' | 'news' | 'all_about_carbon';
 
 export const NewsHero = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-  const currentStatus: FilterType = (searchParams.get('status') || 'all') as FilterType;
+  const currentCategory: FilterType = (searchParams.get('category') || '') as FilterType;
 
-  const [activeFilter, setActiveFilter] = useState<FilterType>(currentStatus);
+  const [activeFilter, setActiveFilter] = useState<FilterType>(currentCategory);
 
   const BUTTON_FILTER = [
     {
       label: 'All',
-      value: 'all',
+      value: '',
     },
     {
       label: 'Insight',
@@ -32,15 +32,13 @@ export const NewsHero = () => {
     },
     {
       label: 'All About Carbon',
-      value: 'all-carbon',
+      value: 'all_about_carbon',
     },
   ];
 
   const onChangeFilter = (value: FilterType) => {
     setActiveFilter(value);
-    if (value) {
-      router.push(`${pathname}?status=${value}`);
-    }
+    router.push(`${pathname}?category=${value}`);
   };
 
   return (

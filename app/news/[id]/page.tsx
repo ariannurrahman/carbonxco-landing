@@ -48,7 +48,7 @@ export default async function NewsDetails({ params }: Props) {
 
         <h1 className='text-[32px] font-medium mb-5'>{news?.title ?? ''}</h1>
         <div
-          className='font-normal space-y-3 leading-5'
+          className='font-normal space-y-4 leading-6'
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(news?.content) }}
         />
       </div>
