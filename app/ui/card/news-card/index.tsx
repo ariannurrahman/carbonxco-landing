@@ -15,7 +15,10 @@ export const NewsCard = ({ category, title, createdAt, author, id, documents, pr
   const transformedCategory = NewsEnum[category as NewsType];
   const thumbnailUrl = documents?.find(({ document_type }) => document_type === 'blog_thumbnail');
   return (
-    <div className='flex justify-center lg:justify-start flex-wrap lg:flex-nowrap items-center lg:items-start last:border-none py-[60px] border-b-2 border-black gap-x-10'>
+    <div
+      key={id}
+      className='flex justify-center lg:justify-start flex-wrap lg:flex-nowrap items-center lg:items-start last:border-none py-[60px] border-b-2 border-black gap-x-10'
+    >
       <div className='relative w-full md:w-[300px] h-[290px] min-w-[300px] min-h-[290px] rounded-tl-[40px] rounded-br-[40px]'>
         <Image
           className='rounded-tl-[40px] rounded-br-[40px] object-cover'
@@ -26,7 +29,7 @@ export const NewsCard = ({ category, title, createdAt, author, id, documents, pr
       </div>
       <div className='w-full'>
         <p className='text-[#46A7ED] font-bold text-[14px] mb-4 mt-5 lg:mt-0'>{transformedCategory ?? 'News'}</p>
-        <Link className='text-black font-semibold text-[24px] my-4' href={`/news/${id.toString()}`}>
+        <Link href={`/news/${id}`} className='text-black font-semibold text-[24px] my-4'>
           {title}
         </Link>
         <h2 className='text-[#252C2D] font-medium text-[14px] my-4'>

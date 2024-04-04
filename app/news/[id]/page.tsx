@@ -5,8 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import DOMPurify from 'isomorphic-dompurify';
 
- 
-
 // export async function generateMetadata({ params }: params: { id: string }): {
 //   const id = params.id;
 //   const blogs: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
@@ -16,8 +14,9 @@ import DOMPurify from 'isomorphic-dompurify';
 //   };
 // }
 
-export default async function NewsDetails({ params }: {params: { id: string }}) {
+export default async function NewsDetails({ params }: { params: { id: string } }) {
   const id = params.id;
+  console.log('news detail id', id);
   const news: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
   const moreNews: News = await fetch(`${BASE_URL}/blogs/${id}/more`).then((res) => res.json());
   const moreNewsThumbnail = moreNews?.documents?.find(({ document_type }) => document_type === 'project_thumbnail');
