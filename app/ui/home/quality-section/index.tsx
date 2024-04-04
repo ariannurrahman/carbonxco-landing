@@ -19,7 +19,7 @@ export const QualitySection = () => {
           </p>
           <div className='space-y-5 mt-5'>
             <Button className='bg-[#00AC42] hover:bg-[#287B49]'>
-              <Link className='inline-flex items-center' href='/faq'>
+              <Link className='inline-flex items-center' href='/works'>
                 <p className='text-base text-white font-medium '>Co-create carbon projects with us</p>
                 <Image className='ml-3' alt='go to FAQ' width={30} height={16} src='/assets/white-right-arrow.png' />
               </Link>
