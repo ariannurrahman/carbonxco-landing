@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { News } from '../news-list';
 import Link from 'next/link';
 import Image from 'next/image';
+import DOMPurify from 'isomorphic-dompurify';
 
 type Props = {
   params: { id: string };
@@ -24,7 +25,6 @@ export default async function NewsDetails({ params }: Props) {
   const news: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
 
   const blogThumbnail = news.documents.find(({ document_type }) => document_type === 'blog_thumbnail')?.url ?? '';
-
   return (
     <SectionWrapper padding='high' className='py-5'>
       {blogThumbnail ? (
@@ -45,7 +45,7 @@ export default async function NewsDetails({ params }: Props) {
       </h3>
 
       <h1 className='text-[32px] font-medium'>{news?.title?.toUpperCase()}</h1>
-      <p className='text-base font-medium my-5'>{news?.content}</p>
+      <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(news?.content) }} />
     </SectionWrapper>
   );
 }
