@@ -20,7 +20,7 @@ export const OurWorkSection = async () => {
     '/assets/home/our-work/our-work-17.png',
   ];
 
-  const response = await fetch(`${BASE_URL}/projects`, {
+  const response = await fetch(`${BASE_URL}/projects?limit=3`, {
     cache: 'no-cache',
   }).then((res) => res.json());
   const projectsList: Project[] = response.data;
