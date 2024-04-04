@@ -209,7 +209,7 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
         <div className='relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {gallery.map(({ url }) => (
             <div key={url} className='w-full h-auto aspect-square relative'>
-              <Image src={url} fill alt={url} sizes='300' className='object-fill' />
+              <Image src={url} fill alt={url} sizes='300' className='object-cover' />
             </div>
           ))}
         </div>
