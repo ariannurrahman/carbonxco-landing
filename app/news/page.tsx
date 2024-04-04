@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { NewsHero } from '@/app/ui/hero/news-hero';
 import { SectionWrapper } from '@/app/ui/wrapper';
 import { NewsList } from './news-list';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'News',
@@ -11,10 +12,14 @@ export const metadata: Metadata = {
 export default function News() {
   return (
     <>
-      <NewsHero />
+      <Suspense fallback={<p>Loading...</p>}>
+        <NewsHero />
+      </Suspense>
       <SectionWrapper padding='high'>
         <div className='flex flex-col w-full pt-[60px]'>
-          <NewsList />
+          <Suspense fallback={<p>Loading...</p>}>
+            <NewsList />
+          </Suspense>
         </div>
       </SectionWrapper>
     </>
