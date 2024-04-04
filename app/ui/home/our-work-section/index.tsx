@@ -26,29 +26,31 @@ export const OurWorkSection = async () => {
   const projectsList: Project[] = response.data;
 
   return (
-    <SectionWrapper padding='high'>
-      <GreenSubTitle className='pt-20' label='OUR WORK' />
-      <div className='grid grid-cols-1 lg:grid-cols-[488px_auto] pb-20 gap-y-10 gap-x-5 lg:gap-x-10'>
+    <SectionWrapper className='' padding='none'>
+      <GreenSubTitle className='pl-4 lg:pl-[120px] xl:pl-[159px] pt-20' label='OUR WORK' />
+      <div className='pl-4 lg:pl-[120px] xl:pl-[159px] grid grid-cols-1 lg:grid-cols-[488px_auto] pb-20 gap-y-10 gap-x-5 lg:gap-x-10'>
         <div>
-          <h3 className='text-[#13282D] text-[24px] lg:text-[32px] font-medium mt-5'>
-            Delivering nation-wide impact from restoring local lands and forests–and more to come!
-          </h3>
-          <p className='text-[#000] text-[14px] font-medium mt-2'>
-            Our core values driven by SDG 1, 2, 5, 8, 11,13, 15, and 17
-          </p>
-          <div className='flex flex-row flex-wrap gap-x-2 gap-y-2 mt-3'>
-            {OUR_WORK_IMAGE.map((eachImg) => (
-              <div key={eachImg} className='relative w-[47px] h-[47px] lg:w-[60px] lg:h-[60px]'>
-                <Image className='m-0' src={eachImg} fill alt={eachImg} sizes='47' />
-              </div>
-            ))}
-          </div>
-          <div className='hidden lg:flex justify-start'>
-            <Button className='bg-[#00AC42] hover:bg-[#287B49] mt-20'>
-              <Link href='/works'>
-                <p className='text-[20px] text-white font-medium'>Learn more about our projects</p>
-              </Link>
-            </Button>
+          <div>
+            <h3 className='text-[#13282D] text-[24px] lg:text-[32px] font-medium mt-5'>
+              Delivering nation-wide impact from restoring local lands and forests–and more to come!
+            </h3>
+            <p className='text-[#000] text-[14px] font-medium mt-2'>
+              Our core values driven by SDG 1, 2, 5, 8, 11,13, 15, and 17
+            </p>
+            <div className='flex flex-row flex-wrap gap-x-2 gap-y-2 mt-3'>
+              {OUR_WORK_IMAGE.map((eachImg) => (
+                <div key={eachImg} className='relative w-[47px] h-[47px] lg:w-[60px] lg:h-[60px]'>
+                  <Image className='m-0' src={eachImg} fill alt={eachImg} sizes='47' />
+                </div>
+              ))}
+            </div>
+            <div className='hidden lg:flex justify-start'>
+              <Button className='bg-[#00AC42] hover:bg-[#287B49] mt-20'>
+                <Link href='/works'>
+                  <p className='text-[20px] text-white font-medium'>Learn more about our projects</p>
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
         <div className='flex flex-col flex-nowrap w-full overflow-y-scroll'>
@@ -56,7 +58,7 @@ export const OurWorkSection = async () => {
             {projectsList?.map(({ documents, title, id, description, sdg }) => {
               return (
                 <ProjectCard
-                  minWidth='min-w-[370px]'
+                  minWidth='min-w-[370px] w-[370px]'
                   key={id}
                   documents={documents}
                   title={title}

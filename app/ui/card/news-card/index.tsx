@@ -18,7 +18,7 @@ export const NewsCard = ({ category, title, createdAt, author, id, documents, pr
     <div className='flex justify-center lg:justify-start flex-wrap lg:flex-nowrap items-center lg:items-start last:border-none py-[60px] border-b-2 border-black gap-x-10'>
       <div className='relative w-full md:w-[300px] h-[290px] min-w-[300px] min-h-[290px] rounded-tl-[40px] rounded-br-[40px]'>
         <Image
-          className='rounded-tl-[40px] rounded-br-[40px]'
+          className='rounded-tl-[40px] rounded-br-[40px] object-cover'
           src={thumbnailUrl?.url ?? '/assets/works/other-project.png'}
           fill
           alt='projects'

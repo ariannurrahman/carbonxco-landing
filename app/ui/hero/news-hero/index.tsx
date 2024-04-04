@@ -5,11 +5,17 @@ import Image from 'next/image';
 import { SectionWrapper } from '@/app/ui/wrapper';
 import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
 import { useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-type FilterType = 'all' | 'insight' | 'news' | 'all-carbon' | null;
+export type FilterType = 'all' | 'insight' | 'news' | 'all-carbon';
 
 export const NewsHero = () => {
-  const [activeFilter, setActiveFilter] = useState<FilterType>(null);
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
+  const currentStatus: FilterType = (searchParams.get('status') || 'all') as FilterType;
+
+  const [activeFilter, setActiveFilter] = useState<FilterType>(currentStatus);
 
   const BUTTON_FILTER = [
     {
@@ -30,6 +36,13 @@ export const NewsHero = () => {
     },
   ];
 
+  const onChangeFilter = (value: FilterType) => {
+    setActiveFilter(value);
+    if (value) {
+      router.push(`${pathname}?status=${value}`);
+    }
+  };
+
   return (
     <SectionWrapper padding='none' className='relative w-screen h-[514px] lg:h-[344px]'>
       <SectionWrapper className='flex justify-start items-center h-full' padding='high'>
@@ -43,12 +56,12 @@ export const NewsHero = () => {
               return (
                 <button
                   key={label}
-                  className={` rounded-lg px-6 py-4 cursor-pointer ${
+                  className={`hover:bg-[#DAEEFA] hover:text-[#46A7ED] rounded-lg px-6 py-4 cursor-pointer ${
                     activeFilter === value
                       ? 'bg-[#E8F4F5] text-[#13282D]'
                       : 'border-[1px] bg-[#E8F4F54D] border-[#46A7ED] text-white'
                   }`}
-                  onClick={() => setActiveFilter(value as FilterType)}
+                  onClick={() => onChangeFilter(value as FilterType)}
                 >
                   <p className='text-base font-medium'>{label}</p>
                 </button>

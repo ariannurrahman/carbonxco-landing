@@ -10,10 +10,8 @@ import { WhyCarbonx } from './ui/home/why-carbonx';
 export default function Home() {
   return (
     <main>
-      <div className='min-h-screen flex-col justify-between'>
-        <HomeHero />
-        <QualitySection />
-      </div>
+      <HomeHero />
+      <QualitySection />
       <Partners />
       <WhatIsCarbonx />
       <WhyCarbonx />

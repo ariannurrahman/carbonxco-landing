@@ -5,6 +5,8 @@ import { NewsCard } from '../ui/card/news-card';
 import { Documents } from '../types';
 import { useEffect, useState } from 'react';
 import { Pagination } from '../ui/works/recent-projects/Pagination';
+import { useSearchParams } from 'next/navigation';
+import { FilterType } from '../ui/hero/news-hero';
 
 export interface News {
   id: string;
@@ -21,18 +23,23 @@ export interface News {
 }
 
 export const NewsList = () => {
+  const searchParams = useSearchParams();
+  const currentStatus: FilterType = (searchParams.get('status') || 'all') as FilterType;
+
   const [totalPage, setTotalPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [news, setNews] = useState<News[] | undefined>(undefined);
 
   useEffect(() => {
     const getProjects = async () => {
-      const response = await fetch(`${BASE_URL}/blogs?limit=6&page=${currentPage}`).then((res) => res.json());
+      const response = await fetch(`${BASE_URL}/blogs?status=${currentStatus}&limit=6&page=${currentPage}`).then(
+        (res) => res.json(),
+      );
       setNews(response.data);
       setTotalPage(response.totalPage);
     };
     getProjects();
-  }, [currentPage]);
+  }, [currentPage, currentStatus]);
 
   const paginationList = Array.from({ length: totalPage }, (_, i) => i + 1);
   const paginate = (page: number) => {

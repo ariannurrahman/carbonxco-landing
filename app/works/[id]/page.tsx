@@ -5,6 +5,7 @@ import { Button } from '@/app/ui/button';
 import { BASE_URL, sdg, SDG_COLOR } from '@/app/constant';
 import { ProjectDetail } from '@/app/types';
 import dayjs from 'dayjs';
+import Link from 'next/link';
 
 type StatusType = 'Origination' | 'Due dilligence' | 'Development' | 'Implementation' | 'Issuance';
 
@@ -230,7 +231,9 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
                 />
               </div>
               <div className='w-[390px] flex items-start flex-col justify-start h-full'>
-                <h1 className='text-[24px] font-semibold'>{moreProject.title ?? ''}</h1>
+                <Link href={moreProject.id}>
+                  <h1 className='text-[24px] font-semibold'>{moreProject.title ?? ''}</h1>
+                </Link>
                 <p className='text-base font-medium'>{moreProject.description ?? ''}</p>
               </div>
             </div>
