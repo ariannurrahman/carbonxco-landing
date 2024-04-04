@@ -1,26 +1,22 @@
 import { BASE_URL } from '@/app/constant';
 import { SectionWrapper } from '@/app/ui/wrapper';
-import { Metadata } from 'next';
 import { News } from '../news-list';
 import Link from 'next/link';
 import Image from 'next/image';
 import DOMPurify from 'isomorphic-dompurify';
 
-type Props = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+ 
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const id = params.id;
-  const blogs: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
-  return {
-    title: blogs?.meta_title ?? blogs?.title,
-    description: blogs?.meta_description ?? blogs?.content,
-  };
-}
+// export async function generateMetadata({ params }: params: { id: string }): {
+//   const id = params.id;
+//   const blogs: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
+//   return {
+//     title: blogs?.title ?? blogs?.meta_title,
+//     description: blogs?.meta_description ?? blogs?.content,
+//   };
+// }
 
-export default async function NewsDetails({ params }: Props) {
+export default async function NewsDetails({ params }: {params: { id: string }}) {
   const id = params.id;
   const news: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
   const moreNews: News = await fetch(`${BASE_URL}/blogs/${id}/more`).then((res) => res.json());
