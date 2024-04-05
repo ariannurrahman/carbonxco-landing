@@ -58,7 +58,7 @@ export const ValuesCard = () => {
         </div>
         <Tooltip
           className='bg-white text-black shadow-md border-2 p-5'
-          style={{ backgroundColor: 'white', opacity: 1, color: 'black', maxWidth: 400 }}
+          style={{ backgroundColor: 'white', opacity: 1, color: 'black', maxWidth: 400, zIndex: 50 }}
           anchorSelect='.first-tooltip'
           place='right'
         >
@@ -68,7 +68,7 @@ export const ValuesCard = () => {
         </Tooltip>
         <Tooltip
           className='bg-white text-black shadow-md border-2 p-5'
-          style={{ backgroundColor: 'white', opacity: 1, color: 'black', maxWidth: 400 }}
+          style={{ backgroundColor: 'white', opacity: 1, color: 'black', maxWidth: 400, zIndex: 50 }}
           anchorSelect='.second-tooltip'
           place='right'
         >
@@ -78,12 +78,11 @@ export const ValuesCard = () => {
         </Tooltip>
         <Tooltip
           className='bg-white text-black shadow-md border-2 p-5'
-          style={{ backgroundColor: 'white', opacity: 1, color: 'black', maxWidth: 400 }}
+          style={{ backgroundColor: 'white', opacity: 1, color: 'black', maxWidth: 400, zIndex: 50 }}
           anchorSelect='.third-tooltip'
           place='right'
         >
           <p className='text-[14px] font-medium text-black '>
-            {' '}
             Conducting robust monitoring systems to track and verify the key project indicators
           </p>
         </Tooltip>

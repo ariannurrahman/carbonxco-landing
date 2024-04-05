@@ -11,11 +11,11 @@ export const AboutHero = () => {
       <SectionWrapper padding='high' className='relative z-20 grid grid-cols-1 md:grid-cols-2 h-full gap-x-5'>
         <div className='flex items-start flex-col justify-center h-full '>
           <GreenSubTitle label='ABOUT CARBONX' />
-          <h2 className='text-white md:text-black text-[32px] lg:text-[40px] font-medium mt-5'>
+          <h2 className='text-white md:text-black text-[28px] font-medium mt-5'>
             CarbonX is an end-to-end carbon projects developer, centered around grassroot communities and climate
             technology solutions.
           </h2>
-          <p className='text-white md:text-[#757575] text-[14px] font-medium mt-4'>
+          <p className='text-white md:text-[#757575] text-[16px] font-medium mt-4'>
             Real change starts at the roots, that is why we actively engage with communities in our carbon projects,
             from the initial planning to long-term implementation. Our projects are ensured to not only generate
             positive environmental outcomes but also create economic opportunities to build a lasting sustainability.

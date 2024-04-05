@@ -45,6 +45,14 @@ export const HomeCarousel = () => {
           alt='Indonesian Carbo Trade Association'
         />
       </SwiperSlide>
+      <SwiperSlide>
+        <Image
+          src='/assets/carousel/carousel-arkadiah.png'
+          width={184}
+          height={117}
+          alt='Indonesian Carbo Trade Association'
+        />
+      </SwiperSlide>
     </Swiper>
   );
 };

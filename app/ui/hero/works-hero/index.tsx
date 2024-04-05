@@ -12,10 +12,10 @@ export const WorksHero = () => {
       >
         <div className='flex items-start flex-col justify-center h-full order-2 lg:order-1'>
           <GreenSubTitle label='OUR WORKS' />
-          <h2 className='text-black text-[32px] font-medium mt-5'>
+          <h2 className='text-black text-[30px] font-medium mt-5'>
             Delivering innovations from local communities to nation-wide carbon projects
           </h2>
-          <p className='text-black text-[14px] lg:text-[16px] lg:text-base font-medium mt-4'>
+          <p className='text-black text-[14px] lg:text-base font-medium mt-4'>
             As an end-to-end project developer, CarbonX makes informed decisions, manages risks, and maximizes the
             likelihood of successful outcomes. It provides higher accountability and a clear roadmap for transforming a
             concept to reality while ensuring that resources are allocated wisely and goals are achieved.

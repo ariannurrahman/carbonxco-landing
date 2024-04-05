@@ -37,7 +37,7 @@ const STORY: Story[] = [
       <p className='text-base font-medium text-center mt-5'>
         We started developing our Nature-based Solution in carbon projects, namely Sanggala Corridor Project in West
         Kalimantan Province and Buru Integrated Sustainable Landscape Project in Maluku Province. Deeply rooted in our
-        communities, we also facilitate the development of Indonesia&apos;s carbon market digital ecosystem.,
+        communities, we also facilitate the development of Indonesia&apos;s carbon market digital ecosystem.
       </p>
     ),
   },

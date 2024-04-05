@@ -25,6 +25,7 @@ export default function TeamsList() {
   useEffect(() => {
     const getTeams = async () => {
       const response = await fetch(`${BASE_URL}/teams?limit=50`).then((res) => res.json());
+      console.log('response', response);
       setTeams(response.data);
     };
     getTeams();

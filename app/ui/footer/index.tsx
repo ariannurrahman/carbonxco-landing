@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FOOTER_NAV } from '../constants';
 import { SectionWrapper } from '../wrapper';
+import { Instagram } from './instagram';
+import { Linkedin } from './linkedin';
 
 export const Footer = () => {
   const FooterLogo = (
@@ -15,19 +17,34 @@ export const Footer = () => {
         CarbonX is an impact-focused company, leading the way in meaningful collaborations that goes beyond carbon
         offsetting.
       </p>
-      <p className='font-medium text-white text-[8px]'>CarbonxCo© 2024 All Rights Reserved</p>
+      <div className='hidden lg:flex flex-row justify-start gap-4'>
+        <Link href='https://www.instagram.com/carbonx.id/' target='_blank'>
+          <Instagram />
+        </Link>
+        <Link href='https://www.linkedin.com/company/carbonx-investments/' target='_blank'>
+          <Linkedin />
+        </Link>
+      </div>
+      <p className='block lg:hidden font-medium text-white text-[8px]'>CarbonxCo© 2024 All Rights Reserved</p>
     </div>
   );
 
   const FooterUrl = (
-    <div className='grid grid-cols-2 gap-y-3 gap-x-5'>
-      {FOOTER_NAV.map(({ href, label }) => {
-        return (
-          <Link className='tracking-wider text-[12px] text-white text-start font-semibold hover:text-[#00B040]' key={label} href={href}>
-            {label}
-          </Link>
-        );
-      })}
+    <div className='flex justify-center flex-col items-center'>
+      <div className='grid grid-cols-2 gap-y-3 gap-x-5'>
+        {FOOTER_NAV.map(({ href, label }) => {
+          return (
+            <Link
+              className='tracking-wider text-[12px] text-white text-start font-semibold hover:text-[#00B040]'
+              key={label}
+              href={href}
+            >
+              {label}
+            </Link>
+          );
+        })}
+      </div>
+      <p className='hidden lg:block font-medium text-white text-[8px] mt-5'>CarbonxCo© 2024 All Rights Reserved</p>
     </div>
   );
 
@@ -45,6 +62,14 @@ export const Footer = () => {
       <p className='font-medium text-white text-[12px]'>
         <span className='w-6 mr-4'>Fax.</span> <span className='ml-4'>+62 21 27085391</span>
       </p>
+      <div className='flex lg:hidden flex-row justify-start gap-4 mt-5'>
+        <Link href='https://www.instagram.com/carbonx.id/' target='_blank'>
+          <Instagram />
+        </Link>
+        <Link href='https://www.linkedin.com/company/carbonx-investments/' target='_blank'>
+          <Linkedin />
+        </Link>
+      </div>
     </div>
   );
 
