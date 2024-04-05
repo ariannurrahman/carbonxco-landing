@@ -43,7 +43,7 @@ export const ProjectCard = ({ documents, title, id, description, sdg, minWidth }
             </div>
           </div>
           <h1 className='text-[#13282D] text-[24px] xl:text-[32px] font-medium my-2 line-clamp-3'>{title}</h1>
-          <p className='text-[#13282D] text-base xl:text-[16px] font-medium text-ellipsis line-clamp-4 overflow-auto'>
+          <p className='text-[#13282D] text-base xl:text-[16px] font-medium text-ellipsis line-clamp-3 overflow-auto'>
             {description}
           </p>
         </div>

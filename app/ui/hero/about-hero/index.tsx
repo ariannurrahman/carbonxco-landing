@@ -11,7 +11,7 @@ export const AboutHero = () => {
       <SectionWrapper padding='high' className='relative z-20 grid grid-cols-1 md:grid-cols-2 h-full gap-x-5'>
         <div className='block md:hidden rounded-tl-[16px] rounded-br-[16px] w-full relative h-[280px]'>
           <Image
-            className='rounded-tl-[16px] rounded-br-[16px]  object-cover'
+            className='rounded-tl-[16px] rounded-br-[16px] object-cover'
             src='/assets/hero/about-hero-mobile-2.jpg'
             sizes='100vw'
             fill
@@ -41,7 +41,7 @@ export const AboutHero = () => {
         <div className='w-full hidden md:flex justify-end '>
           <div className='hidden md:flex w-full max-w-[540px] h-[644px] relative rounded-lg'>
             <Image
-              className='hidden md:block object-fill rounded-lg'
+              className='hidden md:block object-cover rounded-lg'
               src='/assets/hero/about-hero-2.jpg'
               sizes='540'
               fill

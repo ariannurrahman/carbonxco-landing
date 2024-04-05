@@ -108,7 +108,13 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
       </SectionWrapper>
       <SectionWrapper className='mb-5' padding='low'>
         <div className='h-[160px] lg:h-[392px]'>
-          <Image src={featureImage?.url ?? ''} className='w-full h-full' alt='our works' width={1380} height={416} />
+          <Image
+            src={featureImage?.url ?? ''}
+            className='w-full h-full object-cover rounded-tl-[30px] rounded-br-[30px]'
+            alt='our works'
+            width={1380}
+            height={416}
+          />
         </div>
       </SectionWrapper>
       <SectionWrapper className='relative' padding='none'>

@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <div className='relative'>
       <Image
-        className='hidden lg:flex absolute top-0 right-0 object-fit lg:w-[300px] xl:w-[550px] h-full'
+        className='hidden lg:flex absolute top-0 right-0 object-cover lg:w-[300px] xl:w-[550px] h-full'
         src='/assets/contact-us/contact-bg.png'
         sizes='550'
         width={550}

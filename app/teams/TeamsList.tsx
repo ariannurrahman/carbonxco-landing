@@ -25,7 +25,6 @@ export default function TeamsList() {
   useEffect(() => {
     const getTeams = async () => {
       const response = await fetch(`${BASE_URL}/teams?limit=50`).then((res) => res.json());
-      console.log('response', response);
       setTeams(response.data);
     };
     getTeams();
@@ -56,12 +55,12 @@ export default function TeamsList() {
           <div ref={teamRef} key={index} onClick={(e) => setSelectedTeam(index)} className='bg-white w-full relative'>
             <div className='z-30 bg-white relative'>
               <div className=''>
-                <div className='relative aspect-square rounded-tl-[30px] rounded-br-[30px]'>
+                <div className='relative aspect-square object-cover rounded-tl-[30px] rounded-br-[30px]'>
                   <Image
                     src={imgUrl?.url ?? ''}
                     alt={name}
                     fill
-                    className='rounded-tl-[30px] rounded-br-[30px]'
+                    className='rounded-tl-[30px] rounded-br-[30px] object-cover'
                     sizes='auto'
                   />
                 </div>
