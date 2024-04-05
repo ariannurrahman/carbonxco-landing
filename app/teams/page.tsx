@@ -18,7 +18,7 @@ export default function TeamsPage() {
       <SectionWrapper padding='high' className='pt-5 lg:pt-[100px] pb-[400px] z-30'>
         <GreenSubTitle label='OUR TEAM' />
         <div className='flex justify-end '>
-          <h2 className='text-right text-[28px] lg:text-[30px] font-medium max-w-[923px]'>
+          <h2 className='text-right text-[24px] lg:text-[30px] font-medium max-w-[923px]'>
             A broad range of expertise spanning from technical, commercial, community management and legal domains.
           </h2>
         </div>

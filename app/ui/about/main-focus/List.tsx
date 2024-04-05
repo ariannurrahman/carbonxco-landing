@@ -19,7 +19,7 @@ export const MainFocusList = () => {
       lottie: rootsAnimation,
     },
     {
-      label: 'Nature Based Solution',
+      label: 'Nature-based Solutions',
       desc: 'Indonesia has about 60-70 percent of carbon emission reduction potential from its natural sector. Tapping into the transformative power of collective action, we are working together with various stakeholders to take the lead in numerous Nature-based Solution (NbS) projects across the country.',
       lottie: natureAnimation,
     },

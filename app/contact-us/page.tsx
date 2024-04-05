@@ -32,7 +32,9 @@ export default function ContactPage() {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-12'>
           <div>
             <GreenSubTitle label='CONTACT US' />
-            <h1 className='text-[30px] font-medium mt-2'>Take part in our emission reduction and beyond.</h1>
+            <h1 className='text-[24px] lg:text-[30px] font-medium mt-2'>
+              Take part in our emission reduction and beyond.
+            </h1>
             <p className='text-[16px] font-medium mt-5'>
               In a world where science and technology have quickly driven our ways in resolving things, let&apos;s
               ignite our collective efforts that can put inclusion at its core. Do give us a hello, stay in touch, or

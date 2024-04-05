@@ -46,7 +46,7 @@ export const NewsHero = () => {
       <SectionWrapper className='flex justify-start items-center h-full' padding='high'>
         <div className='relative z-20'>
           <GreenSubTitle className='text-white lg:text-[#00AC42]' label='NEWS & INSIGHTS' />
-          <h1 className='text-[28px] lg:text-[30px] text-[#DAEEFA] font-medium max-w-[620px] mt-4'>
+          <h1 className='text-[24px] lg:text-[30px] text-[#DAEEFA] font-medium max-w-[620px] mt-4'>
             Get a deeper scoop of our projects and stay on top of industry trends.
           </h1>
           <div className='flex flex-row flex-wrap justify-start items-center gap-5 mt-5'>
