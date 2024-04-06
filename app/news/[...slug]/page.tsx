@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import DOMPurify from 'isomorphic-dompurify';
 import { notFound } from 'next/navigation';
+import { SocialMedia } from '../SocialMedia';
 
 interface NewsDetailProps {
   params: {
@@ -57,6 +58,7 @@ export default async function NewsDetails({ params }: NewsDetailProps) {
           className='font-normal space-y-4 leading-6'
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(news?.content) }}
         />
+        <SocialMedia />
       </div>
 
       <SectionWrapper padding='none' className='py-8'>
