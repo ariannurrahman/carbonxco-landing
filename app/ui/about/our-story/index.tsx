@@ -15,7 +15,12 @@ export const OurStory = () => {
 
         <StoryList />
       </div>
-      <Image src='/assets/about/our-story.png' className='absolute top-0 left-0 z-10' fill alt='our story' />
+      <Image
+        src='/assets/about/our-story.png'
+        className='absolute top-0 left-0 z-10 objec-cover'
+        fill
+        alt='our story'
+      />
     </SectionWrapper>
   );
 };

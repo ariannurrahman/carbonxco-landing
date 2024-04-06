@@ -19,7 +19,7 @@ export default function TeamsPage() {
         <GreenSubTitle label='OUR TEAM' />
         <div className='flex justify-end '>
           <h2 className='text-right text-[24px] lg:text-[30px] font-medium max-w-[923px]'>
-            A broad range of expertise spanning from technical, commercial, community management and legal domains.
+            A broad range of expertise spanning from technical, commercial, community development, and legal domains.
           </h2>
         </div>
 
@@ -40,7 +40,7 @@ export default function TeamsPage() {
         </SectionWrapper>
         <Image
           src='/assets/join-team-bg.png'
-          className='absolute z-10 top-0 left-0 object-fill'
+          className='absolute z-10 top-0 left-0 object-cover'
           alt='join the team'
           fill
         />

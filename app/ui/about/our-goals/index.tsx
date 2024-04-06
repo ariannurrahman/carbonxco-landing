@@ -17,7 +17,7 @@ export const OurGoals = () => {
     },
     {
       label: 'Supporting villages and village forests',
-      value: '>200 villages and 15 village forests',
+      value: '>80 villages and 15 village forests',
       src: '/assets/about/goal-3.png',
     },
     {

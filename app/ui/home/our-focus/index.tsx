@@ -61,7 +61,7 @@ export const OurFocus = () => {
           alt='our focus'
         />
         <Image
-          className='block lg:hidden z-10 absolute top-0 left-0 w-screen min-h-screen h-full'
+          className='block lg:hidden z-10 absolute top-0 left-0 w-screen h-full object-cover rounded-tl-[30px] rounded-br-[30px]'
           fill
           src='/assets/home/our-focus-mobile.png'
           alt='our focus'

@@ -49,15 +49,15 @@ export default async function NewsDetails({ params }: { params: { id: string } }
 
       <SectionWrapper padding='none' className='py-8'>
         <div className='grid grid-cols-1 lg:grid-cols-[auto_700px]'>
-          <div className='flex justify-center items-center flex-col'>
-            <p className='font-medium text-[32px] text-left w-full '>Other News </p>
-            <p className='font-medium text-[32px] text-left w-full '>that may interest you...</p>
+          <div className='flex justify-center items-center flex-col mb-5 lg:mb-0'>
+            <p className='font-medium text-[32px] text-left w-full'>Other News </p>
+            <p className='font-medium text-[32px] text-left w-full'>that may interest you...</p>
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-[260px_auto] gap-5'>
             <div className='relative rounded-tl-[40px] rounded-br-[40px]'>
               <Image
                 src={moreNewsThumbnail?.url ?? '/assets/works/other-project.png'}
-                className='rounded-tl-[40px] rounded-br-[40px]'
+                className='rounded-tl-[40px] rounded-br-[40px] object-cover'
                 width={260}
                 height={242}
                 alt='other projects'

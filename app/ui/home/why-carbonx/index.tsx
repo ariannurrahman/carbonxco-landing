@@ -35,7 +35,7 @@ export const WhyCarbonx = () => {
   return (
     <div className='relative w-screen min-h-screen h-full lg:h-screen'>
       <div className='relative z-20 flex flex-col justify-center items-center w-full h-full py-20 lg:py-0'>
-        <h2 className='font-medium text-[32px] text-white mb-10'>Why Work with Us?</h2>
+        <h2 className='font-medium text-[32px] text-white mb-10 text-center'>Why Work with Us?</h2>
 
         <div className='grid grid-cols-1 lg:grid-cols-[360px_360px] gap-10 pb-5'>
           {WHY_CARBON_X.map(({ caption, src, title, height, width }) => {
@@ -50,16 +50,17 @@ export const WhyCarbonx = () => {
         </div>
       </div>
       <Image
-        className='hidden lg:block z-10 absolute top-0 left-0 w-screen min-h-screen h-full'
+        className='hidden lg:block z-10 absolute top-0 left-0 w-screen min-h-screen h-full object-cover'
         src='/assets/home/why-carbonx.png'
         width={1440}
         height={800}
         alt='why carbon x'
       />
       <Image
-        className='block lg:hidden z-10 absolute top-0 left-0 w-screen min-h-screen h-full'
+        className='block lg:hidden z-10 absolute top-0 left-0 w-screen min-h-screen h-full object-cover'
         src='/assets/home/why-carbonx-mobile.png'
         alt='why carbon x'
+        sizes='1440'
         fill
       />
     </div>

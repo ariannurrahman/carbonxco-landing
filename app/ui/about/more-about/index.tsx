@@ -19,7 +19,7 @@ export const MoreAbout = () => {
           </div>
         </div>
       </div>
-      <Image className='z-10 absolute top-0 left-0' src='/assets/home/contact-bg.png' alt='contact' fill />
+      <Image className='z-10 absolute top-0 left-0 object-cover' src='/assets/home/contact-bg.png' alt='contact' fill />
     </div>
   );
 };

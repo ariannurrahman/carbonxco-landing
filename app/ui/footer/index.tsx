@@ -30,7 +30,7 @@ export const Footer = () => {
   );
 
   const FooterUrl = (
-    <div className='flex justify-center flex-col items-center'>
+    <div className='flex justify-start items-start lg:justify-center flex-col lg:items-center'>
       <div className='grid grid-cols-2 gap-y-3 gap-x-5'>
         {FOOTER_NAV.map(({ href, label }) => {
           return (
@@ -90,7 +90,7 @@ export const Footer = () => {
           <div className='mt-10'>{FooterLogo}</div>
         </div>
         <Image
-          className='z-10 hidden lg:block absolute top-0 left-0'
+          className='z-10 hidden lg:block absolute top-0 left-0 object-cover'
           src='/assets/footer-bg.png'
           alt='carbonx footer'
           fill

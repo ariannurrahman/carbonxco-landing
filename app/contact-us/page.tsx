@@ -41,8 +41,8 @@ export default function ContactPage() {
               spark a new collaboration with us.
             </p>
             <ContactUsForm />
-            <div className='grid grid-cols-[120px_auto] gap-x-5 px-5 border-t-2 pt-5 border-[#00AC42] mt-20'>
-              <div className=''>
+            <div className='grid grid-cols-1 lg:grid-cols-[120px_auto] gap-x-5 px-5 border-t-2 pt-5 border-[#00AC42] mt-20'>
+              <div className='flex justify-center'>
                 <Image src='/assets/contact-us/contact-handshake.png' width={116} height={108} alt='contact' />
               </div>
               <div>

@@ -59,7 +59,7 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
   return (
     <div>
       <SectionWrapper
-        className='mt-5 lg:mt-[93px] mb-5 lg:mb-[47px] grid grid-cols-1 md:grid-cols-[auto_340px]'
+        className='mt-5 lg:mt-[93px] mb-5 lg:mb-[47px] grid grid-cols-1 md:grid-cols-[auto_340px] gap-x-5'
         padding='high'
       >
         <div className=''>
@@ -67,7 +67,7 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
           <h3 className='font-medium text-[32px] mt-1'>{PROJECT_DETAILS.title}</h3>
           <p className='text-base font-medium mt-[18px] max-w-[756px]'>{PROJECT_DETAILS.description}</p>
         </div>
-        <div className='grid grid-cols-2 gap-3'>
+        <div className='grid grid-cols-2 gap-3 my-5 lg:my-0'>
           <div className='space-y-3'>
             {firstSdg.map((eachSdg, index) => {
               const eachStyle = SDG_COLOR[Number(eachSdg) as sdg];
@@ -170,7 +170,7 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
             </div>
 
             {/* RIGHT */}
-            <div className='relative p-8 lg:border-l-2 border-[#D9D9D9] flex justify-between flex-col'>
+            <div className='relative lg:p-8 lg:border-l-2 border-[#D9D9D9] flex justify-between flex-col'>
               <div className=''>
                 <div className='flex flex-row flex-start flex-nowrap items-center gap-[18px]'>
                   <p className='text-[16px] font-bold'>Project Status</p>
@@ -223,14 +223,14 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
       <SectionWrapper padding='none' className='border-t-2 border-[#D7D7D7]'>
         <SectionWrapper padding='high' className='py-8'>
           <div className='grid grid-cols-1 lg:grid-cols-2'>
-            <div className='flex justify-start items-center'>
+            <div className='flex justify-start items-center mb-5 lg:mb-0'>
               <p className='font-medium text-[32px] text-center w-full '>Other Projects...</p>
             </div>
-            <div className='flex flex-row gap-5 items-center'>
+            <div className='flex flex-row flex-wrap lg:flex-nowrap gap-5 items-center'>
               <div className='relative rounded-tl-[40px] rounded-br-[40px]'>
                 <Image
                   src={moreProjectThumbnail?.url ?? '/assets/works/other-project.png'}
-                  className='rounded-tl-[40px] rounded-br-[40px]'
+                  className='rounded-tl-[40px] rounded-br-[40px] objet-cover'
                   width={260}
                   height={242}
                   alt='other projects'

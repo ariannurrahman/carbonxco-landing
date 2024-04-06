@@ -24,7 +24,7 @@ export const Sidebar = () => {
         </button>
       </div>
       {isSidebarOpen && (
-        <aside className='bg-[#13282D] h-svh pt-10 px-5 fixed top-0 left-0 z-50 w-full transition-all'>
+        <aside className='bg-[#13282D] min-h-svh h-svh pt-10 px-5 fixed top-0 left-0 z-50 w-full transition-all'>
           <div className='flex justify-end w-full'>
             <button onClick={onCloseSidebar}>
               <Image src='/assets/close-icon.svg' alt='close' width={18} height={18} />

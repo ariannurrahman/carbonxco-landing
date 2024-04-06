@@ -10,11 +10,9 @@ import { ProjectCard } from '../../project-card';
 export const OurWorkSection = async () => {
   const OUR_WORK_IMAGE = [
     '/assets/home/our-work/our-work-13.png',
-    // '/assets/home/our-work/our-work-14.png',
     '/assets/home/our-work/our-work-15.png',
     '/assets/home/our-work/our-work-1.png',
     '/assets/home/our-work/our-work-2.png',
-    // '/assets/home/our-work/our-work-3.png',
     '/assets/home/our-work/our-work-5.png',
     '/assets/home/our-work/our-work-8.png',
     '/assets/home/our-work/our-work-17.png',
