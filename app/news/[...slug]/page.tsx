@@ -4,9 +4,17 @@ import { News } from '../news-list';
 import Link from 'next/link';
 import Image from 'next/image';
 import DOMPurify from 'isomorphic-dompurify';
+import { notFound } from 'next/navigation';
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const id = params.id;
+interface NewsDetailProps {
+  params: {
+    slug: string[];
+  };
+}
+
+export async function generateMetadata({ params }: NewsDetailProps) {
+  const { slug } = params;
+  const id = slug[1];
   const blogs: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
   return {
     title: blogs?.title ?? blogs?.meta_title,
@@ -14,9 +22,13 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default async function NewsDetails({ params }: { params: { id: string } }) {
-  const id = params.id;
+export default async function NewsDetails({ params }: NewsDetailProps) {
+  const { slug } = params;
+  const id = slug?.[1] ?? '';
   const news: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
+  if (news.status === 400) {
+    notFound();
+  }
   const moreNews: News = await fetch(`${BASE_URL}/blogs/${id}/more`).then((res) => res.json());
   const moreNewsThumbnail = moreNews?.documents?.find(({ document_type }) => document_type === 'project_thumbnail');
   const blogThumbnail = news?.documents?.find(({ document_type }) => document_type === 'blog_thumbnail')?.url ?? '';

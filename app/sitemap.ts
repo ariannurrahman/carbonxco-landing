@@ -8,11 +8,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const worksResponse = await fetch(`${BASE_URL}/projects?&limit=50&page=${1}`).then((res) => res.json());
 
-  const newsSitemap = newsResponse.data.map(({ id, updatedAt }: { id: string; updatedAt: string }) => ({
-    url: `${URL}news/${id}`,
-    lastModified: updatedAt,
-    priority: 0.9,
-  }));
+  const newsSitemap = newsResponse.data.map(
+    ({ id, updatedAt, meta_title }: { meta_title: string; id: string; updatedAt: string }) => ({
+      url: `${URL}news/${meta_title}/${id}`,
+      lastModified: updatedAt,
+      priority: 0.9,
+    }),
+  );
   const worksSitemap = worksResponse.data.map(({ id, updatedAt }: { id: string; updatedAt: string }) => ({
     url: `${URL}works/${id}`,
     lastModified: updatedAt,

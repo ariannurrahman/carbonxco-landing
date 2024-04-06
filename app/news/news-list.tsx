@@ -20,6 +20,8 @@ export interface News {
   createdAt: string;
   updatedAt: string;
   documents: Documents[];
+  status?: number;
+  message?: string;
 }
 
 export const NewsList = () => {

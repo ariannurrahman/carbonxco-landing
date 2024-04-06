@@ -11,7 +11,7 @@ enum NewsEnum {
   'insight' = 'Insight',
 }
 
-export const NewsCard = ({ category, title, createdAt, author, id, documents, project_summary }: News) => {
+export const NewsCard = ({ category, title, createdAt, author, id, documents, project_summary, meta_title }: News) => {
   const transformedCategory = NewsEnum[category as NewsType];
   const thumbnailUrl = documents?.find(({ document_type }) => document_type === 'blog_thumbnail');
   return (
@@ -29,7 +29,7 @@ export const NewsCard = ({ category, title, createdAt, author, id, documents, pr
       </div>
       <div className='w-full'>
         <p className='text-[#46A7ED] font-bold text-[14px] mb-4 mt-5 lg:mt-0'>{transformedCategory ?? 'News'}</p>
-        <Link href={`/news/${id}`} className='text-black font-semibold text-[24px] my-4'>
+        <Link href={`/news/${meta_title}/${id}`} className='text-black font-semibold text-[24px] my-4'>
           {title}
         </Link>
         <h2 className='text-[#252C2D] font-medium text-[14px] my-4'>
