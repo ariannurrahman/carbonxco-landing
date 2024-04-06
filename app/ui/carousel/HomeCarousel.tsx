@@ -53,6 +53,9 @@ export const HomeCarousel = () => {
           alt='Indonesian Carbo Trade Association'
         />
       </SwiperSlide>
+      <SwiperSlide>
+        <Image src='/assets/carousel/carousel-acexi.png' width={184} height={117} alt='ACEXI' />
+      </SwiperSlide>
     </Swiper>
   );
 };

@@ -12,8 +12,12 @@ type StatusType = 'Origination' | 'Due dilligence' | 'Development' | 'Implementa
 export default async function ProjectsPage({ params }: { params: { id: string } }) {
   const { id } = params;
 
-  const project: ProjectDetail = await fetch(`${BASE_URL}/projects/${id}`).then((res) => res.json());
-  const moreProject: ProjectDetail = await fetch(`${BASE_URL}/projects/${id}/more`).then((res) => res.json());
+  const project: ProjectDetail = await fetch(`${BASE_URL}/projects/${id}`, {
+    cache: 'no-cache',
+  }).then((res) => res.json());
+  const moreProject: ProjectDetail = await fetch(`${BASE_URL}/projects/${id}/more`, {
+    cache: 'no-cache',
+  }).then((res) => res.json());
   const moreProjectThumbnail = moreProject.documents.find(({ document_type }) => document_type === 'project_thumbnail');
 
   const featureImage = project.documents.find(({ document_type }) => document_type === 'project_thumbnail');
