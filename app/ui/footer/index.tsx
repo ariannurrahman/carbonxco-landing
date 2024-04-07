@@ -52,16 +52,14 @@ export const Footer = () => {
     <div className='mt-10 md:mt-0'>
       <p className='font-semibold text-white text-[14px]'>INDONESIA OFFICE</p>
       <p className='mt-3 mb-6 font-medium text-white text-[12px]'>
-        Treasury tower 7th Floor , <br />
+        Treasury Tower 7th Floor , <br />
         Suite 7JKL District 8, SCBD lot.28 <br />
         Jl. Jendral Sudirman Kav. 52-53 Jakarta 12190 - Indonesia
       </p>
       <p className='font-medium text-white text-[12px]'>
         <span className='w-6 mr-4'>Ph.</span> <span className='ml-4'>+62 21 27085488 / 27085081</span>
       </p>
-      <p className='font-medium text-white text-[12px]'>
-        <span className='w-6 mr-4'>Fax.</span> <span className='ml-4'>+62 21 27085391</span>
-      </p>
+
       <div className='flex lg:hidden flex-row justify-start gap-4 mt-5'>
         <Link href='https://www.instagram.com/carbonx.id/' target='_blank'>
           <Instagram />
@@ -76,7 +74,7 @@ export const Footer = () => {
   return (
     <SectionWrapper padding='high' className='bg-[#13282D] lg:bg-transparent py-5 lg:py-14 relative'>
       <footer>
-        <div className='hidden relative z-20 lg:flex justify-between items-start flex-col md:flex-row'>
+        <div className='hidden relative z-20 lg:flex justify-between items-start flex-col md:flex-row gap-x-2'>
           <div className='flex justify-between items-start gap-12 flex-col md:flex-row'>
             {FooterLogo}
             {FooterUrl}

@@ -20,7 +20,7 @@ export const ContactSection = () => {
 
           <p className='mt-5 text-base font-medium'>
             For those interested in co-creating a carbon project with us, do send your initial ideas with a
-            <em> maximum of 5 pages</em> describing your project design and its roadmap
+            <em> maximum of 5 pages</em> describing your project design and its roadmap!
           </p>
           <Button className='bg-[#46A7ED] hover:bg-[#DAEEFA] text-white hover:text-[#13282D]  w-fit mt-8'>
             <Link href='/contact-us'>
@@ -36,8 +36,8 @@ export const ContactSection = () => {
               Let&apos;s talk about how we can make more impact, today.
             </h2>
             <p className='text-base text-white text-center mt-5 font-medium'>
-              Call <span className='text-[#46A7ED] font-semibold'>+6221 1234 5678</span> or e-mail us at{' '}
-              <span className='text-[#46A7ED] font-semibold'>hello@carbonx.com</span>
+              Call <span className='text-[#46A7ED] font-semibold'>+62 21 27085488</span> or e-mail us at{' '}
+              <span className='text-[#46A7ED] font-semibold'>admin@carbonxco.com</span>
             </p>
           </div>
           <Button className='bg-[#00AC42] hover:bg-[#287B49] mt-8'>

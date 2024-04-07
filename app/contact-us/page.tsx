@@ -49,7 +49,7 @@ export default function ContactPage() {
                 <p className='font-medium text-base '>
                   For those interested in co-creating a carbon project with us, do send your initial ideas with a
                   maximum of 5 pages describing your project design and its roadmap by clicking{' '}
-                  <a href='mailto:fikri@carbonxco.com' className='text-[#46A7ED]'>
+                  <a href='mailto:adminhrga@carbonxco.com' className='text-[#46A7ED]'>
                     here.
                   </a>
                 </p>
