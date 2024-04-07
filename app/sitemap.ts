@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { BASE_URL } from './constant';
 
-const URL = 'https://carbonxco-landing.vercel.app/';
+const URL = 'https://carbonxco.com/';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const newsResponse = await fetch(`${BASE_URL}/blogs?&limit=50&page=${1}`).then((res) => res.json());
