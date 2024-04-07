@@ -4,9 +4,10 @@ interface WrapperProps {
   children: ReactNode;
   padding: 'none' | 'low' | 'high';
   className?: string;
+  id?: string;
 }
 
-export const SectionWrapper = ({ children, padding, className }: WrapperProps) => {
+export const SectionWrapper = ({ id, children, padding, className }: WrapperProps) => {
   const defaultPadding =
     padding === 'none'
       ? ''
@@ -16,5 +17,9 @@ export const SectionWrapper = ({ children, padding, className }: WrapperProps) =
       ? 'px-4 lg:px-[120px] xl:px-[159px]'
       : '';
 
-  return <div className={`${defaultPadding} ${className}`}>{children}</div>;
+  return (
+    <div id={id} className={`${defaultPadding} ${className}`}>
+      {children}
+    </div>
+  );
 };

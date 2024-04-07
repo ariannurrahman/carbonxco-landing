@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
 import { SectionWrapper } from '@/app/ui/wrapper';
 import { Button } from '@/app/ui/button';
 import TeamsList from './TeamsList';
-
 export const metadata: Metadata = {
   title: 'Teams',
   description: 'Teams Carbonxco',
@@ -15,15 +15,16 @@ export const metadata: Metadata = {
 export default function TeamsPage() {
   return (
     <>
-      <SectionWrapper padding='high' className='pt-5 lg:pt-[100px] pb-[400px] z-30'>
+      <SectionWrapper id='team-list' padding='high' className='pt-5 lg:pt-[100px] pb-[400px] z-30'>
         <GreenSubTitle label='OUR TEAM' />
         <div className='flex justify-end '>
           <h2 className='text-right text-[24px] lg:text-[30px] font-medium max-w-[923px]'>
             A broad range of expertise spanning from technical, commercial, community development, and legal domains.
           </h2>
         </div>
-
-        <TeamsList />
+        <Suspense fallback={<p>Loading...</p>}>
+          <TeamsList />
+        </Suspense>
       </SectionWrapper>
       <div className='relative w-full h-[230px] z-10'>
         <SectionWrapper
