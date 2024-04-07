@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Contact Us Carbonxco',
+  description: "Take part in your business' emission reduction and beyond with CarbonX!",
 };
 
 export default function ContactPage() {

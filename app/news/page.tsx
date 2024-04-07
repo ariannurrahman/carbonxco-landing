@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'News',
-  description: 'News Carbonxco',
+  description: 'Stay on top of industry trends and get updated on what CarbonX has been doing.',
 };
 
 export default function News() {

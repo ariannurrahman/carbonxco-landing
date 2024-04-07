@@ -5,8 +5,9 @@ import { SectionWrapper } from '../ui/wrapper';
 import FaQList from './FaQList';
 
 export const metadata: Metadata = {
-  title: 'F.A.Q',
-  description: 'F.A.Q Carbonxco',
+  title: 'FAQ',
+  description:
+    'What is carbon credit? How does carbon offsetting work? Your burning questions about carbon projects, answered.',
 };
 
 export default function FaqPage() {

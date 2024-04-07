@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { BASE_URL } from '../constant';
 import Modal from 'react-modal';
 import { TeamModal } from './TeamModal';
+import { useHydrate } from './useHydrate';
 
 export interface Team {
   id: string;
@@ -22,6 +23,7 @@ export interface Team {
 
 export default function TeamsList() {
   Modal.setAppElement('#team-list');
+  const { isHydrate } = useHydrate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const teamRef = useRef<HTMLDivElement>(null);
@@ -53,18 +55,21 @@ export default function TeamsList() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!window) return;
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
+
+  useEffect(() => {
+    if (isHydrate) {
+      handleResize();
+      window?.addEventListener('resize', handleResize);
+
+      return () => {
+        window?.removeEventListener('resize', handleResize);
+      };
+    }
+  }, [isHydrate]);
+  if (!window) return;
 
   return (
     <div id='team-list' className='z-0 relative'>

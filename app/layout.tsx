@@ -9,7 +9,7 @@ import { montserrat } from './ui/fonts';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Carbonxco Landing',
+    template: '%s | Carbonxco',
     default: 'Carbonxco',
   },
   description: 'Carbonxco',

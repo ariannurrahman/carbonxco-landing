@@ -9,7 +9,8 @@ import { MoreAbout } from '@/app/ui/about/more-about';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About Carbonxco',
+  description:
+    'CarbonX is an end-to-end carbon projects facilitator, committed to design a sustainable growth for businesses, involving community and conservation.',
 };
 
 export default function About() {

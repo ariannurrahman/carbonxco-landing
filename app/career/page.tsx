@@ -6,7 +6,8 @@ import { OpportunityList } from './opportunity-list';
 
 export const metadata: Metadata = {
   title: 'Career',
-  description: 'Career Carbonxco',
+  description:
+    'Have you worked on what matters most? Join CarbonX in unleashing the opportunities for meaningful innovation through quality carbon projects. ',
 };
 
 export default function CareerPage() {

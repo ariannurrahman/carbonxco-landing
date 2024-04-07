@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 import { GreenSubTitle } from '@/app/ui/typography/GreenSubTitle';
 import { SectionWrapper } from '@/app/ui/wrapper';
 import { Button } from '@/app/ui/button';
-import TeamsList from './TeamsList';
+import { TeamsListComponent } from './TeamsListComponent';
 export const metadata: Metadata = {
   title: 'Teams',
-  description: 'Teams Carbonxco',
+  description:
+    'CarbonX is equipped with dedicated in-house team with a broad range of expertise, from technical, commercial, to legal domains.',
 };
 
 export default function TeamsPage() {
@@ -22,9 +22,7 @@ export default function TeamsPage() {
             A broad range of expertise spanning from technical, commercial, community development, and legal domains.
           </h2>
         </div>
-        <Suspense fallback={<p>Loading...</p>}>
-          <TeamsList />
-        </Suspense>
+        <TeamsListComponent />
       </SectionWrapper>
       <div className='relative w-full h-[230px] z-10'>
         <SectionWrapper
