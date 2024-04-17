@@ -10,13 +10,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const newsSitemap = newsResponse.data.map(
     ({ id, updatedAt, meta_title }: { meta_title: string; id: string; updatedAt: string }) => ({
-      url: `${URL}news/${meta_title}/${id}`,
+      url: `${URL}/news/${meta_title}/${id}`,
       lastModified: updatedAt,
       priority: 0.9,
     }),
   );
   const worksSitemap = worksResponse.data.map(({ id, updatedAt }: { id: string; updatedAt: string }) => ({
-    url: `${URL}works/${id}`,
+    url: `${URL}/works/${id}`,
     lastModified: updatedAt,
     priority: 0.9,
   }));
