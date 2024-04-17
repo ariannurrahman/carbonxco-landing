@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <meta name='google-site-verification' content='SrsoLuEvR8zC3iZ6q_ycMseugKoz9tRfkxRkMgsn7CE' />
+      <meta name='google-site-verification' content='V4-jqIYjS8SUgmCC_to9shf6Xzgp_-9ayVk7YSzKS-E' />
       <body className={`${montserrat.className} antialiased`}>
         <NextTopLoader showSpinner={false} />
         <Header />
