@@ -16,10 +16,11 @@ export const TeamModal = ({ setSelectedTeam, team }: TeamModalProps) => {
 
   return (
     <Modal
+      ariaHideApp={false}
       isOpen
       className='bg-white shadow-md border-2-[#46A7ED] z-50 w-[340px] h-fit p-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
       onRequestClose={() => setSelectedTeam(null)}
-      contentLabel='Example Modal'
+      contentLabel='Teams'
     >
       <div className='flex flex-row justify-between'>
         <Image
