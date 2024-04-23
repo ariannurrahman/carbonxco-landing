@@ -113,15 +113,17 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
         </div>
       </SectionWrapper>
       <SectionWrapper className='mb-5' padding='low'>
-        <div className='h-[160px] lg:h-[392px]'>
-          <Image
-            src={featureImage?.url ?? ''}
-            className='w-full h-full object-cover rounded-tl-[30px] rounded-br-[30px]'
-            alt='our works'
-            width={1380}
-            height={416}
-          />
-        </div>
+        {featureImage?.url ? (
+          <div className='h-[160px] lg:h-[392px]'>
+            <Image
+              src={featureImage?.url}
+              className='w-full h-full object-cover rounded-tl-[30px] rounded-br-[30px]'
+              alt='our works'
+              width={1380}
+              height={416}
+            />
+          </div>
+        ) : null}
       </SectionWrapper>
       <SectionWrapper className='relative' padding='none'>
         <SectionWrapper className='mb-5 z-30 relative' padding='high'>
@@ -187,18 +189,20 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
                   </div>
                 </div>
 
-                <div>
-                  <p className='text-[16px] font-bold mt-8'>Area map</p>
-                  <div className='relative w-full h-full max-h-[350[px] max-w-[350px] aspect-square'>
-                    <Image
-                      src={mapImage?.url ?? ''}
-                      className='w-full h-full object-fill'
-                      alt='our works'
-                      fill
-                      sizes='350'
-                    />
+                {mapImage?.url ? (
+                  <div>
+                    <p className='text-[16px] font-bold mt-8'>Area map</p>
+                    <div className='relative w-full h-full max-h-[350[px] max-w-[350px] aspect-square'>
+                      <Image
+                        src={mapImage.url}
+                        className='w-full h-full object-fill'
+                        alt='our works'
+                        fill
+                        sizes='350'
+                      />
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <h3 className='text-base font-semibold text-center mb-4'>Need more information for this project?</h3>
