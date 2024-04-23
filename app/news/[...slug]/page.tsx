@@ -31,7 +31,7 @@ export default async function NewsDetails({ params }: NewsDetailProps) {
     notFound();
   }
   const moreNews: News = await fetch(`${BASE_URL}/blogs/${id}/more`).then((res) => res.json());
-  const moreNewsThumbnail = moreNews?.documents?.find(({ document_type }) => document_type === 'project_thumbnail');
+  const moreNewsThumbnail = moreNews?.documents?.find(({ document_type }) => document_type === 'blog_thumbnail');
   const blogThumbnail = news?.documents?.find(({ document_type }) => document_type === 'blog_thumbnail')?.url ?? '';
   return (
     <SectionWrapper padding='high' className='pt-5 '>
