@@ -18,26 +18,28 @@ export default async function ProjectsPage({ params }: { params: { id: string } 
   const moreProject: ProjectDetail = await fetch(`${BASE_URL}/projects/${id}/more`, {
     cache: 'no-cache',
   }).then((res) => res.json());
-  const moreProjectThumbnail = moreProject.documents.find(({ document_type }) => document_type === 'project_thumbnail');
+  const moreProjectThumbnail = moreProject?.documents.find(
+    ({ document_type }) => document_type === 'project_thumbnail',
+  );
 
-  const featureImage = project.documents.find(({ document_type }) => document_type === 'project_thumbnail');
-  const gallery = project.documents.filter(({ document_type }) => document_type === 'project_gallery');
-  const mapImage = project.documents.find(({ document_type }) => document_type === 'project_map');
-  const sdgList = project.sdg;
+  const featureImage = project?.documents.find(({ document_type }) => document_type === 'project_thumbnail');
+  const gallery = project?.documents.filter(({ document_type }) => document_type === 'project_gallery');
+  const mapImage = project?.documents.find(({ document_type }) => document_type === 'project_map');
+  const sdgList = project?.sdg;
   const PROJECT_DETAILS = {
-    title: project.title,
-    description: project.description,
+    title: project?.title,
+    description: project?.description,
     projectArea: {
-      value: project.area,
-      caption: project.area_description,
+      value: project?.area,
+      caption: project?.area_description,
     },
-    ecosystemType: project.ecosystem_type,
-    community: project.community,
-    mainGoal: project.main_goal,
-    keyFactor: project.key_factor,
-    projectStarted: project.start_date ? dayjs.unix(Number(project.start_date)).format('DD MMMM YYYY') : '-',
-    location: project.location,
-    status: project.status as StatusType,
+    ecosystemType: project?.ecosystem_type,
+    community: project?.community,
+    mainGoal: project?.main_goal,
+    keyFactor: project?.key_factor,
+    projectStarted: project?.start_date ? dayjs.unix(Number(project.start_date)).format('DD MMMM YYYY') : '-',
+    location: project?.location,
+    status: project?.status as StatusType,
   };
 
   const statusStyle = () => {

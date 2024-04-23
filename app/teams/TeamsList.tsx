@@ -22,7 +22,6 @@ export interface Team {
 }
 
 export default function TeamsList() {
-  Modal.setAppElement('#team-list');
   const { isHydrate } = useHydrate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -34,7 +33,7 @@ export default function TeamsList() {
   useEffect(() => {
     const getTeams = async () => {
       const response = await fetch(`${BASE_URL}/teams?limit=50`).then((res) => res.json());
-      setTeams(response.data);
+      setTeams(response?.data);
     };
     getTeams();
   }, []);
@@ -61,6 +60,7 @@ export default function TeamsList() {
 
   useEffect(() => {
     if (isHydrate) {
+      Modal.setAppElement('#team-list');
       handleResize();
       window?.addEventListener('resize', handleResize);
 

@@ -37,8 +37,8 @@ export const NewsList = () => {
       const response = await fetch(`${BASE_URL}/blogs?category=${currentCategory}&limit=6&page=${currentPage}`).then(
         (res) => res.json(),
       );
-      setNews(response.data);
-      setTotalPage(response.totalPage);
+      setNews(response?.data);
+      setTotalPage(response?.totalPage);
     };
     getProjects();
   }, [currentPage, currentCategory]);

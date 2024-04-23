@@ -21,7 +21,7 @@ export const OpportunityList = () => {
   useEffect(() => {
     const getJos = async () => {
       const response = await fetch(`${BASE_URL}/jobs`).then((res) => res.json());
-      setJobs(response.data);
+      setJobs(response?.data);
     };
     getJos();
   }, []);

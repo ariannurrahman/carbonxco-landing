@@ -21,7 +21,7 @@ export const OurWorkSection = async () => {
   const response = await fetch(`${BASE_URL}/projects?limit=3`, {
     cache: 'no-cache',
   }).then((res) => res.json());
-  const projectsList: Project[] = response.data;
+  const projectsList: Project[] = response?.data;
 
   return (
     <SectionWrapper className='' padding='none'>

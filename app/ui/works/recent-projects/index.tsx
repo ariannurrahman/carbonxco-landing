@@ -14,8 +14,8 @@ export const RecentProjects = () => {
   useEffect(() => {
     const getProjects = async () => {
       const response = await fetch(`${BASE_URL}/projects?limit=6&page=${currentPage}`).then((res) => res.json());
-      setProjects(response.data);
-      setTotalPage(response.totalPage);
+      setProjects(response?.data);
+      setTotalPage(response?.totalPage);
     };
     getProjects();
   }, [currentPage]);
