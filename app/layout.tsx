@@ -8,11 +8,28 @@ import { Footer } from './ui/footer';
 import { montserrat } from './ui/fonts';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.carbonxco.com/'),
   title: {
     template: '%s | Carbonxco',
     default: 'Carbonxco',
   },
-  description: 'Carbonxco',
+  description:
+    'Join CarbonX in empowering communities through quality carbon projects by leveraging climate technology solutions, for a more sustainable future.',
+  openGraph: {
+    title: 'Carbonxco',
+    description:
+      'Join CarbonX in empowering communities through quality carbon projects by leveraging climate technology solutions, for a more sustainable future.',
+    url: 'https://www.carbonxco.com/',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.carbonxco.com/carbonxco-og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Carbonxco open graph image',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

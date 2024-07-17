@@ -86,7 +86,13 @@ export const ValuesCard = () => {
             Conducting robust monitoring systems to track and verify the key project indicators
           </p>
         </Tooltip>
-        <Image src={src} alt='label' fill sizes='300' className='z-20 absolute top-0 left-0 w-full rounded-lg' />
+        <Image
+          src={src}
+          alt='label'
+          fill
+          sizes='300'
+          className='z-20 absolute top-0 left-0 w-full rounded-lg object-cover'
+        />
       </div>
     );
   });
