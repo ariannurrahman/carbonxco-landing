@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://www.carbonxco.com/carbonxco-og.png',
+        url: 'https://www.carbonxco.com/carbonxco-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Carbonxco open graph image',
