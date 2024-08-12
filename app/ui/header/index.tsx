@@ -15,7 +15,11 @@ export const Header = () => {
         {/* Desktop */}
         <div className='hidden lg:flex gap-10 items-center'>
           {HEADER_NAV.map(({ href, label }) => (
-            <Link className='tracking-wider text-[14px] font-medium text-center hover:text-[#00B040]' key={label} href={href}>
+            <Link
+              className='tracking-wider text-[14px] font-medium text-center hover:text-[#00B040]'
+              key={label}
+              href={href}
+            >
               {label}
             </Link>
           ))}

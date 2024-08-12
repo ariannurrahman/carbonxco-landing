@@ -18,7 +18,7 @@ export const Sidebar = () => {
 
   return (
     <>
-      <div className='block md:hidden'>
+      <div className='block lg:hidden'>
         <button onClick={onOpenSidebar}>
           <Image src='/assets/menu-icon.svg' width={40} height={40} alt='menu' />
         </button>
