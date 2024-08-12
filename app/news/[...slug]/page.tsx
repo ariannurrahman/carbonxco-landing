@@ -17,9 +17,22 @@ export async function generateMetadata({ params }: NewsDetailProps) {
   const { slug } = params;
   const id = slug[1];
   const blogs: News = await fetch(`${BASE_URL}/blogs/${id}`).then((res) => res.json());
+  const image = blogs?.documents?.find(({ document_type }) => document_type === 'blog_thumbnail')?.url;
   return {
     title: blogs?.title ?? blogs?.meta_title,
-    description: blogs?.meta_description ?? blogs?.content,
+    description: blogs?.project_summary ?? blogs?.meta_description,
+    openGraph: {
+      title: blogs?.title ?? blogs?.meta_title,
+      description: blogs?.project_summary ?? blogs?.meta_description,
+      images: [
+        {
+          url: image ?? '/assets/carbonxco-og.jpg',
+          width: 1200,
+          height: 630,
+          alt: blogs?.title,
+        },
+      ],
+    },
   };
 }
 
