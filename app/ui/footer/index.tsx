@@ -4,6 +4,7 @@ import { FOOTER_NAV } from '../constants';
 import { SectionWrapper } from '../wrapper';
 import { Instagram } from './instagram';
 import { Linkedin } from './linkedin';
+import { Email } from './email';
 
 export const Footer = () => {
   const FooterLogo = (
@@ -58,9 +59,10 @@ export const Footer = () => {
         <br />
         Jakarta, Indonesia, 12190
       </p>
-      <p className='font-medium text-white text-[12px]'>
-        <span className='w-6 mr-4'>Ph.</span> <span className='ml-4'>+62 21 27085488 / 27085081</span>
-      </p>
+      <a href='mailto:admin@carbonxco.com' className='flex flex-row flex-nowrap items-center gap-2'>
+        <Email />
+        <span className='font-medium text-xs text-white underline'>admin@carbonxco.com</span>
+      </a>
 
       <div className='flex lg:hidden flex-row justify-start gap-4 mt-5'>
         <Link href='https://www.instagram.com/carbonx.id/' target='_blank'>
