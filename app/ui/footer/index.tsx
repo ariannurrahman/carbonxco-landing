@@ -52,9 +52,11 @@ export const Footer = () => {
     <div className='mt-10 md:mt-0'>
       <p className='font-semibold text-white text-[14px]'>INDONESIA OFFICE</p>
       <p className='mt-3 mb-6 font-medium text-white text-[12px]'>
-        Treasury Tower 7th Floor , <br />
-        Suite 7JKL District 8, SCBD lot.28 <br />
-        Jl. Jendral Sudirman Kav. 52-53 Jakarta 12190 - Indonesia
+        Treasury Tower, SCBD
+        <br />
+        Jl. Jenderal Sudirman
+        <br />
+        Jakarta, Indonesia, 12190
       </p>
       <p className='font-medium text-white text-[12px]'>
         <span className='w-6 mr-4'>Ph.</span> <span className='ml-4'>+62 21 27085488 / 27085081</span>
