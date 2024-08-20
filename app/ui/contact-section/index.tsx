@@ -8,7 +8,7 @@ export const ContactSection = () => {
   return (
     <>
       <SectionWrapper className='grid grid-cols-1 md:grid-cols-[auto_auto] py-20 gap-x-20' padding='high'>
-        <div className='flex justify-center items-center w-[300px] xl:w-[500px] rounded-tl-[30px] rounded-br-[30px]'>
+        <div className='flex justify-center items-center w-[300px] xl:w-[500px] rounded-tl-[30px] rounded-br-[30px] mx-auto'>
           <Image
             src='/assets/home/desa-nekan.png'
             className='object-fit rounded-tl-[30px] rounded-br-[30px]'

@@ -76,9 +76,9 @@ export const Footer = () => {
   );
 
   return (
-    <SectionWrapper padding='high' className='bg-[#13282D] lg:bg-transparent py-5 lg:py-14 relative'>
+    <SectionWrapper padding='high' className='bg-[#13282D] md:bg-transparent py-5 md:py-14 relative'>
       <footer>
-        <div className='hidden relative z-20 lg:flex justify-between items-start flex-col md:flex-row gap-x-2'>
+        <div className='hidden relative z-20 md:flex justify-between items-start flex-col md:flex-row gap-x-2'>
           <div className='flex justify-between items-start gap-12 flex-col md:flex-row'>
             {FooterLogo}
             {FooterUrl}
@@ -86,13 +86,13 @@ export const Footer = () => {
           {FooterAddress}
         </div>
 
-        <div className='flex lg:hidden relative z-20 flex-col'>
+        <div className='flex md:hidden relative z-20 flex-col'>
           {FooterUrl}
           {FooterAddress}
           <div className='mt-10'>{FooterLogo}</div>
         </div>
         <Image
-          className='z-10 hidden lg:block absolute top-0 left-0 object-cover'
+          className='z-10 hidden md:block absolute top-0 left-0 object-cover'
           src='/assets/footer-bg.png'
           alt='carbonx footer'
           fill
