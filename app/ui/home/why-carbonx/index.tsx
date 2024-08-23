@@ -59,7 +59,7 @@ export const WhyCarbonx = () => {
       <Image
         className='block lg:hidden z-10 absolute top-0 left-0 w-screen min-h-screen h-full object-cover'
         src='/assets/home/why-carbonx-mobile.png'
-        alt='why carbon x'
+        alt='why carbon x mobile'
         sizes='1440'
         fill
       />
