@@ -20,7 +20,7 @@ export const ValuesCard = () => {
       caption: (
         <div className='flex flex-col justify-center items-center mt-5 gap-y-4 relative'>
           <p className={`first-tooltip ${firstValueClassname}`}>Additionality</p>
-          <p className={`second-tooltip ${firstValueClassname}`}>Permeance</p>
+          <p className={`second-tooltip ${firstValueClassname}`}>Permanence</p>
           <p className={`third-tooltip ${firstValueClassname}`}>Measurability</p>
         </div>
       ),
